@@ -1,0 +1,38 @@
+/*
+    Глобальные стили, которые необходимо подключать на каждой странице.
+    Служит для формирования начального layout и сброса стандартных стилей
+*/
+
+/* Подключение шрифтов */
+@import "../fonts/inter/stylesheet.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+body {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+}
+ul {
+    list-style: none;
+}
+a {
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Контейнер */
+.container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1400px;
+}

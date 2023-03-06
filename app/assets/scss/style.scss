@@ -1,0 +1,9 @@
+@import "variables.scss";
+@import "globals.scss";
+
+// Подключаем блоки БЭМ
+@import "blocks/style.scss";
+
+@import "header.scss";
+@import "modals.scss";
+@import "footer.scss";

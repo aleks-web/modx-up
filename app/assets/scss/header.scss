@@ -1,0 +1,149 @@
+/*
+    ? Шапка сайта
+*/
+
+
+// ? Верхняя строка
+.ticker {
+    background: var(--main-bg-color);
+    color: #fff;
+    
+    height: 50px;
+
+    &__container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__cta,
+    &__info {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* 
+        ? Элемент с городами в шапке
+        desc: Расширяет и переопределяет стили БЭМ блока blocks/_drop-listing.scss
+    */
+    &__city {
+        margin-right: 25px;
+
+        // Текущий город при множестве городов
+        &-current {
+            padding: 0 10px;
+            height: 100%;
+        }
+
+    } // END блок с городами
+
+
+    /* 
+        ? Элемент с номерами телефонов в шапке
+        desc: Расширяет и переопределяет стили БЭМ блока blocks/_drop-listing.scss
+    */
+    &__phone {
+        font-size: 1rem;
+    } // END Элемент с номерами телефонов в шапке
+}
+
+.header-info {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__nav {
+        height: 50px;
+        display: flex;
+        align-content: center;
+    }
+
+    &__btn {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+// Блок с выпадающим списком при наведении
+// Меню
+.nav {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        margin-right: 10px;
+
+        // Раскрываем подпункты меню при наведении на элемент списка
+        &:hover > .nav__sub-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+        &:hover .nav__item-arrow {
+            transform: rotate(180deg);
+        }
+
+        // Пункт меню в виде текста или ссылки
+        &-link,
+        &-active {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            font-size: 1.25rem;
+            font-weight: 300;
+            padding: 0 15px;
+            transition: var(--fast-animation) all;
+        }
+
+        // Стили для активного меню
+        &-active {
+            color: var(--main-btn-color);
+            cursor: context-menu;
+        }
+
+        &-arrow {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            transform: var(--fast-animation) all;
+        }
+    }
+
+    &__sub-menu {
+        position: absolute;
+        height: 100%;
+        top: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--fast-animation) all;
+
+        li {
+            min-width: 100%;
+            margin-right: 0;
+            background-color: var(--main-btn-color);
+        }
+
+        .nav__sub-menu {
+            left: 100%;
+            top: 0;
+        }
+    }
+}

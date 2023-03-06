@@ -1,0 +1,14 @@
+.btn {
+    display: block;
+    font-size: 1.12rem;
+    padding: 10px 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--main-btn-color);
+    transition: var(--fast-animation) all;
+
+    &:hover {
+        background-color: var(--main-bg-color);
+    }
+}
