@@ -90,14 +90,19 @@
         align-items: center;
         width: max-content;
         margin-right: 10px;
+        cursor: pointer;
 
         // Раскрываем подпункты меню при наведении на элемент списка
         &:hover > .nav__sub-menu {
             visibility: visible;
             opacity: 1;
         }
-        &:hover .nav__item-arrow {
-            transform: rotate(180deg);
+        &:hover > .nav__item-arrow {
+            transform: rotate(-140deg);
+        }
+
+        &:has(.nav__item-arrow) {
+            padding-right: 15px;
         }
 
         // Пункт меню в виде текста или ссылки
@@ -119,11 +124,19 @@
             cursor: context-menu;
         }
 
+        &-link {
+            &:hover {
+                color: #4969B5;
+            }
+        }
+
         &-arrow {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            transform: var(--fast-animation) all;
+            border: solid black;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 2px;
+            transform: rotate(45deg);
+            transition: var(--fast-animation) all;
         }
     }
 
@@ -135,10 +148,20 @@
         visibility: hidden;
         transition: var(--fast-animation) all;
 
-        li {
+        .nav__item {
             min-width: 100%;
             margin-right: 0;
-            background-color: var(--main-btn-color);
+            background-color: #fff;
+            transition: var(--fast-animation) all;
+
+            &:hover {
+                background-color: var(--main-bg-color);
+            }
+        }
+
+        .nav__item-arrow {
+            border-color: #fff;
+            transform: rotate(-45deg);
         }
 
         .nav__sub-menu {
