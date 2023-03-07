@@ -21,7 +21,7 @@ body {
     font-size: 16px;
     line-height: 130%;
 }
-ul { 
+ul {
     list-style: none;
 }
 a {
@@ -35,4 +35,13 @@ a {
     position: relative;
     margin: 0 auto;
     max-width: 1400px;
+
+    @media (max-width: 1440px) {
+        max-width: 1170px;
+    }
+
+    @media (max-width: 1210px) {
+        max-width: 100%;
+        padding: 0 20px;
+    }
 }

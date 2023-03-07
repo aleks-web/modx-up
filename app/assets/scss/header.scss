@@ -59,15 +59,17 @@
     &__container {
         height: 100%;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
     }
 
     &__nav {
-        height: 50px;
+        height: 100%;
+        width: 100%;
+        position: relative;
         display: flex;
-        align-content: center;
+        align-items: center;
     }
 
     &__btn {
@@ -76,12 +78,30 @@
         align-items: center;
     }
 }
+// Брэнд-лого
+.brand {
+    display: flex;
+    align-items: center;
+}
 
 // Блок с выпадающим списком при наведении
 // Меню
 .nav {
+    height: 50px;
     display: flex;
     align-items: center;
+
+    @media (max-width: 1210px) {
+        display: none;
+    }
+
+    &__burger {
+        display: none;
+
+        @media (max-width: 1210px) {
+            display: block;
+        }
+    }
 
     &__item {
         position: relative;
@@ -153,14 +173,10 @@
             margin-right: 0;
             background-color: #fff;
             transition: var(--fast-animation) all;
-
-            &:hover {
-                background-color: var(--main-bg-color);
-            }
         }
 
         .nav__item-arrow {
-            border-color: #fff;
+            
             transform: rotate(-45deg);
         }
 
