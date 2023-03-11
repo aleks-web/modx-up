@@ -1,0 +1,47 @@
+.history-company {
+    padding-top: 40px!important;
+    color: var(--white);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left {
+        width: 40%;
+        color: var(--white);
+    }
+
+    &__body {
+        line-height: 150%;
+        font-size: 1.5rem;
+    }
+
+    &__more {
+        display: block;
+        margin-top: 12px;
+        font-size: 1.38rem;
+        width: max-content;
+        padding-right: 20px;
+        color: rgba(253, 253, 253, 0.3);
+
+        background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.34315 0.343133V2.33717L9.24153 2.34425L0.636039 10.9497L2.05025 12.3639L10.6557 3.75846L10.6628 11.6568H12.6569V0.343133H1.34315Z' fill='%23FDFDFD' fill-opacity='0.3'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center right;
+    }
+
+    &__right {
+        width: 50%;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        
+        &-item {
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

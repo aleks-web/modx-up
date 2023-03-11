@@ -18,7 +18,7 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
     line-height: 130%;
 }
@@ -52,12 +52,16 @@ a {
 
 /* Общие стили блоков (чанков) */
 .block {
+    position: relative;
     padding-top: 120px;
     padding-bottom: 120px;
+
+    background-color: var(--main-bg-color);
 
     &-title {
         padding-top: 24px;
         margin-bottom: 64px;
+        color: var(--white);
         @include title-h1;
 
         &:before {
