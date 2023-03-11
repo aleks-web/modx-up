@@ -55,6 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: var(--main-bg-color-3);
 
     &__container {
         height: 100%;
@@ -166,6 +167,7 @@
         top: 100%;
         opacity: 0;
         visibility: hidden;
+        z-index: 10;
         transition: var(--fast-animation) all;
 
         .nav__item {

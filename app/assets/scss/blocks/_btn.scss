@@ -1,15 +1,33 @@
 .btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
     min-width: 170px;
+    height: 50px;
     font-size: 1.12rem;
-    padding: 10px 10px;
+    padding: 0 20px;
     border-radius: 3px;
-    font-weight: 600;
+    font-weight: 400;
     color: #fff;
     background-color: var(--main-btn-color);
+    cursor: pointer;
     transition: var(--fast-animation) all;
 
     &:hover {
-        background-color: var(--main-bg-color);
+        background-color: var(--main-btn-color-hover);
+    }
+}
+
+.btn-next {
+    background-image: url("data:image/svg+xml,%3Csvg id='arrow-next' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z' fill='%23FDFDFD'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center right;
+    padding-right: 50px;
+    background-position-x: 92%;
+    transition: var(--fast-animation) all;
+
+    &:hover {
+        background-position-x: 93%;
     }
 }

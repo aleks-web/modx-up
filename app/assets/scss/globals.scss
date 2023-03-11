@@ -9,17 +9,21 @@
 * {
     padding: 0;
     margin: 0;
+    line-height: normal;
     box-sizing: border-box;
 }
 html {
     font-size: 16px;
 }
 body {
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 130%;
+}
+button {
+    font-family: 'Inter', sans-serif;
 }
 ul {
     list-style: none;
@@ -43,5 +47,27 @@ a {
     @media (max-width: 1210px) {
         max-width: 100%;
         padding: 0 20px;
+    }
+}
+
+/* Общие стили блоков (чанков) */
+.block {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    &-title {
+        padding-top: 24px;
+        margin-bottom: 64px;
+        @include title-h1;
+
+        &:before {
+            content: '';
+            height: 6px;
+            width: 90px;
+            background-color: var(--main-bg-color-4);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     }
 }

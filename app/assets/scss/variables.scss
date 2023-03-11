@@ -2,9 +2,45 @@
     // Главные цвета
     --main-bg-color: #272E3E;
     --main-bg-color-2: #141E36;
+    --main-bg-color-3: #EDEDED;
+    --main-bg-color-4: #A5BEF7;
     --main-bg-color-hover: #4969B5;
     --main-btn-color: #C43742;
+    --main-btn-color-hover: #9E212B;
+
+    /*
+        Размеры заголовков
+    */
+    // Главный заголовок
+    --main-title-size: 64px;
+    --main-title-lh: 110%;
+
+    // H1 заголовок
+    --title-h1-size: 40px;
+    --title-h1-lh: 110%;
+
+    // H2 заголовок
+    --title-h2-size: 32px;
+    --title-h2-lh: 110%;
 
     // Прочее
     --fast-animation: 0.3s;
+}
+
+@mixin main-title {
+    font-size: var(--main-title-size);
+    line-height: var(--main-title-lh);
+}
+
+@mixin title-h1 {
+    position: relative;
+    font-size: var(--title-h1-size);
+    line-height: var(--title-h1-lh);
+    font-weight: 600;
+}
+
+@mixin title-h2 {
+    position: relative;
+    font-size: var(--title-h2-size);
+    line-height: var(--title-h2-lh);
 }

@@ -67,6 +67,7 @@ function build() {
     return src([
         'app/assets/scss/**/*.scss',
         'app/assets/fonts/**/*',
+        'app/assets/img/**/*',
         'app/**/*.html'
     ], {base: 'app'})
     .pipe(dest(`${dir.dist}`))
