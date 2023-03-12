@@ -80,4 +80,4 @@ exports.watching = watching;
 exports.browsersync = browsersync;
 exports.build = build;
 
-exports.default = parallel(build, browsersync, watching);
+exports.default = parallel(build, html, scripts, styles, browsersync, watching);
