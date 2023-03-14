@@ -29,7 +29,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         position: relative;
-        gap: 2px 1px;
+        gap: 1px 1px;
         width: 50%;
         margin-bottom: 80px;
 
@@ -40,18 +40,26 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            color: var(--main-bg-color-5);
-            background-color: var(--white);
+            justify-content: flex-start;
+            color: var(--white);
+            background-color: var(--main-bg-color);
 
+            // Скос, срез угла
+            &--bevel {
+                background: linear-gradient(-45deg, transparent 15px, var(--main-bg-color) 0);
+            }
+
+            // Срез у первого и последнего элемента
             &:first-child {
-                background: linear-gradient(135deg, transparent 15px, var(--white) 0);
+                background: linear-gradient(135deg, transparent 15px, var(--main-bg-color) 0);
             }
     
             &:last-child {
-                background: linear-gradient(-45deg, transparent 15px, var(--white) 0);
+                background: linear-gradient(-45deg, transparent 15px, var(--main-bg-color) 0);
             }
 
+
+            // Title и Description элемента
             &-title {
                 display: block;
                 font-size: 48px;
@@ -60,6 +68,8 @@
 
             &-desc {
                 display: block;
+                max-width: 80%;
+                margin-top: 30px;
                 font-weight: 400;
             }
         }

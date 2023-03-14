@@ -3,12 +3,15 @@
 
 // Подключаем блоки БЭМ
 @import "blocks/style.scss";
+// END Подключаем блоки БЭМ
 
 @import "header.scss";
 @import "baner.scss";
 @import "cards.scss";
 @import "history-company.scss";
 @import "big-utp.scss";
+@import "partners.scss";
+@import "presentation.scss";
 //@import "";
 
 @import "modals.scss";

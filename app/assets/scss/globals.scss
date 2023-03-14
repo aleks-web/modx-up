@@ -27,6 +27,29 @@ button {
 }
 ul {
     list-style: none;
+    padding-left: 25px;
+
+    li {
+        position: relative;
+        padding-left: 25px;
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            width: 15px;
+            height: 15px;
+            background-image: url(../img/elements/circle.svg);
+            left: 0px;
+            background-repeat: no-repeat;
+            background-position: top right;
+        }
+    }
 }
 a {
     font-weight: 400;
@@ -65,7 +88,6 @@ img {
         padding-top: 24px;
         margin-bottom: 64px;
         color: var(--white);
-        @include title-h1;
 
         &:before {
             content: '';
@@ -75,6 +97,18 @@ img {
             position: absolute;
             top: 0;
             left: 0;
+        }
+
+        &__title {
+            display: block;
+            margin-bottom: 16px;
+            @include title-h1;
+        }
+        &__desc {
+            display: block;
+            font-size: 1.38rem;
+            max-width: 700px;
+            line-height: 140%;
         }
     }
 }

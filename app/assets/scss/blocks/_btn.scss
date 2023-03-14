@@ -1,3 +1,8 @@
+/*
+    Стили кнопок
+*/
+
+// Каркас кнопки
 .btn {
     display: flex;
     align-items: center;
@@ -19,15 +24,44 @@
     }
 }
 
-.btn-next {
-    background-image: url("data:image/svg+xml,%3Csvg id='arrow-next' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z' fill='%23FDFDFD'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center right;
-    padding-right: 50px;
-    background-position-x: 92%;
-    transition: var(--fast-animation) all;
+// Обобщенные стили всех кнопок с иконками
+.btn-next,
+.btn-download {
+    &:after {
+        content: '';
+        width: 16px;
+        height: 16px;
+        margin-left: 15px;
+        background-repeat: no-repeat;
+        transition: var(--fast-animation) all;
+    }
 
     &:hover {
-        background-position-x: 93%;
+        &:after {
+            transform: translateX(3px);
+        }
+    }
+}
+// Кнопка с иконкой  стрелки
+.btn-next {
+    &:after {
+        background-image: url("data:image/svg+xml,%3Csvg id='arrow-next' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z' fill='%23FDFDFD'/%3E%3C/svg%3E");
+    }
+}
+
+// Кнопка с иконкой  скачать
+.btn-download {
+
+    &:after {
+        width: 28px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='24' viewBox='0 0 28 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13 15.17V0H15V15.17L20.59 9.59L22 11L14 19L6 11L7.41 9.58L13 15.17ZM26 22V18H28V24H0V18H2V22H26Z' fill='%23FDFDFD'/%3E%3C/svg%3E");
+    }
+
+    &:hover {
+        &:after {
+            transform: translateX(0);
+            transform: translateY(-2px);
+        }
     }
 }

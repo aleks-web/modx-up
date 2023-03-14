@@ -3,7 +3,7 @@
     color: var(--white);
 
     &:has(~ .big-utp) {
-        padding-bottom: 80px;
+        padding-bottom: 30px;
     }
 
     &__container {
@@ -41,7 +41,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         position: relative;
-        gap: 2px 1px;
+        gap: 1px;
 
         &:before {
             content: "";
@@ -67,6 +67,10 @@
         &-item {
             color: var(--main-btn-color);
             background-color: var(--white);
+
+            &--bevel {
+                background: linear-gradient(-45deg, transparent 15px, var(--main-bg-color) 0);
+            }
 
             &:nth-child(2n) {
                 color: var(--main-bg-color-5);

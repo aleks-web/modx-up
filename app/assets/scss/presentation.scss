@@ -1,0 +1,68 @@
+.presentation {
+    background-color: var(--main-bg-color-2)!important;
+
+    &__wrap {
+        display: flex;
+    }
+
+    &__title {
+        margin-bottom: 30px!important;
+    }
+
+    &__btn {
+        height: 70px;
+        width: max-content;
+        font-size: 1.5rem!important;
+    }
+
+    // Левая часть (контент)
+    &__left {
+        width: 40%;
+
+        &-body {
+            margin-bottom: 50px;
+            font-size: 1.38rem;
+
+            // Делаем всем элементам в блоке отступ, кроме последнего
+            * {
+                margin-bottom: 30px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            // Форматирование контента в блоке (списки, текст)
+            p,
+            ul,
+            &-text {line-height: 140%;color: var(--white);}
+
+            ul {
+                font-size: 1.1rem;
+                font-weight: 500;
+                padding-left: 10px;
+                color: var(--white);
+
+                li {
+                    margin-bottom: 16px;
+                    padding-left: 30px;
+
+                    &:before {
+                        background-image: url(../img/elements/good.svg);
+                        width: 17px;
+                        height: 17px;
+                    }
+                }
+            }
+            // END Форматирование контента в блоке (списки, текст)
+
+
+        }
+    }
+
+    // Правая часть (презинтация)
+    &__right {
+        background-color: aqua;
+        width: 60%;
+    }
+}
