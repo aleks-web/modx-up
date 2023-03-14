@@ -55,14 +55,23 @@
                 }
             }
             // END Форматирование контента в блоке (списки, текст)
-
-
         }
     }
 
     // Правая часть (презинтация)
-    &__right {
+    &__swiper {
         background-color: aqua;
-        width: 60%;
+        width: 50%;
+        height: 100%;
+
+        &-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-button-next {
+
+        }
     }
 }

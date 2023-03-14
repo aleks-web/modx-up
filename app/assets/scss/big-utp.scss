@@ -43,6 +43,7 @@
             justify-content: flex-start;
             color: var(--white);
             background-color: var(--main-bg-color);
+            transition: var(--fast-animation) all;
 
             // Скос, срез угла
             &--bevel {

@@ -106,12 +106,17 @@
 
     &__item {
         position: relative;
+        padding: 0;
         height: 100%;
         display: flex;
         align-items: center;
         width: max-content;
         margin-right: 10px;
         cursor: pointer;
+
+        &:before {
+            content: unset;
+        }
 
         // Раскрываем подпункты меню при наведении на элемент списка
         &:hover > .nav__sub-menu {
@@ -163,6 +168,7 @@
 
     &__sub-menu {
         position: absolute;
+        padding: 0;
         height: 100%;
         top: 100%;
         opacity: 0;

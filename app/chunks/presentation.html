@@ -23,11 +23,34 @@
 
             </div>
 
-            <div class="presentation__right">
-                фывфыв
+            
+
+            <div class="presentation__swiper swiper">
+                <div class="presentation__swiper-wrapper swiper-wrapper">
+                    <div class="presentation__swiper-slide swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
+                    <div class="presentation__swiper-slide swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
+                </div>
+
+                <div class="presentation__swiper-button-prev"></div>
+                <div class="presentation__swiper-button-next"></div>
+
             </div>
+
+          
 
         </div>
 
     </div>
 </section>
+
+<script>
+    const swiper = new Swiper('.presentation__swiper', {
+        speed: 400,
+        spaceBetween: 100,
+        
+        navigation: {
+            nextEl: '.presentation__swiper-button-next',
+            prevEl: '.presentation__swiper-button-prev',
+        }
+    });
+</script>
