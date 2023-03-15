@@ -1,0 +1,29 @@
+.order-call {
+    position: relative;
+    overflow: hidden;
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient (to top, rgba (89,106,114, 0.6), rgba (206,220,23, 0.4)), url('../assets/img/girl.png');
+        background-image: url('../assets/img/girl.png');
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__left {
+
+    }
+
+    &__right {
+
+    }
+}

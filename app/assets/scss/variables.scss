@@ -1,4 +1,8 @@
 :root {
+    // Пропорция
+    --index: 1vh + 1vw;
+
+
     // Главные цвета
     --main-bg-color: #272E3E;
     --main-bg-color-2: #141E36;
@@ -30,6 +34,8 @@
     --fast-animation: 0.3s;
 }
 
+
+// Миксины тайтлов
 @mixin main-title {
     font-size: var(--main-title-size);
     line-height: var(--main-title-lh);
