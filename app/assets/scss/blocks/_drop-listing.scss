@@ -4,6 +4,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    width: max-content;
 
     &__current {
         display: flex;
@@ -11,6 +12,27 @@
         height: 100%;
         cursor: pointer;
         transition: var(--fast-animation) all;
+
+        &:hover::after {
+            transform: rotate(-180deg);
+        }
+
+        &-arrow::after,
+        &-arrow--black::after {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 7px;
+            margin-top: 2px;
+            margin-left: 5px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: var(--arrow-drop-white);
+            transition: var(--fast-animation) all;
+        }
+        &-arrow--black::after {
+            background-image: var(--arrow-drop-black);
+        }
         
         a {
             color: #fff;
@@ -19,16 +41,6 @@
 
     &__icon {
         margin-right: 10px;
-    }
-    
-    // Иконка стрелка
-    &__arrow {
-        margin-left: 5px;
-        transition: var(--fast-animation) all;
-
-        &--open {
-            transform: rotate(-180deg);
-        }
     }
 
     // Список номеров

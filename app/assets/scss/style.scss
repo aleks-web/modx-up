@@ -5,6 +5,7 @@
 @import "blocks/style.scss";
 // END Подключаем блоки БЭМ
 
+// Основные чанки
 @import "header.scss";
 @import "baner.scss";
 @import "cards.scss";
@@ -15,5 +16,6 @@
 @import "order-call.scss";
 //@import "";
 
+// Конечные чанки
 @import "modals.scss";
 @import "footer.scss";

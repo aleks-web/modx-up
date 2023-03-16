@@ -1,1 +1,84 @@
-@import "globals.scss";
+.footer {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: var(--main-bg-color);
+}
+
+
+.footer__city {
+    display: flex;
+    flex-direction: column;
+
+    color: #fff;
+}
+
+
+// Блок время работы
+.footer__working {
+    color: var(--white);
+
+    // Все дочерние элементы первого уровня
+    > * {
+        display: block;
+        line-height: 140%;
+    }
+}
+
+// Блок соц.сетей
+.footer__social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+    margin: 30px 0;
+
+    &-link {
+        margin-right: 20px;
+        opacity: 0.9;
+        transition: var(--fast-animation) all;
+
+        &:hover {
+            opacity: 1;
+            transform: scale(1.015);
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
+
+
+// Блок ссылка политики конф
+.footer__politic {
+    &-link {
+        color: var(--white);
+        border-bottom: 1px solid var(--white);
+    }
+}
+
+// Блок копирайта
+.footer__copyright {
+    margin-top: 60px;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #CED2DB;
+        margin-bottom: 30px;
+    }
+
+    &-text {
+        display: block;
+        color: var(--white);
+        font-size: 1.1rem;
+        line-height: 140%;
+
+        &:first-child {
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+    }
+}

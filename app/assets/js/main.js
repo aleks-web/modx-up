@@ -8,13 +8,11 @@ $(function() {
         $(this).mousemove(function(e) {
             if (!$(this).find('.drop-listing__list').hasClass('drop-listing__list--open')) {
                 $(this).find('.drop-listing__list').toggleClass('drop-listing__list--open');
-                $(this).find('.drop-listing__arrow').toggleClass('drop-listing__arrow--open');
             }
         });
         
         $(this).mouseleave(function(e) {
             $(this).find('.drop-listing__list').toggleClass('drop-listing__list--open');
-            $(this).find('.drop-listing__arrow').toggleClass('drop-listing__arrow--open');
         });
 
     });
