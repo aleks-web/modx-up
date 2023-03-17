@@ -1,0 +1,66 @@
+<section class="block cases">
+    <div class="cases__container container">
+
+        <div class="block-title">
+            <span class="block-title__title-mini">История компании</span>
+            <span class="block-title__title">Благодаря многолетнему опыту мы не боимся браться за сложные задачи</span>
+        </div>
+
+
+        <div class="slider cases__slider swiper">
+
+            <div class="slider__button-wrap">
+                <div class="slider__button-prev"></div>
+                <div class="slider__button-next"></div>
+            </div>
+
+            <div class="slider__wrapper swiper-wrapper">
+
+                <div class="swiper-slide">
+
+                    <div class="more-card">
+                        <div class="more-card__img"><img width="300" src="../assets/img/bg.jpg" alt=""></div>
+                        <div class="more-card__body">
+                            <span class="more-card__title">Разгрузка 40-тонного фургона</span>
+                            <span class="more-card__desc">9 мая. Я работал тогда одним из логистов, а компанию составила Екатерина Зайцева. ​В общем, заявка на ближайшее в 13.00 падает мне на модуль. 4 человека на ближайшее в Коченевск (70км от НСК!!!). В 14.30</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="more-card">
+                        <div class="more-card__img"><img width="300" src="../assets/img/bg.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="more-card">
+                        <div class="more-card__img"><img width="300" src="../assets/img/bg.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="more-card">
+                        <div class="more-card__img"><img width="300" src="../assets/img/bg.jpg" alt=""></div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const casesSlider = new Swiper('.cases__slider', {
+        speed: 400,
+        spaceBetween: 100,
+        slidesPerView: 3,
+        
+        navigation: {
+            nextEl: '.slider__button-prev',
+            prevEl: '.slider__button-next',
+        }
+    });
+</script>

@@ -26,16 +26,16 @@
             
 
             <div class="presentation__right">
-                <div class="presentation__swiper swiper">
+                <div class="presentation__swiper slider swiper">
 
-                    <div class="presentation__swiper-button-wrap">
-                        <div class="presentation__swiper-button-prev"></div>
-                        <div class="presentation__swiper-button-next"></div>
+                    <div class="slider__button-wrap">
+                        <div class="slider__button-prev"></div>
+                        <div class="slider__button-next"></div>
                     </div>
                     
-                    <div class="presentation__swiper-wrapper swiper-wrapper">
-                        <div class="presentation__swiper-slide swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
-                        <div class="presentation__swiper-slide swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
+                        <div class="swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
                     </div>
 
                 </div>
@@ -49,13 +49,13 @@
 </section>
 
 <script>
-    const swiper = new Swiper('.presentation__swiper', {
+    const presentationSwiper = new Swiper('.presentation__swiper', {
         speed: 400,
         spaceBetween: 100,
         
         navigation: {
-            nextEl: '.presentation__swiper-button-next',
-            prevEl: '.presentation__swiper-button-prev',
+            nextEl: '.slider__button-next',
+            prevEl: '.slider__button-prev',
         }
     });
 </script>

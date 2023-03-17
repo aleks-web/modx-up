@@ -53,9 +53,7 @@
 
     // Тело блока (основной текст)
     &__body {
-        &:has(~ .btn) {
-            margin-bottom: 50px;
-        }
+        
     }
 
     // Тайтл
@@ -79,5 +77,6 @@
     &__btn {
         height: 70px;
         font-size: 1.5rem;
+        margin-top: 50px;
     }
 }

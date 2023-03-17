@@ -89,20 +89,36 @@ img {
         margin-bottom: 64px;
         color: var(--white);
 
-        &:before {
-            content: '';
-            height: 6px;
-            width: 90px;
-            background-color: var(--main-bg-color-4);
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
         &__title {
             display: block;
-            margin-bottom: 16px;
+            padding-top: 24px;
+            margin-bottom: 64px;
             @include title-h1;
+
+            &:after {
+                content: '';
+                height: 6px;
+                width: 90px;
+                background-color: var(--main-bg-color-4);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            &-mini {
+                display: block;
+                text-transform: uppercase;
+                color: var(--main-bg-color-4);
+                margin-bottom: 10px;
+                font-weight: 400;
+
+                ~ *:after {
+                    content: unset;
+                }
+                ~ span {
+                    padding-top: 0;
+                }
+            }
         }
         &__desc {
             display: block;

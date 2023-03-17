@@ -2,20 +2,127 @@
     padding-top: 80px;
     padding-bottom: 80px;
     background-color: var(--main-bg-color);
+
+    // Общая обёртка левого и правого контейнера
+    &__wrap {
+        display: flex;
+    }
+
+    // Обертка левого контента (главная информация)
+    &__main {
+        width: 40%;
+
+        > * {
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    // Обертка правого контента (Блок ссылок)
+    &__other {
+        display: flex;
+        justify-content: space-between;
+        width: -webkit-fill-available;
+        width: -moz-available;
+        width: fill-available;
+        
+        // Стили списков
+        ul {
+            padding: 0;
+            margin-right: 50px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            li {
+                padding: 0;
+                margin-bottom: 15px;
+                
+                &:before {
+                    content: unset;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            a {
+                color: #D5DAE3; border-bottom: 1px solid transparent; transition: var(--fast-animation) all;
+                
+                &:hover {
+                    color: var(--white);
+                    border-bottom: 1px solid var(--white);
+                }
+            }
+        }
+
+    }
 }
 
+// Стили логотипа
+.footer__logo {
+    max-width: 190px;
 
+    .footer__logo-svg {
+        filter: brightness(0) invert(1);
+        transition: var(--fast-animation) all;
+
+        &:hover {
+            filter: brightness(1) invert(0);
+        }
+    }
+}
+
+/* 
+    ? Элемент телефона
+    desc: Расширяет и переопределяет стили БЭМ блока blocks/_phone.scss
+*/
+.footer__phone {
+    &:before {
+        width: 25px;
+        height: 25px;
+    }
+
+    &-number {
+        font-size: 1.6rem;
+    }
+
+    &:has(~ .footer__city) {
+        margin-bottom: 0px;
+    }
+}
+
+// Блок с городом
 .footer__city {
-    display: flex;
-    flex-direction: column;
-
+    height: 30px;
     color: #fff;
+    margin-top: 10px;
+
+    &-list {
+        left: 0;
+        background-color: var(--white);
+    }
+
+    &-item {
+        color: var(--main-bg-color);
+
+        &:hover {
+            background-color: unset;
+            color: var(--main-btn-color);
+        }
+    }
 }
 
 
 // Блок время работы
 .footer__working {
-    color: var(--white);
+    color: #D5DAE3;
 
     // Все дочерние элементы первого уровня
     > * {
@@ -30,7 +137,6 @@
     align-items: center;
     justify-content: space-between;
     width: max-content;
-    margin: 30px 0;
 
     &-link {
         margin-right: 20px;
@@ -72,7 +178,7 @@
 
     &-text {
         display: block;
-        color: var(--white);
+        color: #D5DAE3;
         font-size: 1.1rem;
         line-height: 140%;
 
