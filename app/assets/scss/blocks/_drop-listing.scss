@@ -6,16 +6,22 @@
     align-items: center;
     width: max-content;
 
+    &--open &__current {
+        &:after {
+            transform: rotate(-180deg);
+        }
+    }
+    &--open &__list {
+        visibility: visible;
+        opacity: 1;
+    }
+
     &__current {
         display: flex;
         align-items: center;
         height: 100%;
         cursor: pointer;
         transition: var(--fast-animation) all;
-
-        &:hover::after {
-            transform: rotate(-180deg);
-        }
 
         &-arrow::after,
         &-arrow--black::after {
@@ -76,11 +82,6 @@
         z-index: 100;
         background: var(--main-btn-color);
         transition: transform .05s, opacity .2s;
-
-        &--open {
-            visibility: visible;
-            opacity: 1;
-        }
     }
 
 }

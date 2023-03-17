@@ -92,7 +92,9 @@ img {
         &__title {
             display: block;
             padding-top: 24px;
+            margin-top: -24px;
             margin-bottom: 64px;
+            max-width: calc(100% - 450px);
             @include title-h1;
 
             &:after {
@@ -116,7 +118,7 @@ img {
                     content: unset;
                 }
                 ~ span {
-                    padding-top: 0;
+                    
                 }
             }
         }

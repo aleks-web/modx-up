@@ -6,13 +6,13 @@ $(function() {
     $('.drop-listing').each(function(e) {
 
         $(this).mousemove(function(e) {
-            if (!$(this).find('.drop-listing__list').hasClass('drop-listing__list--open')) {
-                $(this).find('.drop-listing__list').toggleClass('drop-listing__list--open');
+            if(!$(this).hasClass('drop-listing--open')) {
+                $(this).toggleClass('drop-listing--open');
             }
         });
         
         $(this).mouseleave(function(e) {
-            $(this).find('.drop-listing__list').toggleClass('drop-listing__list--open');
+            $(this).toggleClass('drop-listing--open');
         });
 
     });

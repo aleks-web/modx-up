@@ -127,8 +127,8 @@
             transform: rotate(-140deg);
         }
 
-        &:has(.nav__item-arrow) {
-            padding-right: 15px;
+        > .nav__item-arrow {
+            margin-right: 15px;
         }
 
         // Пункт меню в виде текста или ссылки
