@@ -54,7 +54,7 @@
         display: block;
         padding: 10px 15px;
         width: 100%;
-        color: #fff;
+        color: #747E94;
         transition: var(--fast-animation) all;
 
         &:last-child {
@@ -62,7 +62,17 @@
         }
 
         &:hover {
-            background-color: var(--main-bg-color-2);
+            color: var(--black);
+        }
+
+        &-current {
+            color: var(--main-color-7);
+            font-weight: bold;
+            cursor: context-menu;
+
+            &:hover {
+                color: var(--main-color-7);
+            }
         }
     }
 
@@ -80,7 +90,7 @@
         flex-direction: column;
         align-items: center;
         z-index: 100;
-        background: var(--main-btn-color);
+        background: var(--white);
         transition: transform .05s, opacity .2s;
     }
 

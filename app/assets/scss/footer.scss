@@ -84,6 +84,8 @@
     desc: Расширяет и переопределяет стили БЭМ блока blocks/_phone.scss
 */
 .footer__phone {
+    margin-bottom: 0px;
+
     &:before {
         width: 25px;
         height: 25px;
@@ -92,30 +94,16 @@
     &-number {
         font-size: 1.6rem;
     }
-
-    &:has(~ .footer__city) {
-        margin-bottom: 0px;
-    }
 }
 
 // Блок с городом
 .footer__city {
     height: 30px;
-    color: #fff;
+    color: var(--white);
     margin-top: 10px;
 
     &-list {
         left: 0;
-        background-color: var(--white);
-    }
-
-    &-item {
-        color: var(--main-bg-color);
-
-        &:hover {
-            background-color: unset;
-            color: var(--main-btn-color);
-        }
     }
 }
 

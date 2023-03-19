@@ -6,9 +6,11 @@
 // ? Верхняя строка
 .ticker {
     background: var(--main-bg-color);
-    color: #fff;
-    
+    color: var(--white);
     height: 50px;
+    @media (max-width: 1210px) {
+        display: none;
+    }
 
     &__container {
         height: 100%;
@@ -43,10 +45,12 @@
 
     /* 
         ? Элемент с номерами телефонов в шапке
-        desc: Расширяет и переопределяет стили БЭМ блока blocks/_drop-listing.scss
+        desc: Расширяет и переопределяет стили БЭМ блока blocks/_phone.scss
     */
     &__phone {
-        font-size: 1rem;
+        &-number {
+            font-size: 1rem;
+        }
     } // END Элемент с номерами телефонов в шапке
 }
 
@@ -55,13 +59,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--main-bg-color-3);
+    background-color: var(--main-color-3);
 
     &__container {
         height: 100%;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "col1 col2 col3";
         justify-content: center;
     }
 
@@ -71,18 +77,27 @@
         position: relative;
         display: flex;
         align-items: center;
+        @media (max-width: 1210px) {
+            grid-area: col1;
+        }
     }
 
     &__btn {
         margin-left: 10px;
         display: flex;
         align-items: center;
+        @media (max-width: 1210px) {
+            justify-content: end;
+        }
     }
 }
 // Брэнд-лого
 .brand {
     display: flex;
     align-items: center;
+    @media (max-width: 1210px) {
+        justify-content: center;
+    }
 }
 
 // Блок с выпадающим списком при наведении
@@ -97,10 +112,31 @@
     }
 
     &__burger {
+        padding: 12px;
+        height: 45px;
+        width: 55px;
         display: none;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-line {
+            display: block;
+            height: 2px;
+            border-radius: 5px;
+            
+            &:nth-child(1) {
+                background-color: var(--main-btn-color);
+            }
+            &:nth-child(2) {
+                background-color: var(--main-color-7);
+            }
+            &:nth-child(3) {
+                background-color: var(--black);
+            }
+        }
 
         @media (max-width: 1210px) {
-            display: block;
+            display: flex;
         }
     }
 

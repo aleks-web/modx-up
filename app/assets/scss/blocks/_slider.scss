@@ -13,6 +13,7 @@
     &__button-next,
     &__button-prev {
         position: relative;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -25,13 +26,6 @@
         &.swiper-button-disabled {
             opacity: 0.5;
             cursor: auto;
-
-            &:not(.slider__button-prev) {
-
-                &:before {
-                    transition: var(--fast-animation);
-                }
-            }
 
             &:hover {
                 background-color: unset;
@@ -50,7 +44,6 @@
             height: 17px;
             background-image: url('../img/elements/arrow-long.svg');
             background-repeat: no-repeat;
-            background-size: 100% 100%;
             transition: var(--fast-animation);
         }
     }

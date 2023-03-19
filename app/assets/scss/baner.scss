@@ -1,37 +1,89 @@
 .baner {
-    height: 790px;
     overflow: hidden;
     position: relative;
     color: #fdfdfd;
-    background-color: var(--main-bg-color-2);
+    background-color: var(--main-color-2);
     background-repeat: no-repeat;
     background-position: center right;
     background-position-x: 110%;
+    padding-bottom: 40px;
 
     &__container {
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
     }
 
     &__content {
         width: 50%;
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
     }
 
-    &__bg-img {
+    &__bg-main {
         position: absolute;
-        right: -60px;
-        width: auto;
+        background-color: inherit;
+        overflow: hidden;
+        right: 0;
+        width: 50%;
         height: 100%;
+        clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+        @media (max-width: 1440px) {
+            width: 40%;
+        }
+        @media (max-width: 1024px) {
+            width: 100%;
+            clip-path: polygon(50% 0%, 100% 15%, 100% 100%, 0 100%, 0 15%);
+            bottom: calc(-100% + 300px);
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            width: auto;
+            height: 100%;
+            @media (max-width: 1024px) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &__bg-other {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height: calc(100% - 100px);
+        @media (max-width: 1440px) {
+            width: 40%;
+        }
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+            position: absolute;
+            left: -150px;
+            bottom: 0;
+            @media (max-width: 1024px) {
+                height: 80%;
+                right: 0;
+                left: unset;
+            }
+        }
     }
 
     &__title {
         color: #fdfdfd;
         margin-bottom: 30px;
-        font-size: 64px;
+        margin-top: 60px;
         font-weight: bold;
-        line-height: 110%;
+        @include main-title;
+        @media (max-width: 1024px) {
+            margin-top: 30px;
+        }
     }
 
     &__descr {
@@ -53,17 +105,24 @@
     }
 
     &__utp {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         height: 140px;
+        margin-top: 80px;
         background-color: rgba(253, 253, 253, 0.2);
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background-color: var(--main-color-2);
+        }
 
         &-item {
             padding: 20px;
             height: 100%;
             display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         &-desc {

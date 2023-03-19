@@ -10,16 +10,20 @@
 
     // Главные цвета
     --main-bg-color: #272E3E;
-    --main-bg-color-2: #141E36;
-    --main-bg-color-3: #EDEDED;
-    --main-bg-color-4: #A5BEF7;
-    --main-bg-color-5: #1B2F70;
-    --main-bg-color-6: #313A4E;
-    --main-bg-color-hover: #4969B5;
+    --main-color-2: #141E36;
+    --main-color-3: #EDEDED;
+    --main-color-4: #A5BEF7;
+    --main-color-5: #1B2F70;
+    --main-color-6: #313A4E;
+    --main-color-7: #4969B5;
+
+    // Главные цвета кнопок
     --main-btn-color: #C43742;
     --main-btn-color-hover: #9E212B;
 
+    // Белый и черные цвета
     --white: #FDFDFD;
+    --black: #1E1E1E;
 
     /*
         Размеры заголовков
@@ -42,6 +46,13 @@
 
     // Прочее
     --fast-animation: 0.3s;
+
+    
+    @media (max-width: 1440px) {
+        // Главный заголовок
+        --main-title-size: 50px;
+        --main-title-lh: 110%;
+    }
 }
 
 
