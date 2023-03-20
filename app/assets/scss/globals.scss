@@ -1,6 +1,14 @@
 /*
     Глобальные стили, которые необходимо подключать на каждой странице.
     Служит для формирования начального layout и сброса стандартных стилей
+
+    Медиазапросы:
+        1440px
+        1210px
+        1024px
+        768px
+        576px
+        376px
 */
 
 /* Подключение шрифтов */
@@ -28,6 +36,7 @@ body {
 }
 button {
     font-family: 'Inter', sans-serif;
+    border: none;
 }
 ul {
     list-style: none;
@@ -73,10 +82,9 @@ img {
     @media (max-width: 1440px) {
         max-width: 1170px;
     }
-
     @media (max-width: 1210px) {
         max-width: 100%;
-        padding: 0 20px;
+        padding: 0 30px;
     }
 }
 
@@ -85,7 +93,7 @@ img {
     position: relative;
     padding-top: 120px;
     padding-bottom: 120px;
-    background-color: var(--main-bg-color);
+    background-color: var(--main-color);
 
     @media (max-width: 1210px) {
         padding-top: 80px;
@@ -132,6 +140,7 @@ img {
             }
         }
         &__desc {
+            margin-top: 12px;
             display: block;
             font-size: 1.38rem;
             max-width: 700px;

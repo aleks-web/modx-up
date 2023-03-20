@@ -67,3 +67,27 @@
         }
     }
 }
+
+// Кнопка закрытия
+.btn-close {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--main-color-8);
+        transform: rotate(45deg);
+        border-radius: 5px;
+    }
+    &:after {
+        transform: rotate(135deg);
+    }
+}

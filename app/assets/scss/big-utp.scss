@@ -10,7 +10,7 @@
         content: "";
         width: 200%;
         height: 200px;
-        background: var(--main-bg-color);
+        background: var(--main-color);
         z-index: 5;
         top: -196px;
         left: -50px;
@@ -42,21 +42,21 @@
             align-items: center;
             justify-content: flex-start;
             color: var(--white);
-            background-color: var(--main-bg-color);
+            background-color: var(--main-color);
             transition: var(--fast-animation) all;
 
             // Скос, срез угла
             &--bevel {
-                background: linear-gradient(-45deg, transparent 15px, var(--main-bg-color) 0);
+                background: linear-gradient(-45deg, transparent 15px, var(--main-color) 0);
             }
 
             // Срез у первого и последнего элемента
             &:first-child {
-                background: linear-gradient(135deg, transparent 15px, var(--main-bg-color) 0);
+                background: linear-gradient(135deg, transparent 15px, var(--main-color) 0);
             }
     
             &:last-child {
-                background: linear-gradient(-45deg, transparent 15px, var(--main-bg-color) 0);
+                background: linear-gradient(-45deg, transparent 15px, var(--main-color) 0);
             }
 
 

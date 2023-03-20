@@ -30,6 +30,7 @@
 
     <section class="header-info">
         <div class="header-info__container container">
+
             <div class="brand">
                 <svg id="logo" width="195" height="54" viewBox="0 0 195 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M60.4854 40.2225C60.4854 38.6831 60.7767 37.1574 61.3734 35.6455C61.9701 34.1335 62.8443 32.759 64.0099 31.522C65.1755 30.285 66.5908 29.2954 68.2559 28.5532C69.9211 27.811 71.7943 27.4536 73.8757 27.4536C76.3873 27.4536 78.5797 27.9759 80.4252 29.0068C82.2707 30.0376 83.6583 31.3983 84.6019 33.0614L79.8147 36.2777C79.44 35.3568 78.9127 34.6421 78.2467 34.1198C77.5806 33.5975 76.8452 33.2402 76.0543 33.034C75.2633 32.8278 74.4863 32.7316 73.737 32.7316C72.5853 32.7316 71.5584 32.9515 70.6842 33.405C69.7962 33.8586 69.0746 34.4497 68.4918 35.1919C67.909 35.9342 67.4789 36.7726 67.1875 37.6935C66.8961 38.6144 66.7573 39.5215 66.7573 40.4012C66.7573 41.432 66.9238 42.4216 67.2707 43.37C67.6038 44.3047 68.0894 45.1431 68.7 45.8716C69.3105 46.6001 70.0598 47.1636 70.9201 47.5897C71.7943 48.0158 72.7656 48.222 73.848 48.222C74.5973 48.222 75.3743 48.112 76.1514 47.8784C76.9285 47.6447 77.65 47.2736 78.3161 46.7375C78.9821 46.2015 79.4955 45.5005 79.8424 44.6346L84.9349 47.5347C84.3799 48.7855 83.5057 49.8576 82.2985 50.7511C81.0913 51.6445 79.7314 52.3317 78.2189 52.799C76.7064 53.2663 75.1939 53.5 73.6953 53.5C71.7527 53.5 69.9904 53.1151 68.3808 52.3592C66.7712 51.6032 65.3697 50.5861 64.1903 49.3215C63.0108 48.057 62.095 46.6276 61.4567 45.0469C60.8045 43.48 60.4854 41.8719 60.4854 40.2225Z" fill="#1B2F70"/>
@@ -46,7 +47,8 @@
                     <path d="M22.6177 40.2915L12.1691 34.3125C11.8638 34.1339 11.6834 33.8177 11.6834 33.4741L11.7112 22.4783C11.7112 21.7361 12.5299 21.2687 13.182 21.6398L22.8953 27.1652C23.0479 27.2477 23.2144 27.289 23.3809 27.289V14.0665C23.2144 14.0665 23.0479 14.0252 22.8953 13.9427L1.59554 1.76488C0.943365 1.39377 0.12468 1.86107 0.12468 2.60329L0.0136719 40.0578C0.0136719 40.4015 0.194061 40.7313 0.499334 40.8963L21.6048 52.9642C22.257 53.3353 23.0756 52.868 23.0756 52.1258L23.1034 41.13C23.1173 40.7864 22.923 40.4564 22.6177 40.2915Z" fill="#C43742"/>
                 </svg>
             </div>
-            <nav class="navigation header-info__nav">
+
+            <nav class="header-info__nav">
                 <ul class="nav">
                     <li class="nav__item">
                         <a class="nav__item-link" href="#"><span class="nav__item-active">Цены</span></a>
@@ -73,11 +75,13 @@
                     <li class="nav__item"><a class="nav__item-link" href="#">Работа у нас</a></li>
                     <li class="nav__item"><a class="nav__item-link" href="#">Контакты</a></li>
                 </ul>
+
                 <span class="nav__burger">
                     <span class="nav__burger-line"></span>
                     <span class="nav__burger-line"></span>
                     <span class="nav__burger-line"></span>
                 </span>
+
             </nav>
 
             <div class="header-info__btn">
@@ -86,3 +90,62 @@
         </div>
     </section>
 </header>
+
+<div class="mob-menu">
+    <button class="btn-close mob-menu__close"></button>
+
+    <div class="mob-menu__logo">
+        <img src="../assets/img/elements/logo.svg" alt="">
+    </div>
+
+    <div class="mob-menu__info">
+
+        <div class="drop-listing mob-menu__city">
+            <span class="drop-listing__current drop-listing__current-arrow--black mob-menu__city-current">
+                <span class="drop-listing__icon"><svg width="14" height="18"><use xlink:href="#geo"></use></svg></span>
+                <span>Томск</span>
+            </span>
+            <div class="drop-listing__list mob-menu__city-list">
+                <a class="drop-listing__item drop-listing__item-current" href="#">Томск</a>
+                <a class="drop-listing__item" href="#">Екатеринбург</a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    
+    <ul class="nav">
+        <li class="nav__item">
+            <a class="nav__item-link" href="#"><span class="nav__item-active">Цены</span></a>
+            <span class="nav__item-arrow"></span>
+
+            <ul class="nav__sub-menu">
+                <li class="nav__item"><a class="nav__item-link" href="#">Компаниям</a></li>
+                <li class="nav__item"><a class="nav__item-link" href="#">Физ.лицам</a></li>
+                <li class="nav__item">
+                    <a class="nav__item-link" href="#">Подпункт 4</a>
+                    <span class="nav__item-arrow"></span>
+                    
+                    <ul class="nav__sub-menu">
+                        <li class="nav__item"><a class="nav__item-link" href="#">Подпункт 1</a></li>
+                        <li class="nav__item"><a class="nav__item-link" href="#">Подпункт 2</a></li>
+                        <li class="nav__item"><a class="nav__item-link" href="#">Подпункт 3</a></li>
+                    </ul>
+                    
+                </li>
+            </ul>
+        </li>
+        <li class="nav__item"><a class="nav__item-link" href="#">Компаниям</a></li>
+        <li class="nav__item"><a class="nav__item-link" href="#">Частным лицам</a></li>
+        <li class="nav__item"><a class="nav__item-link" href="#">Работа у нас</a></li>
+        <li class="nav__item"><a class="nav__item-link" href="#">Контакты</a></li>
+    </ul>
+    
+    <div class="mob-menu__btn">
+        <button class="btn">Заказать звонок</button>
+    </div>
+    
+    
+</div>

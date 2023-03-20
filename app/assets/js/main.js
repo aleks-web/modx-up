@@ -16,4 +16,12 @@ $(function() {
         });
 
     });
+
+
+    // Для карточек с текстом
+    $('.card-info').each(function(e) {
+        $(this).click(function(e) {
+            $(this).toggleClass('card-info--open');
+        });
+    });
 });

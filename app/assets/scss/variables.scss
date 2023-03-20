@@ -9,13 +9,14 @@
     
 
     // Главные цвета
-    --main-bg-color: #272E3E;
+    --main-color: #272E3E;
     --main-color-2: #141E36;
     --main-color-3: #EDEDED;
     --main-color-4: #A5BEF7;
     --main-color-5: #1B2F70;
     --main-color-6: #313A4E;
     --main-color-7: #4969B5;
+    --main-color-8: #747E94;
 
     // Главные цвета кнопок
     --main-btn-color: #C43742;
@@ -52,6 +53,21 @@
         // Главный заголовок
         --main-title-size: 50px;
         --main-title-lh: 110%;
+    }
+    @media (max-width: 768px) {
+        // Главный заголовок
+        --main-title-size: 40px;
+        --main-title-lh: 100%;
+    }
+    @media (max-width: 576px) {
+        // Главный заголовок
+        --main-title-size: 35px;
+        --main-title-lh: 100%;
+    }
+    @media (max-width: 376px) {
+        // Главный заголовок
+        --main-title-size: 25px;
+        --main-title-lh: 100%;
     }
 }
 
