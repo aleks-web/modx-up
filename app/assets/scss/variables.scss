@@ -6,7 +6,7 @@
     --arrow-drop-black: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.719743 2.03023L4.99999 6.31048L9.28024 2.03023L8.21974 0.969727L4.99999 4.18948L1.78024 0.969726L0.719743 2.03023Z' fill='%231E1E1E'/%3E%3C/svg%3E");
     --arrow-drop-white: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.719743 2.03023L4.99999 6.31048L9.28024 2.03023L8.21974 0.969727L4.99999 4.18948L1.78024 0.969726L0.719743 2.03023Z' fill='%23E8EBF2'/%3E%3C/svg%3E");
     --arrow-up: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.67713 0.343133V2.33717L9.57551 2.34425L0.970023 10.9497L2.38424 12.3639L10.9897 3.75846L10.9968 11.6568H12.9908V0.343133H1.67713Z' fill='%23FDFDFD' fill-opacity='0.8'/%3E%3C/svg%3E");
-    
+
 
     // Главные цвета
     --main-color: #272E3E;
@@ -48,22 +48,35 @@
     // Прочее
     --fast-animation: 0.3s;
 
-    
+
     @media (max-width: 1440px) {
         // Главный заголовок
         --main-title-size: 50px;
         --main-title-lh: 110%;
     }
+
+    @media (max-width: 1210px) {
+        // Главный заголовок
+        --title-h1-size: 35px;
+        --title-h1-lh: 110%;
+
+        // H2 заголовок
+        --title-h2-size: 26px;
+        --title-h2-lh: 110%;
+    }
+
     @media (max-width: 768px) {
         // Главный заголовок
         --main-title-size: 40px;
         --main-title-lh: 100%;
     }
+
     @media (max-width: 576px) {
         // Главный заголовок
         --main-title-size: 35px;
         --main-title-lh: 100%;
     }
+
     @media (max-width: 376px) {
         // Главный заголовок
         --main-title-size: 25px;

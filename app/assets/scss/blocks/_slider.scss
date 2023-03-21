@@ -8,6 +8,10 @@
         align-items: center;
         justify-content: end;
         margin-bottom: 25px;
+
+        @media (max-width: 576px) {
+            margin-bottom: 10px;
+        }
     }
 
     &__button-next,
@@ -22,6 +26,11 @@
         cursor: pointer;
         transition: var(--fast-animation) all;
 
+        @media (max-width: 576px) {
+            width: 75px;
+            height: 40px;
+        }
+
         // Если слайдов нет (некуда листать)
         &.swiper-button-disabled {
             opacity: 0.5;
@@ -35,6 +44,10 @@
         // Кнопка при наведении
         &:hover {
             background-color: rgba(253, 253, 253, 0.1);
+
+            @media (max-width: 376px) {
+                background-color: unset;
+            }
         }
 
         &:before {
@@ -45,6 +58,12 @@
             background-image: url('../img/elements/arrow-long.svg');
             background-repeat: no-repeat;
             transition: var(--fast-animation);
+
+            @media (max-width: 576px) {
+                background-size: 100%;
+                width: 45px;
+                height: 14px;
+            }
         }
     }
 

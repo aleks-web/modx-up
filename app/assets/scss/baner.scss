@@ -14,9 +14,11 @@
 
     &__content {
         width: 100%;
+
         @media (max-width: 1024px) {
             width: 100%;
         }
+
         @media (max-width: 1024px) {
             display: grid;
             grid-template-areas:
@@ -36,14 +38,17 @@
         width: 50%;
         height: 100%;
         clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+
         @media (max-width: 1440px) {
             width: 40%;
         }
+
         @media (max-width: 1024px) {
             width: 100%;
             clip-path: polygon(50% 0%, 100% 15%, 100% 100%, 0 100%, 0 15%);
             bottom: calc(-100% + 500px);
         }
+
         @media (max-width: 576px) {
             clip-path: polygon(82% 0, 180% 40%, 100% 100%, 0 100%, 0% 20%);
             bottom: calc(-100% + 420px);
@@ -64,9 +69,11 @@
         bottom: 0;
         width: 50%;
         height: calc(100% - 100px);
+
         @media (max-width: 1440px) {
             width: 40%;
         }
+
         @media (max-width: 1024px) {
             width: 100%;
         }
@@ -77,11 +84,13 @@
             position: absolute;
             left: -150px;
             bottom: 0;
+
             @media (max-width: 1024px) {
                 height: 80%;
                 right: 0;
                 left: unset;
             }
+
             @media (max-width: 576px) {
                 height: 70%;
                 right: -100px;
@@ -99,6 +108,7 @@
         margin-top: 60px;
         font-weight: bold;
         @include main-title;
+
         @media (max-width: 1024px) {
             margin-top: 30px;
             width: 100%;
@@ -108,6 +118,7 @@
     // Описание (основной контент)
     &__descr {
         margin-bottom: 50px;
+
         @media (max-width: 1024px) {
             margin-bottom: 20px;
         }
@@ -124,8 +135,8 @@
 
     // Кнопка
     &__btn {
-        height: 70px;
         font-size: 1.4rem;
+
         @media (max-width: 576px) {
             grid-area: row4;
             margin-top: 40px;
@@ -138,10 +149,12 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         margin-top: 80px;
+
         @media (max-width: 1024px) {
             grid-template-columns: 1fr 1fr;
             gap: 10px;
         }
+
         @media (max-width: 576px) {
             margin-top: 0;
             grid-template-columns: 1fr;
@@ -157,6 +170,7 @@
             justify-content: center;
             text-align: center;
             background-color: rgba(253, 253, 253, 0.2);
+
             @media (max-width: 576px) {
                 flex-direction: row;
                 align-items: center;
@@ -166,6 +180,7 @@
 
         &-icon {
             margin-bottom: 15px;
+
             @media (max-width: 576px) {
                 margin-bottom: 0;
                 margin-right: 10px;

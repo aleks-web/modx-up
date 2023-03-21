@@ -1,25 +1,58 @@
 .presentation {
-    padding-top: 210px!important;
-    background-color: var(--main-color-2)!important;
+    padding-top: 210px;
+    background-color: var(--main-color-2) !important;
+
+    @media (max-width: 1440px) {
+        padding-top: 150px;
+        padding-bottom: 70px;
+    }
+
+    @media (max-width: 1210px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    @media (max-width: 576px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    @media (max-width: 376px) {
+        padding-top: 40px;
+        padding-bottom: 0;
+    }
 
     &__wrap {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 1210px) {
+            flex-direction: column;
+        }
     }
 
     &__title {
-        margin-bottom: 30px!important;
+        margin-bottom: 30px !important;
     }
 
     &__btn {
-        height: 70px;
-        width: max-content;
-        font-size: 1.5rem!important;
+        @media (max-width: 576px) {
+            width: 100%;
+        }
     }
 
     // Левая часть (контент)
     &__left {
         width: 40%;
+
+        @media (max-width: 1210px) {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 576px) {
+            margin-bottom: 20px;
+        }
 
         &-body {
             margin-bottom: 50px;
@@ -37,7 +70,10 @@
             // Форматирование контента в блоке (списки, текст)
             p,
             ul,
-            &-text {line-height: 140%;color: var(--white);}
+            &-text {
+                line-height: 140%;
+                color: var(--white);
+            }
 
             ul {
                 font-size: 1.1rem;
@@ -56,6 +92,7 @@
                     }
                 }
             }
+
             // END Форматирование контента в блоке (списки, текст)
         }
     }
@@ -63,10 +100,23 @@
     // Правая часть (презинтация)
     &__right {
         width: 50%;
+
+        @media (max-width: 1210px) {
+            width: 100%;
+        }
+
+        @media (max-width: 376px) {
+            width: calc(100% + 40px);
+            margin-left: -20px;
+        }
     }
 
     // Стилизация слайдера
     &__swiper {
         top: -90px;
+
+        @media (max-width: 1210px) {
+            top: unset;
+        }
     }
 }

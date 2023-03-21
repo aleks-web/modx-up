@@ -10,8 +10,8 @@
     border: none;
     min-width: 170px;
     width: max-content;
-    height: 50px;
-    font-size: 1.12rem;
+    height: 70px;
+    font-size: 1.4rem;
     padding: 0 20px;
     border-radius: 3px;
     font-weight: 400;
@@ -22,6 +22,11 @@
 
     &:hover {
         background-color: var(--main-btn-color-hover);
+    }
+
+    @media (max-width: 1210px) {
+        height: 60px;
+        font-size: 1.2rem;
     }
 }
 
@@ -44,6 +49,7 @@
         }
     }
 }
+
 // Кнопка с иконкой  стрелки
 .btn-next {
     &:after {
@@ -87,6 +93,7 @@
         transform: rotate(45deg);
         border-radius: 5px;
     }
+
     &:after {
         transform: rotate(135deg);
     }

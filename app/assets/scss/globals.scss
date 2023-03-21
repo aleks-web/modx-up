@@ -20,13 +20,16 @@
     line-height: normal;
     box-sizing: border-box;
 }
+
 html {
     font-size: 16px;
+
     @media (max-width: 1024px) {
         font-size: 14px;
     }
 
 }
+
 body {
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -34,10 +37,12 @@ body {
     font-size: 16px;
     line-height: 130%;
 }
+
 button {
     font-family: 'Inter', sans-serif;
     border: none;
 }
+
 ul {
     list-style: none;
     padding-left: 25px;
@@ -64,11 +69,13 @@ ul {
         }
     }
 }
+
 a {
     font-weight: 400;
     color: #000;
     text-decoration: none;
 }
+
 img {
     width: 100%;
 }
@@ -82,9 +89,14 @@ img {
     @media (max-width: 1440px) {
         max-width: 1170px;
     }
+
     @media (max-width: 1210px) {
         max-width: 100%;
         padding: 0 30px;
+    }
+
+    @media (max-width: 376px) {
+        padding: 0 20px;
     }
 }
 
@@ -100,10 +112,16 @@ img {
         padding-bottom: 80px;
     }
 
+    @media (max-width: 376px) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
     &-title {
         padding-top: 24px;
         margin-bottom: 64px;
         color: var(--white);
+
         @media (max-width: 1210px) {
             margin-bottom: 40px;
         }
@@ -131,14 +149,14 @@ img {
                 margin-bottom: 10px;
                 font-weight: 400;
 
-                ~ *:after {
+                ~*:after {
                     content: unset;
                 }
-                ~ span {
-                    
-                }
+
+                ~span {}
             }
         }
+
         &__desc {
             margin-top: 12px;
             display: block;

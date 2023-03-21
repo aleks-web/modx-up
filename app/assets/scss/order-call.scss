@@ -12,7 +12,7 @@
         height: 100%;
         background: linear-gradient(0deg, rgba(39, 46, 62, 0.8), rgba(39, 46, 62, 0.8)), url('../img/bg.jpg');
         background-size: 100%;
-        
+
 
         img {
             width: 100%;
@@ -25,6 +25,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 1024px) {
+            flex-direction: column-reverse;
+        }
     }
 
     // Левая часть блока
@@ -33,14 +37,92 @@
         width: 45%;
         height: 600px;
 
+        @media (max-width: 1440px) {
+            height: 500px;
+        }
+
+        @media (max-width: 1024px) {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            height: 257px;
+        }
+
+        @media (max-width: 576px) {
+            height: 300px;
+            flex-direction: column-reverse;
+        }
+
+        &-btn {
+            display: none;
+
+            @media (max-width: 1024px) {
+                display: flex;
+                justify-content: center;
+                width: 50%;
+
+                .btn {
+                    display: flex;
+                    margin: 0;
+                    height: 70px;
+                    font-size: 1.5rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                justify-content: right;
+            }
+
+            @media (max-width: 576px) {
+                justify-content: center;
+                position: absolute;
+                bottom: 40px;
+                width: 100%;
+
+                .btn {
+                    width: 100%;
+                    font-size: 1.2rem;
+                    height: 60px;
+                }
+            }
+        }
+
         &-img {
             position: relative;
             width: 100%;
             height: 100%;
 
+            @media (max-width: 1024px) {
+                width: 50%;
+            }
+
+            @media (max-width: 576px) {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
             img {
                 position: absolute;
                 bottom: 0;
+
+                @media (max-width: 1024px) {
+                    position: static;
+                }
+
+                @media (max-width: 768px) {
+                    position: absolute;
+                }
+
+                @media (max-width: 576px) {
+                    position: static;
+                    height: 100%;
+                    width: auto;
+                }
             }
         }
 
@@ -49,12 +131,23 @@
     // Правая часть блока
     &__right {
         width: 50%;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__phone {
+        @media (max-width: 1024px) {
+            justify-content: center;
+        }
     }
 
     // Тело блока (основной текст)
-    &__body {
-        
-    }
+    &__body {}
 
     // Тайтл
     &__title {
@@ -62,6 +155,10 @@
         color: var(--white);
         margin-bottom: 32px;
         @include title-h1;
+
+        @media (max-width: 1210px) {
+            margin-bottom: 20px;
+        }
     }
 
     // Описание
@@ -75,8 +172,14 @@
 
     // Кнопка
     &__btn {
-        height: 70px;
-        font-size: 1.5rem;
         margin-top: 50px;
+
+        @media (max-width: 1210px) {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
     }
 }

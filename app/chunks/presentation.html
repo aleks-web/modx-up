@@ -9,12 +9,14 @@
                 </div>
 
                 <div class="presentation__left-body">
-                    <p class="presentation__left-text">Сложные задачи мы берем с большим интересом, так как они развивают нас, позволяют нам и дальше становиться лучшими в своем деле.</p>
-                
+                    <p class="presentation__left-text">Сложные задачи мы берем с большим интересом, так как они
+                        развивают нас, позволяют нам и дальше становиться лучшими в своем деле.</p>
+
                     <ul>
                         <li>Переместить станок весом в 4 тонны? Легко!</li>
                         <li>Пронести 500-килограммовое оборудование по узкому проему? Сделаем!</li>
-                        <li>Собрать бригаду из 40 человек для выполнения строительных работ в труднодоступной местности? Без проблем! </li>
+                        <li>Собрать бригаду из 40 человек для выполнения строительных работ в труднодоступной местности?
+                            Без проблем! </li>
                     </ul>
                 </div>
 
@@ -23,7 +25,7 @@
 
             </div>
 
-            
+
 
             <div class="presentation__right">
                 <div class="presentation__swiper slider swiper">
@@ -32,8 +34,10 @@
                         <div class="slider__button-prev"></div>
                         <div class="slider__button-next"></div>
                     </div>
-                    
+
                     <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
+                        <div class="swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
                         <div class="swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
                         <div class="swiper-slide"><img src="../assets/img/delete/1.jpg" loading="lazy" alt=""></div>
                     </div>
@@ -41,7 +45,7 @@
                 </div>
             </div>
 
-          
+
 
         </div>
 
@@ -50,9 +54,24 @@
 
 <script>
     const presentationSwiper = new Swiper('.presentation__swiper', {
-        speed: 400,
-        spaceBetween: 100,
-        
+        breakpoints: {
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                slideToClickedSlide: true,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+                slideToClickedSlide: true,
+            },
+            1210: {
+                slidesPerView: 1,
+                spaceBetween: 100,
+                slideToClickedSlide: true,
+            }
+        },
+
         navigation: {
             nextEl: '.slider__button-next',
             prevEl: '.slider__button-prev',
