@@ -10,18 +10,28 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2px;
         margin-bottom: 50px;
+
         @media (max-width: 1024px) {
             grid-template-columns: 1fr 1fr;
         }
+
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
 
-            > * {
+            >* {
                 margin-bottom: 10px;
 
                 &:last-child {
                     margin-bottom: 0;
                 }
+            }
+        }
+
+        @media (max-width: 376px) {
+            margin-bottom: 30px;
+
+            >* {
+                margin-bottom: 0;
             }
         }
     }

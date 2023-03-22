@@ -67,9 +67,17 @@
     justify-content: space-between;
     background-color: var(--main-color-3);
 
+    @media (max-width: 1024px) {
+        height: 80px;
+    }
+
+    @media (max-width: 576px) {
+        height: 60px;
+    }
+
     // Контейнер
     &__container {
-        height: 100%;
+        height: auto;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -78,7 +86,7 @@
         justify-content: center;
     }
 
-    // Десктоп меню
+    // Меню в шапке
     &__nav {
         height: 100%;
         width: 100%;
@@ -90,32 +98,65 @@
             grid-area: col1;
         }
     }
-
-    // Кнопка в шапке
-    &__btn {
-        margin-left: 10px;
-        display: flex;
-        align-items: center;
-
-        @media (max-width: 1210px) {
-            justify-content: end;
-        }
-
-        .btn {
-            height: 50px;
-            font-size: 1.12rem;
-        }
-    }
 }
 
-// Брэнд-лого
-.brand {
+// Кнопка в шапке
+.header-info__btn {
+    margin-left: 10px;
     display: flex;
     align-items: center;
 
     @media (max-width: 1210px) {
+        justify-content: end;
+    }
+
+    .btn {
+        height: 50px;
+        font-size: 1.12rem;
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    .btn-call-mini {
+        display: none;
+
+        @media (max-width: 1024px) {
+            display: block;
+        }
+
+        @media (max-width: 576px) {
+            height: 30px;
+            width: 30px;
+        }
+
+    }
+}
+
+// Брэнд-лого
+.header-info__brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    @media (max-width: 1210px) {
         justify-content: center;
     }
+
+    img {
+        height: 60px;
+        width: auto;
+
+        @media (max-width: 1024px) {
+            height: 45px;
+        }
+
+        @media (max-width: 576px) {
+            height: 25px;
+        }
+    }
+
 }
 
 // Блок с выпадающим списком при наведении
@@ -141,6 +182,12 @@
         flex-direction: column;
         justify-content: space-between;
 
+        @media (max-width: 576px) {
+            padding: 7px;
+            height: 32px;
+            width: 38px;
+        }
+
         &-line {
             display: block;
             height: 2px;
@@ -163,6 +210,8 @@
             display: flex;
         }
     }
+
+    // END Кнопка раскрытия меню (бургер)
 
     &__item {
         position: relative;

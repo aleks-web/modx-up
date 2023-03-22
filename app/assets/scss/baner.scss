@@ -8,6 +8,10 @@
     background-position-x: 110%;
     padding-bottom: 40px;
 
+    @media (max-width: 376px) {
+        padding-bottom: 15px;
+    }
+
     &__container {
         height: 100%;
     }
@@ -51,7 +55,11 @@
 
         @media (max-width: 576px) {
             clip-path: polygon(82% 0, 180% 40%, 100% 100%, 0 100%, 0% 20%);
-            bottom: calc(-100% + 420px);
+            bottom: calc(-100% + 320px);
+        }
+
+        @media (max-width: 376px) {
+            bottom: calc(-100% + 220px);
         }
 
         img {
@@ -97,6 +105,11 @@
                 bottom: -70px;
                 left: unset;
             }
+
+            @media (max-width: 376px) {
+                right: -140px;
+                bottom: 0;
+            }
         }
     }
 
@@ -109,9 +122,17 @@
         font-weight: bold;
         @include main-title;
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1210px) {
             margin-top: 30px;
+        }
+
+        @media (max-width: 1024px) {
             width: 100%;
+        }
+
+        @media (max-width: 376px) {
+            margin-top: 20px;
+            margin-bottom: 15px;
         }
     }
 
@@ -130,6 +151,14 @@
         ul li {
             margin-bottom: 13px;
             font-size: 1.4rem;
+
+            @media (max-width: 576px) {
+                font-size: 1.3rem;
+            }
+
+            @media (max-width: 376px) {
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -141,6 +170,11 @@
             grid-area: row4;
             margin-top: 40px;
             width: 100%;
+        }
+
+        @media (max-width: 376px) {
+            height: 50px;
+            font-size: 1.1rem;
         }
     }
 
@@ -158,12 +192,18 @@
         @media (max-width: 576px) {
             margin-top: 0;
             grid-template-columns: 1fr;
-            width: max-content;
+            max-width: 340px;
+            gap: 1px;
+        }
+
+        @media (max-width: 376px) {
+            max-width: 180px;
         }
 
         &-item {
             padding: 20px;
             height: 100%;
+            font-size: 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -172,23 +212,30 @@
             background-color: rgba(253, 253, 253, 0.2);
 
             @media (max-width: 576px) {
+                text-align: left;
                 flex-direction: row;
                 align-items: center;
                 justify-content: flex-start;
+                padding: 10px;
+                font-size: 1rem;
+                font-weight: 500;
             }
         }
 
         &-icon {
             margin-bottom: 15px;
+            height: 44px;
 
             @media (max-width: 576px) {
+                height: 30px;
                 margin-bottom: 0;
-                margin-right: 10px;
+                margin-right: 15px;
             }
-        }
 
-        &-desc {
-            font-size: 1.25rem;
+            img {
+                height: 100%;
+                width: auto;
+            }
         }
     }
 }

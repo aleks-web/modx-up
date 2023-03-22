@@ -1,7 +1,16 @@
 .cases {
-    background-color: var(--main-color-6)!important;
+    background-color: var(--main-color-6) !important;
 
     &__block-title {
         max-width: calc(100% - 450px);
+
+        @media (max-width: 1024px) {
+            max-width: calc(100% - 250px);
+        }
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+            margin-bottom: 80px;
+        }
     }
 }

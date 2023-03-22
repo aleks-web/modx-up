@@ -92,11 +92,7 @@ img {
 
     @media (max-width: 1210px) {
         max-width: 100%;
-        padding: 0 30px;
-    }
-
-    @media (max-width: 376px) {
-        padding: 0 20px;
+        padding: 0 var(--container-padding);
     }
 }
 
@@ -112,57 +108,95 @@ img {
         padding-bottom: 80px;
     }
 
-    @media (max-width: 376px) {
-        padding-top: 40px;
-        padding-bottom: 40px;
+    @media (max-width: 1024px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
-    &-title {
+    @media (max-width: 376px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+/* Блок заголовок */
+.block-title {
+    padding-top: 24px;
+    margin-bottom: 64px;
+    color: var(--white);
+
+    @media (max-width: 1210px) {
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 376px) {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        display: block;
         padding-top: 24px;
-        margin-bottom: 64px;
-        color: var(--white);
+        margin-top: -24px;
+        @include title-h1;
 
-        @media (max-width: 1210px) {
-            margin-bottom: 40px;
+        @media (max-width: 1024px) {
+            padding-top: 20px;
         }
 
-        &__title {
-            display: block;
-            padding-top: 24px;
-            margin-top: -24px;
-            @include title-h1;
+        &:after {
+            content: '';
+            height: 6px;
+            width: 90px;
+            background-color: var(--main-color-4);
+            position: absolute;
+            top: 0;
+            left: 0;
 
-            &:after {
-                content: '';
-                height: 6px;
-                width: 90px;
-                background-color: var(--main-color-4);
-                position: absolute;
-                top: 0;
-                left: 0;
+            @media (max-width: 1024px) {
+                height: 4px;
+                width: 80px;
             }
 
-            &-mini {
-                display: block;
-                text-transform: uppercase;
-                color: var(--main-color-4);
-                margin-bottom: 10px;
-                font-weight: 400;
-
-                ~*:after {
-                    content: unset;
-                }
-
-                ~span {}
+            @media (max-width: 376px) {
+                width: 60px;
             }
         }
 
-        &__desc {
-            margin-top: 12px;
+        &-mini {
             display: block;
-            font-size: 1.38rem;
-            max-width: 700px;
-            line-height: 140%;
+            text-transform: uppercase;
+            color: var(--main-color-4);
+            margin-bottom: 10px;
+            font-weight: 400;
+
+            ~*:after {
+                content: unset;
+            }
+
+            ~span {}
+        }
+    }
+
+    &__desc {
+        margin-top: 12px;
+        display: block;
+        font-size: 1.38rem;
+        max-width: 700px;
+        line-height: 140%;
+
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 1.15rem;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 376px) {
+            font-size: 1rem;
+            margin-top: 6px;
         }
     }
 }

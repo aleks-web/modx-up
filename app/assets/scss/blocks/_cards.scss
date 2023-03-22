@@ -4,10 +4,13 @@
 // Карточка читать далее
 .more-card {
     overflow: hidden;
+    container-type: inline-size;
+    container-name: more-card;
 
     &:hover &__wrap * {
         opacity: 1;
     }
+
     &:hover &__img img {
         transform: scale(1.02);
     }
@@ -15,18 +18,31 @@
     &__img {
         margin-bottom: 20px;
         overflow: hidden;
-        
+
+        @media (max-width: 376px) {
+            margin-bottom: 15px;
+        }
+
         img {
             transition: var(--fast-animation) all;
         }
     }
-    
+
     &__wrap {
         display: flex;
         justify-content: space-between;
+
+        @container more-card (max-width: 340px) {
+            flex-direction: column;
+        }
     }
+
     &__body {
         width: 90%;
+
+        @container more-card (max-width: 340px) {
+            width: 100%;
+        }
     }
 
     &__title {
@@ -35,6 +51,10 @@
         margin-bottom: 10px;
         font-weight: 500;
         @include title-h3;
+
+        @media (max-width: 376px) {
+            margin-bottom: 5px;
+        }
     }
 
     &__desc {
@@ -52,12 +72,31 @@
 
     &__link {
         position: relative;
+        display: flex;
+        align-items: center;
         width: 56px;
         height: 56px;
         border-radius: 100%;
         border: 2px solid var(--white);
         opacity: 0.2;
         transition: var(--fast-animation) all;
+
+        @container more-card (max-width: 340px) {
+            opacity: 0.9;
+            border: unset;
+            width: 100%;
+            height: 30px;
+            border-radius: unset;
+            margin-top: 10px;
+            flex-direction: row-reverse;
+
+            &:after {
+                display: block;
+                content: 'Читать далее';
+                color: var(--white);
+                margin-right: 10px;
+            }
+        }
 
         &:before {
             content: '';
@@ -67,6 +106,11 @@
             background-image: var(--arrow-up);
             background-repeat: no-repeat;
             background-position: center;
+
+            @container more-card (max-width: 340px) {
+                width: 13px;
+                position: static;
+            }
         }
     }
 }
@@ -75,7 +119,7 @@
 .card-info {
     container-type: inline-size;
     container-name: card-info;
-    
+
     @media (max-width: 576px) {
         &--open {
             .card-info__body {
@@ -94,11 +138,14 @@
         padding: 30px 20px;
         background-color: rgba(253, 253, 253, 0.1);
         transition: var(--fast-animation) all;
+
         @container card-info (min-width: 390px) {
             flex-direction: column;
         }
+
         @media (max-width: 576px) {
             flex-direction: column;
+            padding: 20px 20px;
         }
     }
 
@@ -108,12 +155,14 @@
         align-items: center;
         flex-direction: column;
         text-align: center;
+
         @container card-info (min-width: 390px) {
             flex-direction: column-reverse;
         }
+
         @media (max-width: 576px) {
             flex-direction: column;
-            margin-bottom: 10px;
+            margin-bottom: 0;
         }
 
         &-title {
@@ -121,13 +170,18 @@
             color: #fdfdfd;
             text-transform: uppercase;
             font-size: 1.38rem;
+
+            @media (max-width: 376px) {
+                font-size: 1rem;
+            }
         }
     }
-    
+
 
     &:hover &__body {
         visibility: visible;
         opacity: 1;
+
         @media (max-width: 576px) {
             visibility: unset;
             opacity: unset;
@@ -140,16 +194,23 @@
         align-items: center;
         flex-direction: column;
         margin-bottom: 20px;
+
         @container card-info (min-width: 390px) {
             height: auto;
         }
+
         @media (max-width: 576px) {
-            height: 110px;
+            height: 100px;
+        }
+
+        @media (max-width: 376px) {
+            height: 80px;
         }
 
         img {
             height: 100%;
             width: auto;
+
             @container card-info (min-width: 390px) {
                 position: absolute;
                 z-index: -1;
@@ -157,6 +218,7 @@
                 top: 10%;
                 opacity: 0.2;
             }
+
             @media (max-width: 576px) {
                 position: static;
                 opacity: 1;
@@ -171,13 +233,19 @@
         color: #fdfdfd;
         line-height: 130%;
         font-weight: 200;
+
         @container card-info (min-width: 390px) {
             text-align: left;
         }
+
         @media (max-width: 576px) {
             text-align: center;
         }
-        
+
+        @media (max-width: 376px) {
+            font-size: 1rem;
+        }
+
     }
 
     &__body {
@@ -192,6 +260,7 @@
         height: 100%;
         background-color: var(--main-color-7);
         transition: var(--fast-animation) all;
+
         @container card-info (min-width: 390px) {
             position: static;
             opacity: 1;
@@ -199,10 +268,12 @@
             background: transparent;
             padding: 0;
         }
+
         @media (max-width: 576px) {
             position: static;
             background: transparent;
             padding: 0;
+            margin-top: 10px;
             opacity: 1;
             visibility: visible;
             display: none;
@@ -215,9 +286,11 @@
             text-transform: uppercase;
             font-size: 1.38rem;
             margin-bottom: 12px;
+
             @container card-info (min-width: 390px) {
                 display: none;
             }
+
             @media (max-width: 576px) {
                 display: none;
             }
