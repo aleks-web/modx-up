@@ -1,9 +1,13 @@
 .big-utp {
     position: relative;
     padding-top: 145px;
-    background-color: var(--main-color-6)!important;
+    background-color: var(--main-color-6) !important;
     overflow: hidden;
     padding-bottom: 0;
+
+    @media (max-width: 376px) {
+        padding-top: 120px;
+    }
 
     &:before {
         position: absolute;
@@ -15,8 +19,16 @@
         top: -196px;
         left: -50px;
         transform: rotate(-4deg);
+
+        @media (max-width: 768px) {
+            transform: rotate(-9deg);
+        }
+
+        @media (max-width: 576px) {
+            top: -165px;
+        }
     }
-    
+
     &__bg-img {
         position: absolute;
         top: 0;
@@ -27,16 +39,34 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         position: relative;
         gap: 1px 1px;
-        width: 50%;
+        max-width: 700px;
         margin-bottom: 80px;
+
+        @media (max-width: 1210px) {
+            max-width: 600px;
+        }
+
+        @media (max-width: 768px) {
+            max-width: unset;
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: repeat(2, 1fr);
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 376px) {
+            grid-template-columns: 1fr;
+        }
 
         &-item {
             position: relative;
             overflow: hidden;
-            height: 170px;
+            min-height: 170px;
+            padding: 30px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -45,33 +75,38 @@
             background-color: var(--main-color);
             transition: var(--fast-animation) all;
 
+            @media (max-width: 1024px) {
+                background-color: rgba(255, 255, 255, 0.1);
+                min-height: unset;
+            }
+
+            @media (max-width: 576px) {
+                padding: 20px 0;
+            }
+
             // Скос, срез угла
             &--bevel {
-                background: linear-gradient(-45deg, transparent 15px, var(--main-color) 0);
+                clip-path: polygon(100% 2%, 100% 85%, 85% 100%, 0 100%, 0 0);
             }
 
             // Срез у первого и последнего элемента
             &:first-child {
-                background: linear-gradient(135deg, transparent 15px, var(--main-color) 0);
+                clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
+
             }
-    
+
             &:last-child {
-                background: linear-gradient(-45deg, transparent 15px, var(--main-color) 0);
-            }
-
-
-            // Title и Description элемента
-            &-title {
-                display: block;
-                font-size: 48px;
-                font-weight: 700;
+                clip-path: polygon(100% 2%, 100% 85%, 85% 100%, 0 100%, 0 0);
             }
 
             &-desc {
                 display: block;
                 max-width: 80%;
-                margin-top: 30px;
                 font-weight: 400;
+
+                @media (max-width: 576px) {
+                    font-size: 1rem;
+                }
             }
         }
     }
@@ -79,14 +114,22 @@
     &__utp {
         display: flex;
         position: relative;
-        height: 230px;
+        padding: 30px 0;
         background-color: rgba(0, 0, 0, 0.2);
 
         &-container {
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
+            display: grid;
+            gap: 50px 15px;
+            grid-template-columns: repeat(4, 1fr);
+
+            @media (max-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 576px) {
+                gap: 0;
+            }
         }
 
         &-item {
@@ -95,6 +138,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
+
+            @media (max-width: 576px) {
+                padding: 20px 15px;
+            }
 
             &-title {
                 margin-bottom: 12px;
@@ -102,12 +150,22 @@
                 font-size: 2.1rem;
                 font-weight: 700;
                 color: var(--white);
+
+                @media (max-width: 576px) {
+                    font-size: 1.7rem;
+                    margin-bottom: 5px;
+                }
             }
+
             &-desc {
                 display: block;
                 font-size: 1.3rem;
                 font-weight: 500;
                 color: var(--white);
+
+                @media (max-width: 576px) {
+                    font-size: 1.1rem;
+                }
             }
         }
     }

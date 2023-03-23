@@ -3,20 +3,34 @@
     padding-bottom: 80px;
     background-color: var(--main-color);
 
+    @media (max-width: 1024px) {
+        padding-top: 40px;
+    }
+
     // Общая обёртка левого и правого контейнера
     &__wrap {
         display: flex;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
     }
 
     // Обертка левого контента (главная информация)
     &__main {
-        width: 40%;
+        min-width: 300px;
 
-        > * {
+        @media (max-width: 768px) {
+            min-width: unset;
+            margin-bottom: 50px;
+        }
+
+        >* {
             margin-top: 30px;
             margin-bottom: 30px;
 
-            &:last-child {
+            &:last-child,
+            &:first-child {
                 margin: 0;
             }
         }
@@ -29,7 +43,11 @@
         width: -webkit-fill-available;
         width: -moz-available;
         width: fill-available;
-        
+
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+        }
+
         // Стили списков
         ul {
             padding: 0;
@@ -42,7 +60,7 @@
             li {
                 padding: 0;
                 margin-bottom: 15px;
-                
+
                 &:before {
                     content: unset;
                 }
@@ -53,8 +71,10 @@
             }
 
             a {
-                color: #D5DAE3; border-bottom: 1px solid transparent; transition: var(--fast-animation) all;
-                
+                color: #D5DAE3;
+                border-bottom: 1px solid transparent;
+                transition: var(--fast-animation) all;
+
                 &:hover {
                     color: var(--white);
                     border-bottom: 1px solid var(--white);
@@ -113,7 +133,7 @@
     color: #D5DAE3;
 
     // Все дочерние элементы первого уровня
-    > * {
+    >* {
         display: block;
         line-height: 140%;
     }
