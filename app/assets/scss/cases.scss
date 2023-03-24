@@ -1,6 +1,10 @@
 .cases {
     background-color: var(--main-color-6) !important;
 
+    @media (max-width: 576px) {
+        padding-bottom: 0;
+    }
+
     &__block-title {
         max-width: calc(100% - 450px);
 

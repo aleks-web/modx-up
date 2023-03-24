@@ -1,17 +1,22 @@
 /*
     desc: Универсальный скрипт раскрытия/скрытия списка. Реализовано для БЭМ блока blocks/_drop-listing.scss
 */
-$(function() {
+$(function () {
 
-    $('.drop-listing').each(function(e) {
+    // Функция, которая затемняет сайт
+    function addBodyBackground(e) {
+        $('body').addClass('blackout');
+    }
 
-        $(this).mousemove(function(e) {
-            if(!$(this).hasClass('drop-listing--open')) {
+    $('.drop-listing').each(function (e) {
+
+        $(this).mousemove(function (e) {
+            if (!$(this).hasClass('drop-listing--open')) {
                 $(this).toggleClass('drop-listing--open');
             }
         });
-        
-        $(this).mouseleave(function(e) {
+
+        $(this).mouseleave(function (e) {
             $(this).toggleClass('drop-listing--open');
         });
 
@@ -19,9 +24,19 @@ $(function() {
 
 
     // Для карточек с текстом
-    $('.card-info').each(function(e) {
-        $(this).click(function(e) {
+    $('.card-info').each(function (e) {
+        $(this).click(function (e) {
             $(this).toggleClass('card-info--open');
         });
+    });
+
+    // Главное меню
+    $('.nav__burger').click(function (e) {
+        $('.mob-menu').css('transform', 'translateX(0)');
+        $('.mob-menu').addClass('open');
+    });
+
+    $(window).click(function (e) {
+        $('.mob-menu').hasClass('open') ? $('.mob-menu').removeClass('open') : console.log('Нет');
     });
 });
