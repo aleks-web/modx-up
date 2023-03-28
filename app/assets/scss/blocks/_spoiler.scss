@@ -1,0 +1,33 @@
+.spoiler {
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+
+    &--open &__title::after {
+        transform: rotate(180deg);
+    }
+
+    &__title {
+        position: relative;
+        font-size: 1.1rem;
+        color: var(--white);
+        opacity: 0.8;
+        display: flex;
+        justify-content: space-between;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 10px;
+            background-image: var(--arrow-drop-white);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            transition: var(--fast-animation) all;
+        }
+    }
+
+    &__content {
+        font-size: 1rem;
+        color: var(--white);
+    }
+}

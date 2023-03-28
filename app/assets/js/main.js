@@ -39,4 +39,12 @@ $(function () {
     $(window).click(function (e) {
         $('.mob-menu').hasClass('open') ? $('.mob-menu').removeClass('open') : console.log('Нет');
     });
+
+
+    // Спойлеры
+    $('.spoiler').each(function (e) {
+        $(this).click(function (e) {
+            $(this).toggleClass('spoiler--open');
+        });
+    });
 });

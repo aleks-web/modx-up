@@ -1,0 +1,10 @@
+.q-and-a {
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+
+        > * {
+            width: 30%;
+        }
+    }
+}
