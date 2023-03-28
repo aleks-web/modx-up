@@ -1,0 +1,23 @@
+.payment {
+    &__container {}
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+            width: 90%;
+            margin: 0 auto;
+
+            >* {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

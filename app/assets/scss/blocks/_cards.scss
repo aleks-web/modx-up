@@ -297,3 +297,93 @@
         }
     }
 }
+
+// Карточки со скосом
+.card-bevel {
+    background-color: rgba(253, 253, 253, 0.1);
+    container-type: inline-size;
+    container-name: card-bevel;
+
+    &:first-child {
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
+
+        @media (max-width: 376px) {
+            clip-path: none;
+        }
+    }
+
+    &:last-child {
+        clip-path: polygon(100% 0, 100% 85%, 85% 100%, 0 100%, 0 0);
+
+        @media (max-width: 376px) {
+            clip-path: none;
+        }
+    }
+
+    &:hover &__content-all {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__wrap {
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 376px) {
+            padding: 20px;
+        }
+    }
+
+    &__content,
+    &__content-all {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__content-all {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--main-btn-color); //visibility: hidden;
+        opacity: 0;
+        transition: var(--fast-animation) all;
+    }
+
+    &__title {
+        @include title-h3;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 5px;
+    }
+
+    &__desc {
+        font-size: 1.1rem;
+        color: var(--white);
+        opacity: 0.7;
+        font-weight: 200;
+    }
+
+    &__img {
+        position: relative;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
+        @media (max-width: 376px) {
+            height: 60px;
+        }
+
+        svg {
+            position: absolute;
+            display: block;
+            height: 100%;
+        }
+    }
+}
