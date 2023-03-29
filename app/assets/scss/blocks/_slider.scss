@@ -31,6 +31,11 @@
             height: 40px;
         }
 
+        @media (max-width: 376px) {
+            width: 50px;
+            height: 30px;
+        }
+
         // Если слайдов нет (некуда листать)
         &.swiper-button-disabled {
             opacity: 0.5;
@@ -63,6 +68,11 @@
                 background-size: 100%;
                 width: 45px;
                 height: 14px;
+            }
+
+            @media (max-width: 376px) {
+                width: 30px;
+                height: 9px;
             }
         }
     }

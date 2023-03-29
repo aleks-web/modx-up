@@ -19,6 +19,7 @@
     margin: 0;
     line-height: normal;
     box-sizing: border-box;
+    color: var(--white);
 }
 
 html {
@@ -180,8 +181,6 @@ img {
             ~*:after {
                 content: unset;
             }
-
-            ~span {}
         }
     }
 

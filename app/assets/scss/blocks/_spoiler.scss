@@ -1,23 +1,46 @@
 .spoiler {
-    padding: 15px 20px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--fast-animation) all;
 
-    &--open &__title::after {
-        transform: rotate(180deg);
+    &--open {
+        border: 1px solid transparent;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    &--open &__title {
+        opacity: 1;
+
+        &:after {
+            transform: rotate(180deg);
+        }
+
+    }
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid transparent;
     }
 
     &__title {
         position: relative;
+        padding: 15px 20px;
         font-size: 1.1rem;
         color: var(--white);
         opacity: 0.8;
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        transition: var(--fast-animation) all;
 
-        &::after {
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        &:after {
             content: '';
             display: block;
-            width: 14px;
+            min-width: 14px;
             height: 10px;
             background-image: var(--arrow-drop-white);
             background-repeat: no-repeat;
@@ -27,6 +50,9 @@
     }
 
     &__content {
+        display: none;
+        padding: 15px 20px;
+        padding-top: 0;
         font-size: 1rem;
         color: var(--white);
     }

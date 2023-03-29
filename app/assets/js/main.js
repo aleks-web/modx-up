@@ -36,15 +36,20 @@ $(function () {
         $('.mob-menu').addClass('open');
     });
 
-    $(window).click(function (e) {
-        $('.mob-menu').hasClass('open') ? $('.mob-menu').removeClass('open') : console.log('Нет');
-    });
-
 
     // Спойлеры
     $('.spoiler').each(function (e) {
         $(this).click(function (e) {
             $(this).toggleClass('spoiler--open');
+            $(this).find('.spoiler__content').slideToggle(200).toggleClass('.spoiler__content--open');
+        });
+    });
+
+    // Карточки отзывов
+    $('.review-card').each(function (e) {
+        $(this).click(function (e) {
+            $(this).toggleClass('review-card--open');
+            $(this).find('.review-card__content').toggleClass('spoiler__content--open');
         });
     });
 });

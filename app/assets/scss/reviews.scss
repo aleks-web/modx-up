@@ -1,0 +1,13 @@
+.reviews {
+    @media (max-width: 576px) {
+        padding-bottom: 0;
+    }
+
+    &__container {
+        margin-top: 85px;
+    }
+
+    &__title {
+        max-width: 500px;
+    }
+}

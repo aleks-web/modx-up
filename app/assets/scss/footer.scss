@@ -34,6 +34,9 @@
 
         @media (max-width: 376px) {
             margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         >* {
@@ -75,7 +78,26 @@
 
             @media (max-width: 376px) {
                 margin-right: 0;
-                margin-bottom: 20px;
+
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 50px;
+                    height: 1px;
+                    background-color: #CED2DB;
+                    opacity: 0.2;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                }
+
+                &:last-child::after {
+                    content: unset;
+                }
             }
 
             &:last-child {
@@ -122,6 +144,10 @@
 // Стили логотипа
 .footer__logo {
     max-width: 190px;
+
+    @media (max-width: 376px) {
+        max-width: 140px;
+    }
 
     .footer__logo-svg {
         filter: brightness(0) invert(1);
