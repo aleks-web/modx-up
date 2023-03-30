@@ -45,6 +45,8 @@ $(function () {
         });
     });
 
+
+
     // Карточки отзывов
     $('.review-card').each(function (e) {
         $(this).click(function (e) {
@@ -52,4 +54,17 @@ $(function () {
             $(this).find('.review-card__content').toggleClass('spoiler__content--open');
         });
     });
+
+    // Блоки видео
+    $('.video-youtube').each(function (e) {
+        $(this).click(function (e) {
+            let videoId = $(this).data('video-id');
+            let videoSrc = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+            e.preventDefault();
+
+            $(this).addClass('video-youtube--play');
+            $(this).find('.video-youtube__video').html('<iframe src="' + videoSrc + '" allow="autoplay" frameborder="0" allowfullscreen></iframe>');
+        });
+    });
+
 });

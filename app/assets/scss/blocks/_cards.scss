@@ -629,3 +629,57 @@
         }
     }
 }
+
+.review-card-min {
+    background-color: var(--main-color);
+    color: var(--white);
+    max-width: 450px;
+
+    &__wrap {
+        padding: 20px;
+    }
+
+    &__header {
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    &__avatar {
+        overflow: hidden;
+        grid-area: avatar;
+        height: 60px;
+        min-width: 60px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-right: 20px;
+    }
+
+    &__info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__name {
+        display: block;
+        color: var(--main-color-4);
+        @include title-h3;
+        font-weight: 500;
+    }
+
+    &__other {
+        display: block;
+        opacity: 0.8;
+    }
+
+    &__content {
+        line-height: 155%;
+
+        p {
+            margin-bottom: 10px;
+            line-height: 155%;
+        }
+    }
+
+}

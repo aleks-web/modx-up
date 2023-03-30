@@ -19,7 +19,6 @@
     margin: 0;
     line-height: normal;
     box-sizing: border-box;
-    color: var(--white);
 }
 
 html {
@@ -37,6 +36,11 @@ body {
     font-weight: 300;
     font-size: 16px;
     line-height: 130%;
+    position: relative;
+}
+
+p {
+    margin-bottom: 20px;
 }
 
 button {
@@ -205,5 +209,19 @@ img {
             font-size: 1rem;
             margin-top: 6px;
         }
+    }
+}
+
+@keyframes animation-pull {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0);
     }
 }

@@ -3,6 +3,7 @@
     &__left {
         width: 30%;
         z-index: 1;
+        color: var(--white);
 
         @media (max-width: 1024px) {
             width: 100%;
@@ -212,6 +213,7 @@
     &-content {
         text-align: center;
         font-size: 1rem;
+        color: var(--white);
 
         @media (max-width: 1210px) {
             font-size: 0.9rem;

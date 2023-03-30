@@ -1,31 +1,25 @@
 .big-utp {
     position: relative;
-    padding-top: 145px;
-    background-color: var(--main-color-6) !important;
     overflow: hidden;
-    padding-bottom: 0;
+    background-color: var(--main-color) !important;
 
-    @media (max-width: 376px) {
-        padding-top: 120px;
-    }
+    &__wrap {
+        padding-bottom: 0;
+        padding-top: 145px;
+        background-color: var(--main-color-6) !important;
 
-    &:before {
-        position: absolute;
-        content: "";
-        width: 200%;
-        height: 200px;
-        background: var(--main-color);
-        z-index: 5;
-        top: -196px;
-        left: -50px;
-        transform: rotate(-4deg);
+        // Верхний скос блока
+        &--bevel {
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
 
-        @media (max-width: 768px) {
-            transform: rotate(-9deg);
-        }
+            @media (max-width: 1210px) {
+                clip-path: polygon(0 13%, 100% 0, 100% 100%, 0% 100%);
+            }
 
-        @media (max-width: 576px) {
-            top: -165px;
+            @media (max-width: 1210px) {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+                padding-top: 80px;
+            }
         }
     }
 

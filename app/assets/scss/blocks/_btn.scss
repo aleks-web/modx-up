@@ -95,12 +95,17 @@
 }
 
 // Кнопка закрытия
-.btn-close {
+.btn-close,
+.btn-close--white {
     position: relative;
     display: block;
     width: 20px;
     height: 20px;
     background-color: transparent;
+
+    &:hover {
+        cursor: pointer;
+    }
 
     &:before,
     &:after {
@@ -119,6 +124,14 @@
     }
 }
 
+.btn-close--white {
+
+    &:before,
+    &:after {
+        background-color: var(--white);
+    }
+}
+
 // Кнопка заказать звонок
 .btn-call-mini {
     display: block;
@@ -130,4 +143,45 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 100%;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    animation-name: animation-pull;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+// Кнопка плей
+.btn-play {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-btn-color);
+    border-radius: 100%;
+    width: 65px;
+    height: 65px;
+    transition: var(--fast-animation) all;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 25px;
+        background-color: var(--white);
+        opacity: 0.8;
+        margin-left: 10%;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+        transition: var(--fast-animation) all;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--main-btn-color-hover);
+
+        &:before {
+            opacity: 1;
+        }
+    }
 }
