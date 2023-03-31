@@ -67,4 +67,35 @@ $(function () {
         });
     });
 
+    // Табы
+    $('.tabs-wrap').each(function(e) {
+        let allItems = $(this).find('.tabs-list').find('.tabs-list__item');
+
+        // Добавляем первому элемену активывный класс
+        $(this).find('.tabs-content').find('.tabs-content__item').first().addClass('tabs-content__item--open');
+        allItems.first().addClass('tabs-list__item-current');
+        
+        // Вешаем событие клика на таб
+        allItems.each(function(e) {
+            $(this).click(function (e) {
+                let tabId = $(this).data('tab-id');
+                let allContent = $(this).parents('.tabs-wrap').find('.tabs-content').find('.tabs-content__item');
+
+                $(this).siblings('.tabs-list__item').removeClass('tabs-list__item-current');
+                $(this).addClass('tabs-list__item-current');
+
+                // Открываем по клику нужный контент
+                allContent.each(function(e) {
+
+                    if ($(this).data('tab-id') == tabId) {
+                        $(this).addClass('tabs-content__item--open');
+                    } else {
+                        $(this).removeClass('tabs-content__item--open');
+                    }
+                });
+            });
+        });
+
+    });
+
 });

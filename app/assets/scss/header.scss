@@ -27,6 +27,10 @@
         justify-content: space-between;
     }
 
+    &__cta-text {
+        margin-bottom: 0;
+    }
+
     /* 
         ? Элемент с городами в шапке
         desc: Расширяет и переопределяет стили БЭМ блока blocks/_drop-listing.scss

@@ -1,7 +1,7 @@
 .pluses-work {
     background: linear-gradient(to bottom, var(--main-color) 50%, var(--main-color-6) 50%);
 
-    // Обращаемся к следующему элементу
+    // Обращаемся к следующему блоку
     ~section {
         padding-top: 50px !important;
 

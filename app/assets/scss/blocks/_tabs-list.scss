@@ -2,6 +2,8 @@
 .tabs-list {
     position: relative;
 
+    $padding-item: 15px;
+
     &__bg {
         position: absolute;
         width: 100%;
@@ -19,7 +21,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 15px;
+        padding: $padding-item;
         width: 100%;
         font-weight: 600;
         height: 100%;
@@ -59,6 +61,8 @@
     // Пункт списка
     &__item {
         border-radius: 3px;
+        padding: $padding-item;
+        margin-bottom: 5px;
         transition: var(--fast-animation) all;
 
         &:not(.tabs-list__item-current):hover {
@@ -82,7 +86,29 @@
             background-color: var(--main-color-7);
             font-weight: 500;
             cursor: context-menu;
-            padding: 15px;
+            padding: $padding-item;
+        }
+    }
+}
+
+.tabs-content {
+    position: relative;
+
+    &__item {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        background-color: antiquewhite;
+        margin-bottom: 20px;
+        transition: var(--fast-animation) all;
+
+        &--open {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
