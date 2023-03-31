@@ -1,0 +1,17 @@
+.vacant {
+    background-color: var(--main-color-6);
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__bar {
+        width: 40%;
+    }
+
+    &__main {
+        width: 50%;
+    }
+}

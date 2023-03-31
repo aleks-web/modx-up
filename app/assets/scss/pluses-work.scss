@@ -1,0 +1,140 @@
+.pluses-work {
+    background: linear-gradient(to bottom, var(--main-color) 50%, var(--main-color-6) 50%);
+
+    // Обращаемся к следующему элементу
+    ~section {
+        padding-top: 50px !important;
+
+        @media (max-width: 1024px) {
+            padding-top: unset;
+        }
+    }
+
+    &__wrap {
+        position: relative;
+        background-color: var(--main-color);
+        padding: 140px 0 280px 0;
+        clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+
+        @media (max-width: 1440px) {
+            clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+            padding: 80px 0 100px 0;
+        }
+
+        @media (max-width: 1024px) {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            padding-top: 50px;
+            padding-bottom: 0;
+        }
+
+        @media (max-width: 376px) {
+            clip-path: polygon(0 0, 100% 0, 100% 97%, 0% 100%);
+        }
+    }
+
+
+    // Срез картинки
+    &__bg-bevel {
+        height: 100%;
+        width: 100%;
+        display: block;
+        background-image: url('../img/bg.jpg');
+        background-position: center;
+        background-size: cover;
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+
+        @media (max-width: 1440px) {
+            clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+        }
+
+        @media (max-width: 1024px) {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        background: linear-gradient(to bottom, var(--main-color) 50%, var(--main-color) 50%);
+        height: 100%;
+        width: 45%;
+
+        @media (max-width: 1210px) {
+            width: 40%;
+        }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            display: none;
+        }
+    }
+
+    &__container {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+    &__content {
+        color: var(--white);
+        width: 50%;
+
+        @media (max-width: 1210px) {
+            width: 55%;
+        }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+
+            &-main {
+                padding-top: 60px;
+                background-image: url('../img/bg.jpg');
+                padding-bottom: 100px;
+                width: calc(100% + var(--container-padding) * 2);
+                margin-right: var(--container-padding-negative);
+            }
+        }
+
+        @media (max-width: 576px) {
+            &-main {
+                padding-top: var(--container-padding);
+                padding-bottom: 70px;
+            }
+        }
+    }
+
+    &__grid-utp {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+
+        @media (max-width: 1024px) {
+            padding: 0 var(--container-padding);
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 376px) {
+            grid-template-columns: 1fr;
+        }
+
+        >* {
+            @media (max-width: 1024px) {}
+        }
+    }
+
+    &__card-bg {
+        @media (max-width: 1024px) {
+            opacity: 0.8;
+        }
+    }
+}

@@ -1,8 +1,16 @@
 .reviews-doer {
     background-color: var(--main-color-6);
 
+    @media (max-width: 1024px) {
+        padding-bottom: 0;
+    }
+
     &__container {
         display: flex;
         align-items: center;
+    }
+
+    &__title {
+        margin-bottom: 75px;
     }
 }

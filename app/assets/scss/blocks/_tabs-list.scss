@@ -1,0 +1,39 @@
+// Табы вертикальне. Выпадающий список
+.tabs-list {
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #ccc;
+    }
+
+    // Изначально скрыт выпадающий список
+    &__current {
+        display: none;
+    }
+
+    // Непосредственно сам список
+    &__list {
+        padding: 8px;
+        color: var(--white);
+    }
+
+    // Пункт списка
+    &__item {
+        border-radius: 3px;
+        padding: 15px;
+        transition: var(--fast-animation) all;
+
+        &:hover {
+            background-color: var(--main-color-7);
+        }
+
+        &:before {
+            content: unset;
+        }
+    }
+}
