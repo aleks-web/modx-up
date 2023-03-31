@@ -8,12 +8,46 @@
         height: 100%;
         top: 0;
         left: 0;
-        background-color: #ccc;
+        background-color: var(--main-color);
+        opacity: 0.4;
     }
 
     // Изначально скрыт выпадающий список
     &__current {
+        z-index: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        width: 100%;
+        font-weight: 600;
+        height: 100%;
+        background-color: var(--main-color-7);
+        color: var(--white);
+        cursor: pointer;
         display: none;
+
+        &:after {
+            content: '';
+            width: 20px;
+            height: 13px;
+            background-image: var(--arrow-drop-white);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: var(--fast-animation) all;
+
+        }
+
+        &--open {
+            &:after {
+                transform: rotate(-180deg);
+            }
+        }
+
+        &-text {
+            display: block;
+        }
     }
 
     // Непосредственно сам список
@@ -25,15 +59,30 @@
     // Пункт списка
     &__item {
         border-radius: 3px;
-        padding: 15px;
         transition: var(--fast-animation) all;
 
-        &:hover {
-            background-color: var(--main-color-7);
+        &:not(.tabs-list__item-current):hover {
+            background-color: var(--main-color);
+            cursor: pointer;
         }
 
         &:before {
             content: unset;
+        }
+
+        a {
+            color: var(--white);
+            font-weight: 300;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+        }
+
+        &-current {
+            background-color: var(--main-color-7);
+            font-weight: 500;
+            cursor: context-menu;
+            padding: 15px;
         }
     }
 }
