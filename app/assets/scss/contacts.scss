@@ -1,0 +1,21 @@
+.contacts {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: var(--main-color);
+
+    &__container {
+        
+    }
+
+    &__wrap {
+        width: 45%;
+    }
+
+    &__map {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
+}

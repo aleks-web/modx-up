@@ -1,0 +1,22 @@
+.company-info {
+    display: flex;
+    margin-bottom: 50px;
+    align-items: center;
+
+    &__icon {
+        width: 55px;
+        margin-right: 25px;
+    }
+    &__title {
+        text-transform: uppercase;
+        color: var(--main-color-4);
+        @include title-h3;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    &__content {
+        color: var(--white);
+        font-size: 1.1rem;
+        line-height: 140%;
+    }
+}
