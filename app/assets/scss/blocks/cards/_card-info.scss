@@ -1,0 +1,182 @@
+// Карточки с описанием
+.card-info {
+    container-type: inline-size;
+    container-name: card-info;
+
+    @media (max-width: 576px) {
+        &--open {
+            .card-info__body {
+                display: block;
+            }
+        }
+    }
+
+    // Главная обертка карточки
+    &__wrap {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        background-color: rgba(253, 253, 253, 0.1);
+        transition: var(--fast-animation) all;
+
+        @container card-info (min-width: 390px) {
+            flex-direction: column;
+        }
+
+        @media (max-width: 576px) {
+            flex-direction: column;
+            padding: 20px 20px;
+        }
+    }
+
+    // Превью часть
+    &__view {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        @container card-info (min-width: 390px) {
+            flex-direction: column-reverse;
+        }
+
+        @media (max-width: 576px) {
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+
+        &-title {
+            display: block;
+            color: #fdfdfd;
+            text-transform: uppercase;
+            font-size: 1.38rem;
+
+            @media (max-width: 376px) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+
+    &:hover &__body {
+        visibility: visible;
+        opacity: 1;
+
+        @media (max-width: 576px) {
+            visibility: unset;
+            opacity: unset;
+        }
+    }
+
+    &__img {
+        height: 110px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        @container card-info (min-width: 390px) {
+            height: auto;
+        }
+
+        @media (max-width: 576px) {
+            height: 100px;
+        }
+
+        @media (max-width: 376px) {
+            height: 80px;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+
+            @container card-info (min-width: 390px) {
+                position: absolute;
+                z-index: -1;
+                right: -10%;
+                top: 10%;
+                opacity: 0.2;
+            }
+
+            @media (max-width: 576px) {
+                position: static;
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+    }
+
+    &__desc {
+        display: block;
+        text-align: center;
+        color: #fdfdfd;
+        line-height: 130%;
+        font-weight: 200;
+
+        @container card-info (min-width: 390px) {
+            text-align: left;
+        }
+
+        @media (max-width: 576px) {
+            text-align: center;
+        }
+
+        @media (max-width: 376px) {
+            font-size: 1rem;
+        }
+
+    }
+
+    &__body {
+        padding: inherit;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--main-color-7);
+        transition: var(--fast-animation) all;
+
+        @container card-info (min-width: 390px) {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            background: transparent;
+            padding: 0;
+        }
+
+        @media (max-width: 576px) {
+            position: static;
+            background: transparent;
+            padding: 0;
+            margin-top: 10px;
+            opacity: 1;
+            visibility: visible;
+            display: none;
+        }
+
+        &-title {
+            display: block;
+            text-align: center;
+            color: #fdfdfd;
+            text-transform: uppercase;
+            font-size: 1.38rem;
+            margin-bottom: 12px;
+
+            @container card-info (min-width: 390px) {
+                display: none;
+            }
+
+            @media (max-width: 576px) {
+                display: none;
+            }
+        }
+    }
+}

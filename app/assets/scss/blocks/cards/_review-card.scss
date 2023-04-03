@@ -1,0 +1,242 @@
+// Карточки отзывов
+.review-card {
+    container-type: inline-size;
+    container-name: review-card;
+
+    clip-path: polygon(5% 0, 100% 0, 100% 0, 100% 95%, 95% 100%, 0 100%, 0 100%, 0 5%);
+
+
+    @mixin end {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    @mixin start {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    // Поведение картинки при наведении
+    &:hover &__img img {
+        transform: scale(1.01);
+    }
+
+    // В открытом состоянии
+    &--open &__content {
+        display: block;
+        -webkit-line-clamp: unset;
+        -webkit-box-orient: unset;
+        overflow: unset;
+    }
+
+    // Обертка карточки
+    &__wrap {
+        background-color: var(--main-color-6);
+        color: var(--white);
+        padding: 25px;
+        display: grid;
+        justify-content: space-between;
+        grid-template-areas:
+            "header header"
+            "img img"
+            "content content"
+            "city time";
+
+        @container review-card (max-width: 376px) {
+            padding: 15px;
+        }
+
+        @media (max-width: 576px) {
+            grid-template-areas:
+                "img img"
+                "header header"
+                "content content"
+                "city time";
+            padding: 20px;
+        }
+
+        @media (max-width: 376px) {
+            padding: 15px;
+            grid-template-areas:
+                "header header"
+                "time time"
+                "img img"
+                "content content"
+                "city city";
+        }
+
+
+    }
+
+    // Грид элемент шапка карточки (имя, доп.инф, рейтинг)
+    &__header {
+        margin-bottom: 8px;
+        grid-area: header;
+        display: grid;
+        grid-template-areas:
+            "name rating"
+            "other other";
+
+        @media (max-width: 376px) {
+            grid-template-areas:
+                "name rating"
+                "name other";
+            gap: 5px 0;
+            margin-bottom: 3px;
+        }
+    }
+
+    // Элемент имя
+    &__name {
+        grid-area: name;
+        font-weight: 500;
+        @include title-h3;
+
+        @container review-card (max-width: 376px) {
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 376px) {
+            @include start;
+        }
+
+    }
+
+    // Прочее (под именем). Какая-то доп.инфа (напр. номер телефона)
+    &__other {
+        grid-area: other;
+        color: rgba(253, 253, 253, 0.6);
+        font-weight: 200;
+        font-size: 1.1rem;
+
+        @container review-card (max-width: 376px) {
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 376px) {
+            font-size: 0.8rem;
+            @include end;
+        }
+    }
+
+    // Элемент рейтинга
+    &__rating {
+        grid-area: rating;
+        @include end;
+
+        &-star {
+            width: 25px;
+            height: 25px;
+            background-image: var(--star-yellow);
+            background-size: 100%;
+            margin-right: 5px;
+            overflow: hidden;
+
+            @container review-card (max-width: 376px) {
+                width: 15px;
+                height: 15px;
+                margin-right: 3px;
+            }
+
+            @media (max-width: 576px) {
+                width: 20px;
+                height: 20px;
+            }
+
+            @media (max-width: 376px) {
+                width: 15px;
+                height: 15px;
+                margin-right: 3px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    // Элемент картинка
+    &__img {
+        grid-area: img;
+        margin-bottom: 18px;
+        overflow: hidden;
+        transition: var(--fast-animation) all;
+
+        @container review-card (max-width: 376px) {
+            width: calc(100% + 30px);
+            margin-left: -15px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 576px) {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 376px) {
+            margin-bottom: 5px;
+            width: calc(100% + 30px);
+            margin-left: -15px;
+        }
+
+        img {
+            transition: var(--fast-animation) all;
+        }
+    }
+
+    // Контент
+    &__content {
+        grid-area: content;
+        font-size: 1rem;
+        line-height: 160%;
+        margin-bottom: 8px;
+        transition: var(--fast-animation) all;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        @container review-card (max-width: 376px) {
+            font-size: 14px;
+        }
+    }
+
+    // Элемент времени
+    &__time {
+        grid-area: time;
+        color: rgba(213, 218, 227, 0.8);
+        font-size: 1.1rem;
+        @include end;
+
+        @container review-card (max-width: 376px) {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 376px) {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            @include start;
+        }
+    }
+
+    // Элемент города
+    &__city {
+        grid-area: city;
+        color: rgba(213, 218, 227, 0.8);
+        font-size: 1.1rem;
+
+        @container review-card (max-width: 376px) {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 376px) {
+            font-size: 0.9rem;
+        }
+    }
+}
