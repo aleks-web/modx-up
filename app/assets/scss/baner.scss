@@ -33,6 +33,41 @@
         }
     }
 
+    // Линия
+    &__bg-line {
+        position: absolute;
+        overflow: hidden;
+        right: 0;
+        width: 52%;
+        height: 100%;
+        clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+        background-color: var(--main-btn-color);
+
+        @media (max-width: 1440px) {
+            width: 43%;
+        }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            clip-path: polygon(50% 0%, 100% 15%, 100% 100%, 0 100%, 0 15%);
+            bottom: calc(-100% + 500px + 1%);
+        }
+
+        @media (max-width: 1024px) {
+            bottom: calc(-100% + 500px + 2%);
+        }
+
+        @media (max-width: 576px) {
+            clip-path: polygon(82% 0, 180% 40%, 100% 100%, 0 100%, 0% 20%);
+            bottom: calc(-100% + 320px + 3%);
+        }
+
+        @media (max-width: 376px) {
+            clip-path: polygon(82% 0, 180% 40%, 100% 100%, 0 100%, 0% 20%);
+            bottom: calc(-100% + 220px + 3%);
+        }
+    }
+
     // Главный фон
     &__bg-main {
         position: absolute;

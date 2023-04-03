@@ -1,0 +1,329 @@
+// Табы вертикальне. Выпадающий список
+
+// Обертка
+.drop-tabs {}
+
+// Вкладки
+.drop-tabs-list {
+    position: relative;
+
+    @media (max-width: 1024px) {
+        padding: 10px;
+    }
+
+    @media (max-width: 576px) {
+        padding: 0;
+    }
+
+    $padding-item: 15px;
+
+    &__wrap {
+        @media (max-width: 1024px) {
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                background-color: var(--main-color);
+                height: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--main-btn-color);
+            }
+        }
+
+        @media (max-width: 576px) {
+            overflow: hidden;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        border-radius: 3px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--main-color);
+        opacity: 0.4;
+    }
+
+    // Изначально скрыт выпадающий список
+    &__current {
+        z-index: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $padding-item;
+        width: 100%;
+        font-weight: 600;
+        height: 100%;
+        background-color: var(--main-color-7);
+        color: var(--white);
+        cursor: pointer;
+        display: none;
+
+        @media (max-width: 576px) {
+            display: flex;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 13px;
+            background-image: var(--arrow-drop-white);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: 10px;
+            transition: var(--fast-animation) all;
+
+        }
+
+        &--open {
+            &:after {
+                transform: rotate(-180deg);
+            }
+        }
+
+        &-text {
+            display: block;
+        }
+    }
+
+    // Непосредственно сам список
+    &__list {
+        padding: 8px;
+        color: var(--white);
+
+        &--open {
+            opacity: 1 !important;
+            visibility: visible !important;
+            position: relative !important;
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+        @media (max-width: 576px) {
+            padding: 0 10px;
+            flex-wrap: wrap;
+            display: none;
+            margin-top: 10px;
+        }
+    }
+
+    // Пункт списка
+    &__item {
+        border-radius: 3px;
+        padding: $padding-item;
+        margin-bottom: 5px;
+        transition: var(--fast-animation) all;
+
+        @media (max-width: 1024px) {
+            min-width: max-content;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 576px) {
+            min-width: unset;
+            width: 100%;
+        }
+
+        &:not(.drop-tabs-list__item-current):hover {
+            background-color: var(--main-color-6);
+            cursor: pointer;
+        }
+
+        &:before {
+            content: unset;
+        }
+
+        a {
+            color: var(--white);
+            font-weight: 300;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+        }
+
+        &-current {
+            background-color: var(--main-color-7);
+            font-weight: 500;
+            cursor: context-menu;
+            padding: $padding-item;
+
+            @media (max-width: 576px) {
+                background-color: var(--main-color-6);
+                display: flex;
+                justify-content: space-between;
+
+                &:after {
+                    content: "Текущая";
+                    font-size: 0.8rem;
+                    background-image: unset;
+                    position: relative;
+                    background-color: var(--main-btn-color);
+                    padding: 3px 10px;
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+}
+
+// Контент вкладок
+.drop-tabs-content {
+    position: relative;
+
+    &__item {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        transition: var(--fast-animation) all;
+
+        &--open {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        display: block;
+        height: 100%;
+        background-color: var(--main-color);
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__wrap {
+        position: relative;
+        z-index: 1;
+        color: var(--white);
+    }
+
+    &__title {
+        display: block;
+        color: var(--main-color-4);
+        @include title-h2;
+        font-weight: bold;
+        padding: 20px;
+        padding-bottom: 10px;
+
+        @media (max-width: 576px) {
+            padding: 0;
+            padding-bottom: 15px;
+        }
+    }
+
+    // Доп.инфа
+    &__info {
+        padding: 20px;
+
+        @media (max-width: 576px) {
+            padding: 0;
+        }
+
+        &-line {
+            display: grid;
+            grid-template-columns: 60% 40%;
+
+            @media (max-width: 376px) {
+                grid-template-columns: 1fr;
+
+                >* {
+                    margin-bottom: 10px;
+                }
+            }
+
+            ~div[class*='-line'] {
+                margin-top: 15px;
+                padding-top: 15px;
+                border-top: 1px solid rgb(255 255 255 / 11%);
+
+                @media (max-width: 376px) {
+                    margin-top: 5px;
+                    padding-top: 10px;
+                }
+
+            }
+        }
+
+        &-title {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+
+            @media (max-width: 376px) {
+                margin-bottom: 3px;
+            }
+        }
+
+        &-desc {
+            color: var(--main-color-4);
+            @include title-h2;
+            font-weight: bold;
+
+            @media (max-width: 576px) {
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+        }
+    }
+
+    // END Доп.инфа
+
+    &__body {
+        padding: 25px;
+        margin-top: 30px;
+        background-color: var(--main-color-6);
+        clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+
+        @media (max-width: 376px) {
+            padding: 20px;
+        }
+    }
+
+    &__list {
+
+        &-title {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        ~div[class*='__list'] {
+            margin-top: 25px;
+        }
+
+        // Сброс списка в блоке
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+
+}

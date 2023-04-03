@@ -11,6 +11,7 @@
             transform: rotate(-180deg);
         }
     }
+
     &--open &__list {
         visibility: visible;
         opacity: 1;
@@ -36,10 +37,11 @@
             background-image: var(--arrow-drop-white);
             transition: var(--fast-animation) all;
         }
+
         &-arrow--black::after {
             background-image: var(--arrow-drop-black);
         }
-        
+
         a {
             color: #fff;
         }
