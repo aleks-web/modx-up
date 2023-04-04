@@ -1,0 +1,270 @@
+.main-baner {
+    position: relative;
+    background-color: var(--main-color-2);
+    min-height: calc(100vh - 150px);
+    color: var(--white);
+    overflow: hidden;
+
+    &__bg,
+    &__bg-img {
+        position: absolute;
+        display: block;
+        width: 52%;
+        background-color: var(--main-btn-color);
+        background-repeat: no-repeat no-repeat;
+        background-size: cover;
+        height: 100%;
+        right: 0;
+        clip-path: polygon(20% 0, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+        z-index: 0;
+
+        @media (max-width: 1024px) {
+            bottom: 0;
+            height: 50%;
+            width: 100%;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0 100%, 0 25%);
+        }
+
+        @media (max-width: 576px) {
+            clip-path: polygon(70% 0, 100% 25%, 100% 100%, 0 100%, 0 40%);
+        }
+    }
+
+    &__bg-img {
+        width: 96%;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            height: 93%;
+        }
+    }
+
+    &__bg-other {
+        position: absolute;
+        content: '';
+        height: 90%;
+        bottom: 0;
+        right: 10%;
+        overflow: hidden;
+
+        @media (max-width: 1440px) {
+            right: 5%;
+        }
+
+        @media (max-width: 1210px) {
+            right: 0;
+            height: 80%;
+        }
+
+        @media (max-width: 1024px) {
+            right: 0;
+            height: 70%;
+        }
+
+        @media (max-width: 768px) {
+            height: 65%;
+        }
+
+        @media (max-width: 576px) {
+            right: -120px;
+            bottom: -50px;
+        }
+
+        @media (max-width: 376px) {
+            right: -150px;
+            bottom: -50px;
+        }
+
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &__container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        min-height: inherit;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 1024px) {
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 576px) {
+            display: grid;
+            grid-template-areas:
+                "row1"
+                "row2"
+                "row3"
+                'row4';
+        }
+    }
+
+    &__title {
+        @include main-title;
+        color: var(--white);
+        margin-bottom: 30px;
+        width: 70%;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+    }
+
+    &__main-content {
+        width: 70%;
+
+        >* {
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+
+        ~a[class*='__btn'] {
+            margin-top: 40px;
+        }
+
+        ~div[class*='main-baner__utp'] {
+            margin-top: 50px;
+        }
+
+        ul {
+            padding-left: 10px;
+        }
+
+        ul li {
+            margin-bottom: 13px;
+            font-size: 1.4rem;
+
+            @media (max-width: 576px) {
+                font-size: 1.3rem;
+            }
+
+            @media (max-width: 376px) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    // Элемент контактов
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.3rem;
+
+        >* {
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // Группа кномок
+    &__btns-wrap {
+        display: flex;
+        align-items: center;
+
+        >* {
+            margin-right: 20px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+// Кнопка
+.main-baner__btn {
+    font-size: 1.4rem;
+
+    @media (max-width: 576px) {
+        grid-area: row4;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    @media (max-width: 376px) {
+        height: 50px;
+        font-size: 1.1rem;
+    }
+}
+
+// УТП блок
+.main-baner__utp {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 80px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    @media (max-width: 576px) {
+        grid-area: row2;
+        margin-top: 0;
+        grid-template-columns: 1fr;
+        max-width: 340px;
+        gap: 1px;
+    }
+
+    @media (max-width: 376px) {
+        max-width: 180px;
+    }
+
+    &-item {
+        padding: 20px;
+        height: 100%;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: rgba(253, 253, 253, 0.2);
+
+        @media (max-width: 576px) {
+            text-align: left;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+
+    &-icon {
+        margin-bottom: 15px;
+        height: 44px;
+
+        @media (max-width: 576px) {
+            height: 30px;
+            margin-bottom: 0;
+            margin-right: 15px;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &-desc {
+        margin: 0;
+    }
+}

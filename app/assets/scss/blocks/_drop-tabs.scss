@@ -19,7 +19,7 @@
 
     &__wrap {
         @media (max-width: 1024px) {
-            overflow-x: auto;
+            overflow-x: overlay;
 
             &::-webkit-scrollbar {
                 background-color: var(--main-color);
@@ -28,11 +28,13 @@
 
             &::-webkit-scrollbar-thumb {
                 background-color: var(--main-btn-color);
+                border-radius: 5px;
             }
         }
 
         @media (max-width: 576px) {
             overflow: hidden;
+            padding-bottom: 0;
         }
     }
 
@@ -44,19 +46,19 @@
         top: 0;
         left: 0;
         background-color: var(--main-color);
-        opacity: 0.4;
     }
 
     // Изначально скрыт выпадающий список
     &__current {
         z-index: 1;
+        font-size: 1rem;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: $padding-item;
         width: 100%;
-        font-weight: 600;
+        font-weight: 400;
         height: 100%;
         background-color: var(--main-color-7);
         color: var(--white);
@@ -70,7 +72,7 @@
         &:after {
             content: '';
             display: block;
-            width: 20px;
+            min-width: 20px;
             height: 13px;
             background-image: var(--arrow-drop-white);
             background-repeat: no-repeat;
@@ -105,7 +107,6 @@
 
         @media (max-width: 1024px) {
             display: flex;
-            margin-bottom: 10px;
             padding: 0;
         }
 
@@ -197,6 +198,7 @@
             opacity: 1;
             visibility: visible;
             position: relative;
+            margin-bottom: 0;
         }
     }
 
@@ -225,17 +227,22 @@
         @include title-h2;
         font-weight: bold;
         padding: 20px;
-        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 0;
+        margin-bottom: 20px;
 
         @media (max-width: 576px) {
             padding: 0;
-            padding-bottom: 15px;
         }
     }
 
     // Доп.инфа
     &__info {
         padding: 20px;
+
+        ~div {
+            margin-top: 20px;
+        }
 
         @media (max-width: 576px) {
             padding: 0;
@@ -292,12 +299,16 @@
 
     &__body {
         padding: 25px;
-        margin-top: 30px;
         background-color: var(--main-color-6);
         clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
 
         @media (max-width: 376px) {
             padding: 20px;
+        }
+
+        >*[class*='__info'] {
+            padding: 0;
+            margin-bottom: 20px;
         }
     }
 
@@ -324,6 +335,59 @@
             margin-bottom: 10px;
         }
     }
+}
 
+// Стилизация таблиц в теле контента таба
+.drop-tabs-content__table {
+    width: 100%;
+    overflow-x: overlay;
+    padding: 10px 0;
+    margin-bottom: -20px;
+    margin-top: -20px;
 
+    &::-webkit-scrollbar {
+        background-color: var(--main-color);
+        height: 5px;
+        margin-top: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--main-btn-color);
+        border-radius: 5px;
+    }
+
+    // Общие стили
+    &-titles,
+    &-item {
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        gap: 20px;
+
+        >* {
+            width: 100%;
+            padding: 10px 0;
+            box-sizing: border-box;
+            min-width: 150px;
+
+            @media (max-width: 576px) {
+                padding: 0;
+                margin-bottom: 10px;
+            }
+
+            &:first-child {
+                min-width: 300px;
+            }
+        }
+
+    }
+
+    &-titles {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--main-color-4);
+    }
 }

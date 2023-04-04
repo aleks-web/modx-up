@@ -1,0 +1,73 @@
+.tabs-services {
+    min-height: 70vh;
+
+    &__bg {
+        display: block;
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: .5;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        margin-bottom: 40px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+
+    &__sidebar-tabs {
+        width: 40%;
+        margin-right: 40px;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            margin-bottom: calc(var(--container-padding) - 10px);
+        }
+    }
+
+    // Кнопка. Микс
+    &__btn {
+        margin-top: 40px;
+        width: 100%;
+
+        @media (max-width: 1024px) {
+            margin-top: calc(var(--container-padding) - 10px);
+        }
+    }
+
+    &__content-tabs {
+        width: 55%;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+
+            .drop-tabs-content__body {
+                overflow-x: overlay;
+            }
+        }
+
+        // Селектор микс. Задает доп стили для основных
+        &-bg {
+            border-radius: 10px;
+        }
+    }
+}

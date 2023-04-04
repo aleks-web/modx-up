@@ -77,7 +77,7 @@
     &:after {
         width: 25px;
         height: 20px;
-        background-image: url("data:image/svg+xml,%3Csvg width='28' height='24' viewBox='0 0 28 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13 15.17V0H15V15.17L20.59 9.59L22 11L14 19L6 11L7.41 9.58L13 15.17ZM26 22V18H28V24H0V18H2V22H26Z' fill='%23FDFDFD'/%3E%3C/svg%3E");
+        background-image: var(--arrow-download-white);
 
         @media (max-width: 376px) {
             width: 13px;
@@ -93,6 +93,53 @@
         }
     }
 }
+
+// ? Кнопки с бордером
+.btn-border,
+.btn-border-download {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    font-weight: 500;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 2px solid var(--white);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: var(--fast-animation) all;
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--black);
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-left: 10px;
+        transition: var(--fast-animation) all;
+    }
+}
+
+// Иконка скачать
+.btn-border-download:after {
+    background-image: var(--arrow-download-white);
+    transform: translateY(-1px);
+}
+
+.btn-border-download:hover:after {
+    background-image: var(--arrow-download-black);
+    transform: translateY(0);
+}
+
+// ? END Кнопки с бордером
+
 
 // Кнопка закрытия
 .btn-close,

@@ -4,7 +4,11 @@
 
 <body>
   @@include('chunks/header.html')
-  @@include('chunks/baner.html')
+  @@include('chunks/main-baner.html', {
+  "title": "Рабочий персонал под любые задачи",
+  "other-img": "../assets/img/man.png",
+  "bg": "../assets/img/bg.jpg",
+  })
   @@include('chunks/cards.html')
   @@include('chunks/history-company.html')
   @@include('chunks/big-utp.html')

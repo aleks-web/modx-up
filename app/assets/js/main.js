@@ -73,8 +73,15 @@ $(function () {
         let currentItem = $(this).find('.drop-tabs-list__current');
         let currentItemText = currentItem.find('.drop-tabs-list__current-text');
         let tabsList = $(this).find('.drop-tabs-list__list');
+        let overflow = $(this).find('.drop-tabs-list__wrap');
 
-        console.log(currentItemText.text());
+
+
+        if (overflow.prop('scrollWidth') > overflow.width()) {
+            tabsList.css('margin-bottom', '15px');
+        } else {
+            tabsList.css('justify-content', 'space-around');
+        }
 
         currentItem.click(function (e) {
             $(this).toggleClass('drop-tabs-list__current--open');

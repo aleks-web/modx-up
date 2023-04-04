@@ -1,3 +1,41 @@
+/* Небольшие элементы с иконками */
+.icon-text-phone,
+.icon-text-email,
+.icon-text-clock {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat no-repeat;
+    }
+}
+
+// Иконка с телефоном
+.icon-text-phone::before {
+    background-image: var(--phone-white);
+}
+
+// Иконка с email
+.icon-text-email::before {
+    background-image: var(--email-white);
+}
+
+// Иконка с часами
+.icon-text-clock::before {
+    background-image: var(--clock-white);
+}
+
+/* END Небольшие элементы с иконками */
+
+// Информация о компании
 .company-info {
     display: flex;
     margin-bottom: 50px;
