@@ -209,6 +209,7 @@
     border-radius: 100%;
     width: 65px;
     height: 65px;
+    z-index: 1;
     transition: var(--fast-animation) all;
 
     &:before {

@@ -233,6 +233,20 @@ img {
     }
 }
 
+
+// Стиль сбрасывает iframe и прочее в картах. Выступает оберткой для различных карт
+.map-wrap {
+    width: 100%;
+    height: 100%;
+
+    iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
 @keyframes animation-pull {
     0% {
         transform: rotate(0);

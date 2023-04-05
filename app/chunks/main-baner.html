@@ -17,6 +17,15 @@
                 <p>Страница 404</p>
                 }
 
+                @@if (page == 'individuals') {
+                <ul>
+                    <li>Не боимся сложных задач</li>
+                    <li>Проявляем заботу о клиентах</li>
+                    <li>Гордимся своими сотрудниками</li>
+                    <li>Верим в свое дело, любим и продолжаем его</li>
+                </ul>
+                }
+
                 @@if (page == 'main') {
                 <ul>
                     <li>Рабочие на производство</li>
@@ -58,6 +67,9 @@
         }
         @@if (page == 'companies') {
         <a href="#" class="btn btn-next main-baner__btn">Начать сотрудничать</a>
+        }
+        @@if (page == 'individuals') {
+        <a href="/price.html" class="btn btn-next main-baner__btn">Смотреть цены</a>
         }
 
 

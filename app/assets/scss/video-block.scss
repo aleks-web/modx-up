@@ -71,7 +71,7 @@
             top: 60px;
             right: 60px;
             background-color: rgba(0, 0, 0, 0.26);
-            z-index: -1;
+            z-index: 0;
 
             @media (max-width: 1210px) {
                 top: -60px

@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('chunks/head.html', {"title": "Компаниям"})
+@@include('chunks/head.html', {
+"title": "Главная страница"
+})
 
 <body>
     @@include('chunks/header.html')
     @@include('chunks/main-baner.html', {
-    "title": "Рабочий персонал под любые объекты",
-    "other-img": "../assets/img/delete/mangood.png",
+    "title": "Поможем с любым переездом",
+    "other-img": "../assets/img/delete/man.png",
     "bg": "../assets/img/delete/bg.jpg",
-    "page": "companies",
+    "page": "individuals",
     })
     @@include('chunks/big-utp.html', {"bevel": "false", "title": "За что нас ценят клиенты?"})
-    @@include('chunks/partners.html')
+    @@include('chunks/stage.html')
     @@include('chunks/cases.html')
-    @@include('chunks/video-block.html', {"bevel": "false"})
+    @@include('chunks/reviews.html')
+    <!-- Здесь должна быть большая карта -->
     @@include('chunks/payment.html')
-    <!-- Сюда нужен блок Закрываем вакансии -->
     @@include('chunks/q-and-a.html')
     @@include('chunks/order-call.html')
 
 
 
     @@include('chunks/footer.html')
-    @@include('chunks/modals.html')
     @@include('chunks/svg.html')
 
     <script src="assets/js/main.min.js"></script>
