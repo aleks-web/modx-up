@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('chunks/head.html')
+@@include('chunks/head.html', {
+"title": "Главная страница"
+})
 
 <body>
   @@include('chunks/header.html')
   @@include('chunks/main-baner.html', {
   "title": "Рабочий персонал под любые задачи",
-  "other-img": "../assets/img/man.png",
-  "bg": "../assets/img/bg.jpg",
+  "other-img": "../assets/img/delete/man.png",
+  "bg": "../assets/img/delete/bg.jpg",
+  "page": "main",
   })
   @@include('chunks/cards.html')
   @@include('chunks/history-company.html')
-  @@include('chunks/big-utp.html')
+  @@include('chunks/big-utp.html', {"bevel": "true"})
   @@include('chunks/partners.html')
   @@include('chunks/presentation.html')
   @@include('chunks/cases.html')

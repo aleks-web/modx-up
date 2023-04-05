@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('chunks/head.html', {
-"title": "Страница 404"
+"title": "Наши контакты"
 })
 
 <body>
     @@include('chunks/header.html')
     @@include('chunks/main-baner.html', {
-    "title": "Страница не найдена",
+    "title": "Выполняем заказы 24/7",
     "other-img": "../assets/img/delete/man404.png",
     "bg": "../assets/img/delete/bg.jpg",
-    "page": "error",
+    "page": "contacts",
     })
+    @@include('chunks/contacts.html')
+    @@include('chunks/order-call.html')
 
 
     @@include('chunks/footer.html')

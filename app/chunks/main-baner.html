@@ -12,13 +12,32 @@
         <div class="main-baner__main-content">
             <h1 class="main-baner__title">@@title</h1>
             <div class="main-baner__main-content">
+
+                @@if (page == 'error') {
+                <p>Страница 404</p>
+                }
+
+                @@if (page == 'main') {
                 <ul>
                     <li>Рабочие на производство</li>
                     <li>Услуги аутсорсинга</li>
                     <li>Уборка и клининг</li>
                     <li>Такелажные работы</li>
                 </ul>
+                }
 
+                @@if (page == 'companies') {
+                <ul>
+                    <li>Складские комплексы</li>
+                    <li>Производственные площадки и фабрики</li>
+                    <li>Закрытые объекты с пропускным режимом</li>
+                    <li>Строительные объекты</li>
+                    <li>Гипермаркеты</li>
+                    <li>Выездные мероприятия</li>
+                </ul>
+                }
+
+                @@if (page == 'contacts') {
                 <div class="main-baner__contacts">
                     <span class="icon-text-phone">(423) 202-91-97</span>
                     <span class="icon-text-email">info@staff-24.ru</span>
@@ -29,12 +48,20 @@
                     <a class="btn-border-download" href="#">Договор</a>
                     <a class="btn-border-download" href="#">Акт</a>
                 </div>
+                }
+
             </div>
         </div>
 
+        @@if (page == 'main') {
         <a href="#" class="btn btn-next main-baner__btn">Смотреть цены</a>
+        }
+        @@if (page == 'companies') {
+        <a href="#" class="btn btn-next main-baner__btn">Начать сотрудничать</a>
+        }
 
 
+        @@if (page == 'main') {
         <div class="main-baner__utp">
             <div class="main-baner__utp-item">
                 <span class="main-baner__utp-icon"><img src="/assets/img/1.svg" alt=""></span>
@@ -53,6 +80,7 @@
                 <p class="main-baner__utp-desc">Отсрочка при крупных заказах</p>
             </div>
         </div>
+        }
     </div>
 
 </section>
