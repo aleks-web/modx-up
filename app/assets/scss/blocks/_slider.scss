@@ -81,3 +81,17 @@
         transform: rotate(180deg);
     }
 }
+
+// Слайдер видео
+.slider-video {
+
+    /**
+     * Поведение при активном навигационном слайде
+     * https://swiperjs.com/demos#thumbs-gallery
+    */
+    .swiper-slide-thumb-active {
+        .video-youtube-nav {
+            opacity: 1;
+        }
+    }
+}

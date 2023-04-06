@@ -3,33 +3,85 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 
     /**
+     * ? Стили для навигационной плашки
      * Если видео блок выступает в виде навигационной плашки.
      * Смотрим: https://swiperjs.com/demos#thumbs-gallery
-     * Миксуем. Ставим рядом с video-youtube
-     * Example: class="video-youtube video-youtube-nav"
+     * Миксуем. СТАВИМ рядом с video-youtube
+     * Example good: class="video-youtube video-youtube-nav"
      **/
     &-nav {
+        position: relative;
         min-height: 185px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        opacity: 0.8;
+        transition: var(--fast-animation) all;
+
+        @media (max-width: 576px) {
+            min-height: 130px;
+        }
+
+        @media (max-width: 376px) {
+            min-height: 100px;
+        }
+
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
 
         // Уменьшаем кнопку, т.к плашка навигационная дорвольно маленькая
         .btn-play {
             width: 30px;
             height: 30px;
+            cursor: context-menu;
 
+            @media (max-width: 376px) {
+                width: 20px;
+                height: 20px;
+            }
+
+            // При наведении ничего не делаем.
+            &:hover {
+                background-color: var(--main-btn-color);
+            }
+
+            // Иконка плей (треугольник)
             &:before {
                 width: 8px;
                 height: 15px;
+
+                @media (max-width: 376px) {
+                    width: 5px;
+                    height: 10px;
+                }
+            }
+        }
+
+        // Бутафорная линия
+        .video-youtube__line {
+            @media (max-width: 376px) {
+                bottom: 5px;
+                height: 1px;
             }
         }
     }
 
+
+    // Стили при наведеии
     &:hover &__line::before {
         background-color: var(--main-btn-color-hover);
     }
 
-    // В состоянии проигрывания
+    /**
+     * В состоянии проигрывания.
+     * Добавляется при клике при помощи js
+    */
     &--play &__video {
         opacity: 1;
         visibility: visible;
@@ -60,15 +112,18 @@
         background-repeat: no-repeat;
         z-index: 0;
         transition: var(--fast-animation) all;
+
+        img {
+            transition: var(--fast-animation) all;
+            object-fit: contain;
+        }
     }
 
-    // Картинка фон
-    img {
-        transition: var(--fast-animation) all;
-        object-fit: contain;
-    }
-
-    // Блок видео
+    /**
+     * Блок видео
+     * Изначально пуст
+     * Подгружается видео при клике
+    */
     &__video {
         opacity: 0;
         visibility: hidden;
@@ -85,7 +140,10 @@
     }
 }
 
-// Линия проигрывания. Бутафория
+/**
+ * Линия проигрывания. Бутафорная.
+ * Ее можно использовать по желанию в html.
+*/
 .video-youtube__line {
     position: absolute;
     width: 90%;
@@ -119,3 +177,113 @@
         background-color: rgba(200, 200, 200, 0.4);
     }
 }
+
+
+/**
+ * ! Одиночный блок с видео
+ * Если необходимо вставить одиночное видео (без слайдеров), то вставляем, КАК ОБЫЧНЫЙ СЛАЙД
+ * В будущем возможно нужно будет проинициализировать слайдер.
+ * С готовой разметкой это легче сделать
+ * ! Не забудьте сделать обертку
+ 
+    <div class="КЛАСС_ОБЕРТКА">
+
+        <!--swiper-slide -->
+        <div class="swiper-slide">
+            <div class="video-youtube-nav">
+                <span class="btn-play"></span>
+                <span class="video-youtube__img"
+                    style="background-image: url('../assets/img/delete/bg.jpg');"></span>
+                <!--img class="video-youtube__img" src="../assets/img/delete/bg.jpg" alt=""-->
+
+                <span class="video-youtube__line">
+                    <span class="video-youtube__line-loaded"></span>
+                </span>
+            </div>
+        </div>
+        <!--END swiper-slide -->
+
+    </div>
+
+*/
+
+
+/**
+ * ! Вид слайда, если он навигационный (не основной)
+ * Смотрим: https://swiperjs.com/demos#thumbs-gallery
+
+    <!--swiper-slide -->
+    <div class="swiper-slide">
+        <div class="video-youtube video-youtube-nav">
+            <span class="btn-play"></span>
+            <span class="video-youtube__img"
+                style="background-image: url('../assets/img/delete/bg.jpg');"></span>
+
+            <span class="video-youtube__line">
+                <span class="video-youtube__line-loaded"></span>
+            </span>
+        </div>
+    </div>
+    <!--END swiper-slide -->
+ */
+
+
+
+/**
+ * ! JS код инициализации двух слайдеров.
+ * ! Основного и вспомогательного (навигационного)
+
+    <!-- Initialize Swiper -->
+    <script>
+        // Вспомогательный (навигационный).
+        // Всегда инициализируется первым, чем основной.
+        // Ставим в коде раньше.
+        var videoSliderNav1 = new Swiper(".video-block__slider-nav", {
+            spaceBetween: 10,
+            slidesPerView: 2,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+
+
+        // Основной слайдер
+        var videoSlider1 = new Swiper(".video-block__slider", {
+            spaceBetween: 10,
+            thumbs: {
+                swiper: videoSliderNav1,
+            }
+        });
+    </script>
+    <!-- END Initialize Swiper -->
+ */
+
+
+
+/**
+ * ! Вид слайда, если он основной
+ * Смотрим: https://swiperjs.com/demos#thumbs-gallery
+
+    <!--swiper-slide -->
+    <div class="swiper-slide">
+        <div class="video-youtube video-block__video" data-video-id="_OzWxKSm1rU">
+            <span class="btn-play"></span>
+            <span class="video-youtube__img"
+                style="background-image: url('../assets/img/delete/bg.jpg');"></span>
+
+            <div class="video-youtube__video">
+
+            </div>
+
+            <span class="video-youtube__line">
+                <span class="video-youtube__line-loaded"></span>
+            </span>
+        </div>
+    </div>
+    <!--END swiper-slide -->
+
+ 
+ * Есть небольшие отличия, но они не большие.
+ * В основном элементе есть video-youtube по которому цепляется js код и вытаскивает атрибут data-video-id (id видео с ютюб)
+ * Также есть элемент video-youtube__video, куда потом подгружается видео
+ * Использование video-youtube__line - по желанию. Это бутофорная линия загрузки видео.
+ */

@@ -3,11 +3,6 @@
 */
 $(function () {
 
-    // Функция, которая затемняет сайт
-    function addBodyBackground(e) {
-        $('body').addClass('blackout');
-    }
-
     $('.drop-listing').each(function (e) {
 
         $(this).mousemove(function (e) {
@@ -57,14 +52,16 @@ $(function () {
 
     // Блоки видео
     $('.video-youtube').each(function (e) {
-        $(this).click(function (e) {
-            let videoId = $(this).data('video-id');
-            let videoSrc = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
-            e.preventDefault();
+        if (!$(this).hasClass('video-youtube-nav')) {
+            $(this).click(function (e) {
+                let videoId = $(this).data('video-id');
+                let videoSrc = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+                e.preventDefault();
 
-            $(this).addClass('video-youtube--play');
-            $(this).find('.video-youtube__video').html('<iframe src="' + videoSrc + '" allow="autoplay" frameborder="0" allowfullscreen></iframe>');
-        });
+                $(this).addClass('video-youtube--play');
+                $(this).find('.video-youtube__video').html('<iframe src="' + videoSrc + '" allow="autoplay" frameborder="0" allowfullscreen></iframe>');
+            });
+        }
     });
 
     // Табы
@@ -124,5 +121,55 @@ $(function () {
         });
 
     });
+
+
+
+    // Скрипт, который инициализирует слайдеры видеоблока
+
+    $('.video-block').each(function (e) {
+
+        let ID = $(this).find('.video-block__slider').attr('id');
+        let IDNav = $(this).find('.video-block__slider-nav').attr('id');
+
+        console.log(ID);
+
+        if (ID) {
+
+        }
+
+        // thisSwiperVideo_[e] = new Swiper(".video-block__slider", {
+        //     spaceBetween: 10,
+        //     thumbs: {
+        //         swiper: videoSliderNav1,
+        //     }
+        // });
+
+        // thisSwiperVideoNav_[e] = new Swiper(".video-block__slider-nav", {
+        //     spaceBetween: 10,
+        //     slidesPerView: 2,
+        //     freeMode: true,
+        //     watchSlidesProgress: true,
+        // });
+
+    });
+
+    // // Вспомогательный (навигационный).
+    // // Всегда инициализируется первым, чем основной.
+    // // Ставим в коде раньше.
+    // var videoSliderNav1 = new Swiper(".video-block__slider-nav", {
+    //     spaceBetween: 10,
+    //     slidesPerView: 2,
+    //     freeMode: true,
+    //     watchSlidesProgress: true,
+    // });
+
+
+    // // Основной слайдер
+    // var videoSlider1 = new Swiper(".video-block__slider", {
+    //     spaceBetween: 10,
+    //     thumbs: {
+    //         swiper: videoSliderNav1,
+    //     }
+    // });
 
 });

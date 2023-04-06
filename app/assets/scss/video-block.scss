@@ -86,10 +86,6 @@
             min-width: unset;
             width: 100%;
         }
-
-        @media (max-width: 376px) {
-            width: calc(100% + var(--container-padding) * 2);
-        }
     }
 
     &__left {
@@ -107,8 +103,9 @@
         }
     }
 
+    // Основной заголовок. Миксуется с .block-title
     &__title {
-        margin-bottom: 0;
+        margin-bottom: 30px;
 
         @media (max-width: 1210px) {
             margin-bottom: 20px;
@@ -162,7 +159,7 @@
                 align-items: flex-start;
 
                 &:before {
-                    top: 5px;
+                    top: 2px;
 
                     @media (max-width: 376px) {
                         top: 0;
@@ -195,6 +192,22 @@
 
         @media (max-width: 576px) {
             height: 250px;
+        }
+    }
+
+    &__slider {
+        @media (max-width: 376px) {
+            width: calc(100% + var(--container-padding) * 2);
+            margin-left: var(--container-padding-negative) !important;
+        }
+    }
+
+    // Для навигационного меню
+    &__slider-nav {
+        margin-top: 20px;
+
+        @media (max-width: 376px) {
+            margin-bottom: var(--container-padding);
         }
     }
 
