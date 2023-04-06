@@ -1,5 +1,29 @@
 .video-youtube {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /**
+     * Если видео блок выступает в виде навигационной плашки.
+     * Смотрим: https://swiperjs.com/demos#thumbs-gallery
+     * Миксуем. Ставим рядом с video-youtube
+     * Example: class="video-youtube video-youtube-nav"
+     **/
+    &-nav {
+        min-height: 185px;
+
+        // Уменьшаем кнопку, т.к плашка навигационная дорвольно маленькая
+        .btn-play {
+            width: 30px;
+            height: 30px;
+
+            &:before {
+                width: 8px;
+                height: 15px;
+            }
+        }
+    }
 
     &:hover &__line::before {
         background-color: var(--main-btn-color-hover);
@@ -54,6 +78,7 @@
         transition: var(--fast-animation) all;
     }
 
+    // Сам фрейм видео
     iframe {
         width: 100%;
         height: 100%;

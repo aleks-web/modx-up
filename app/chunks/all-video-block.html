@@ -1,0 +1,109 @@
+<section class="block all-video-block">
+    <div class="all-video-block__wrap @@if(bevel == 'true') {all-video-block__wrap--bevel}">
+        <div class="all-video-block__container container">
+
+            <div class="all-video-block__left">
+                <div class="block-title all-video-block__title">
+                    <span class="block-title__title">С большим уважением относимся к каждому сотруднику</span>
+                </div>
+
+                <div class="all-video-block__content">
+                    <p>Из года в год мы создавали самые комфортные условия работы для персонала различной квалификации.
+                    </p>
+                    <p>Мы с большим уважением относимся к каждому сотруднику, потому что гордимся тем, какую важную
+                        работу они выполняют каждый день.</p>
+                </div>
+            </div>
+
+
+            <div class="all-video-block__right">
+
+                <!--all-video-block__slider -->
+                <div class="all-video-block__slider swiper">
+                    <div class="swiper-wrapper">
+
+
+                        <div class="swiper-slide">
+                            <div class="video-youtube all-video-block__video" data-video-id="_OzWxKSm1rU">
+                                <span class="btn-play"></span>
+                                <span class="video-youtube__img"
+                                    style="background-image: url('../assets/img/delete/bg.jpg');"></span>
+                                <!--img class="video-youtube__img" src="../assets/img/delete/bg.jpg" alt=""-->
+
+                                <div class="video-youtube__video">
+
+                                </div>
+
+                                <span class="video-youtube__line">
+                                    <span class="video-youtube__line-loaded"></span>
+                                </span>
+                            </div>
+                        </div><!--END swiper-slide -->
+
+
+
+
+                    </div><!--END swiper-wrapper -->
+                </div>
+                <!--END all-video-block__slider -->
+
+
+                <!--all-video-block__slider -->
+                <div class="all-video-block__slider-nav swiper">
+                    <div class="swiper-wrapper">
+
+
+                        <div class="swiper-slide">
+                            <div class="video-youtube video-youtube-nav" data-video-id="_OzWxKSm1rU">
+                                <span class="btn-play"></span>
+                                <span class="video-youtube__img"
+                                    style="background-image: url('../assets/img/delete/bg.jpg');"></span>
+                                <!--img class="video-youtube__img" src="../assets/img/delete/bg.jpg" alt=""-->
+
+                                <div class="video-youtube__video">
+
+                                </div>
+
+                                <span class="video-youtube__line">
+                                    <span class="video-youtube__line-loaded"></span>
+                                </span>
+                            </div>
+                        </div><!--END swiper-slide -->
+
+
+
+
+                    </div><!--END swiper-wrapper -->
+                </div>
+                <!--END all-video-block__slider -->
+
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+    const videoSlider = new Swiper('.all-video-block__slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+
+        navigation: {
+            nextEl: '.slider__button-next',
+            prevEl: '.slider__button-prev',
+        }
+    });
+
+    const videoSliderNav = new Swiper('.all-video-block__slider-nav', {
+        slidesPerView: 2,
+        spaceBetween: 20,
+
+        navigation: {
+            nextEl: '.slider__button-next',
+            prevEl: '.slider__button-prev',
+        }
+    });
+</script>

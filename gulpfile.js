@@ -6,12 +6,12 @@
 
 const { src, dest, watch, parallel } = require('gulp'),                            // Gulp
 
-scss                                   = require('gulp-sass')(require('sass')),    // sass
-concat                                 = require('gulp-concat'),                   // concat - соеденить скрипты
-browserSync                            = require('browser-sync').create(),         // browserSync - слежка за страницей
-uglify                                 = require('gulp-uglify-es').default,        // gulp-uglify-es - работа с js файлами
-autoprefixer                           = require('gulp-autoprefixer');             // gulp-autoprefixer - префиксы для браузеров
-fileinclude                            = require('gulp-file-include');             // gulp-file-include - для импорта html в html
+    scss = require('gulp-sass')(require('sass')),         // sass
+    concat = require('gulp-concat'),                      // concat - соеденить скрипты
+    browserSync = require('browser-sync').create(),       // browserSync - слежка за страницей
+    uglify = require('gulp-uglify-es').default,           // gulp-uglify-es - работа с js файлами
+    autoprefixer = require('gulp-autoprefixer'),          // gulp-autoprefixer - префиксы для браузеров
+    fileinclude = require('gulp-file-include');           // gulp-file-include - для импорта html в html
 
 const dir = {
     app: "app/",
@@ -20,7 +20,7 @@ const dir = {
     distJs: "dist/assets/js",
 }
 
-function browsersync () {
+function browsersync() {
     browserSync.init({
         server: {
             baseDir: 'dist/',
@@ -33,7 +33,7 @@ function styles() {
         .pipe(scss())
         .pipe(concat('style.min.css'))
         //.pipe(autoprefixer({
-            //overrideBrowserslist: ['last 10 version']
+        //overrideBrowserslist: ['last 10 version']
         //}))
         .pipe(dest(`${dir.distCss}`))
         .pipe(browserSync.stream())
@@ -41,20 +41,20 @@ function styles() {
 
 function scripts() {
     return src('app/assets/js/main.js')
-    .pipe(concat('main.min.js'))
-    .pipe(uglify())
-    .pipe(dest(`${dir.distJs}`))
-    .pipe(browserSync.stream())
+        .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(dest(`${dir.distJs}`))
+        .pipe(browserSync.stream())
 }
 
 function html() {
     return src('app/*.html')
-    .pipe(fileinclude({
-        prefix: '@@',
-        basepath: '@file'
-    }))
-    .pipe(dest(`${dir.dist}`))
-    .pipe(browserSync.stream())
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(dest(`${dir.dist}`))
+        .pipe(browserSync.stream())
 }
 
 function watching() {
@@ -69,8 +69,8 @@ function build() {
         'app/assets/fonts/**/*',
         'app/assets/img/**/*',
         'app/**/*.html'
-    ], {base: 'app'})
-    .pipe(dest(`${dir.dist}`))
+    ], { base: 'app' })
+        .pipe(dest(`${dir.dist}`))
 }
 
 exports.styles = styles;
