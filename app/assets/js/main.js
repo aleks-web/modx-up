@@ -3,6 +3,30 @@
 */
 $(function () {
 
+    // Функция проверки элемента на скрол
+    function hasScroll(element) {
+        const conteinerScroll = document.querySelector(element).scrollWidth;
+        const containerVisible = document.querySelector(element).offsetWidth;
+
+        if (conteinerScroll > containerVisible) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+        Главное меню
+    */
+    $('.nav__burger').click(function (e) {
+        $('.mob-menu').css('transform', 'translateX(0)');
+        $('.mob-menu').addClass('open');
+    });
+
+
+
+
     $('.drop-listing').each(function (e) {
 
         $(this).mousemove(function (e) {
@@ -23,12 +47,6 @@ $(function () {
         $(this).click(function (e) {
             $(this).toggleClass('card-info--open');
         });
-    });
-
-    // Главное меню
-    $('.nav__burger').click(function (e) {
-        $('.mob-menu').css('transform', 'translateX(0)');
-        $('.mob-menu').addClass('open');
     });
 
 

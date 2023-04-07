@@ -84,19 +84,20 @@
         height: auto;
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas:
             "col1 col2 col3";
-        justify-content: center;
+        justify-content: space-between;
     }
 
     // Меню в шапке
     &__nav {
         height: 100%;
-        width: 100%;
+        width: 80%;
         position: relative;
         display: flex;
         align-items: center;
+        overflow-x: inherit;
+        overflow-y: unset;
 
         @media (max-width: 1210px) {
             grid-area: col1;
@@ -166,6 +167,7 @@
 // Блок с выпадающим списком при наведении
 // Меню
 .nav {
+    padding: 0;
     height: 50px;
     display: flex;
     align-items: center;
@@ -177,6 +179,16 @@
         display: none;
     }
 
+    &__menu {
+        padding: 0;
+        margin-right: 10px;
+        height: 100%;
+
+        &:before {
+            content: unset;
+        }
+    }
+
     // Кнопка раскрытия меню (бургер)
     &__burger {
         padding: 12px;
@@ -185,6 +197,7 @@
         display: none;
         flex-direction: column;
         justify-content: space-between;
+        cursor: pointer;
 
         @media (max-width: 576px) {
             padding: 7px;
@@ -253,6 +266,7 @@
 
         >.nav__item-arrow {
             margin-right: 15px;
+            margin-left: -15px;
         }
 
         // Пункт меню в виде текста или ссылки
@@ -313,8 +327,8 @@
         }
 
         .nav__item-arrow {
-
             transform: rotate(-45deg);
+            margin-left: -45px;
         }
 
         .nav__sub-menu {

@@ -2,13 +2,13 @@
     background: linear-gradient(to bottom, var(--main-color) 50%, var(--main-color-6) 50%);
 
     // Обращаемся к следующему блоку
-    ~section {
-        padding-top: 50px !important;
+    // ~section {
+    //     padding-top: 50px !important;
 
-        @media (max-width: 1024px) {
-            padding-top: unset;
-        }
-    }
+    //     @media (max-width: 1024px) {
+    //         padding-top: unset;
+    //     }
+    // }
 
     &__wrap {
         position: relative;
