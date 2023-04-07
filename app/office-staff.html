@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('chunks/head.html', {
+"title": "Главная страница"
+})
+
+<body>
+    @@include('chunks/header.html')
+    @@include('chunks/main-baner.html', {
+    "title": "Начни зарабатывать со СмартСтафф уже сегодня",
+    "other-img": "../assets/img/delete/girl2.png",
+    "bg": "../assets/img/delete/bg.jpg",
+    "page": "office-staff",
+    })
+
+    @@include('chunks/vacant.html')
+    @@include('chunks/pluses-work.html')
+    @@include('chunks/video-block-all.html', {"bevel": "true"})
+
+
+    @@include('chunks/footer.html')
+    @@include('chunks/svg.html')
+
+    <script src="assets/js/main.min.js"></script>
+</body>
+
+</html>

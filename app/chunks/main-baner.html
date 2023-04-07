@@ -26,6 +26,17 @@
                 </ul>
                 }
 
+
+                @@if (page == 'office-staff') {
+                <ul>
+                    <li>Официальное трудоустройство</li>
+                    <li>Полис ДМС</li>
+                    <li>Обучение и карьерный рост</li>
+                    <li>Возможность работать удаленно</li>
+                </ul>
+                }
+
+
                 @@if (page == 'main') {
                 <ul>
                     <li>Рабочие на производство</li>
@@ -70,6 +81,9 @@
         }
         @@if (page == 'individuals') {
         <a href="/price.html" class="btn btn-next main-baner__btn">Смотреть цены</a>
+        }
+        @@if (page == 'office-staff') {
+        <a href="#" class="btn btn-next main-baner__btn">Заполнить анкету</a>
         }
 
 

@@ -124,52 +124,37 @@ $(function () {
 
 
 
-    // Скрипт, который инициализирует слайдеры видеоблока
-
+    // Скрипт, который инициализирует слайдеры видеоблоков
     $('.video-block').each(function (e) {
 
-        let ID = $(this).find('.video-block__slider').attr('id');
-        let IDNav = $(this).find('.video-block__slider-nav').attr('id');
+        /**
+         * Получаем уникальные идентификаторы блоков видео
+         * Основной блок - ID, вспомогательный (или навигационный) - IDNav
+        */
+        let ID = '#' + $(this).find('.video-block__slider').attr('id');
+        let IDNav = '#' + $(this).find('.video-block__slider-nav').attr('id');
 
-        console.log(ID);
+        // Инициализируем если присутствует навигационный блок
+        if (IDNav) {
 
-        if (ID) {
-
+            new Swiper(IDNav, {
+                spaceBetween: 10,
+                slidesPerView: 2,
+                freeMode: true,
+                watchSlidesProgress: true,
+            });
         }
 
-        // thisSwiperVideo_[e] = new Swiper(".video-block__slider", {
-        //     spaceBetween: 10,
-        //     thumbs: {
-        //         swiper: videoSliderNav1,
-        //     }
-        // });
-
-        // thisSwiperVideoNav_[e] = new Swiper(".video-block__slider-nav", {
-        //     spaceBetween: 10,
-        //     slidesPerView: 2,
-        //     freeMode: true,
-        //     watchSlidesProgress: true,
-        // });
+        // Инициализируем если присутствует основной блок
+        if (ID) {
+            new Swiper(ID, {
+                spaceBetween: 10,
+                thumbs: {
+                    swiper: IDNav,
+                }
+            });
+        }
 
     });
-
-    // // Вспомогательный (навигационный).
-    // // Всегда инициализируется первым, чем основной.
-    // // Ставим в коде раньше.
-    // var videoSliderNav1 = new Swiper(".video-block__slider-nav", {
-    //     spaceBetween: 10,
-    //     slidesPerView: 2,
-    //     freeMode: true,
-    //     watchSlidesProgress: true,
-    // });
-
-
-    // // Основной слайдер
-    // var videoSlider1 = new Swiper(".video-block__slider", {
-    //     spaceBetween: 10,
-    //     thumbs: {
-    //         swiper: videoSliderNav1,
-    //     }
-    // });
 
 });
