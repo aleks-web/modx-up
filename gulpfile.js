@@ -16,8 +16,8 @@ const { src, dest, watch, parallel } = require('gulp'),                         
 const dir = {
     app: "app/",
     dist: "dist/",
-    distCss: "dist/assets/css",
-    distJs: "dist/assets/js",
+    distCss: "dist/assets/template/css",
+    distJs: "dist/assets/template/js",
 }
 
 function browsersync() {
@@ -29,7 +29,7 @@ function browsersync() {
 }
 
 function styles() {
-    return src('app/assets/scss/style.scss')
+    return src('app/assets/template/scss/style.scss')
         .pipe(scss())
         .pipe(concat('style.min.css'))
         //.pipe(autoprefixer({
@@ -40,7 +40,7 @@ function styles() {
 }
 
 function scripts() {
-    return src('app/assets/js/main.js')
+    return src('app/assets/template/js/main.js')
         .pipe(concat('main.min.js'))
         .pipe(uglify())
         .pipe(dest(`${dir.distJs}`))
@@ -58,16 +58,16 @@ function html() {
 }
 
 function watching() {
-    watch(['app/assets/scss/**/*.scss'], styles);
-    watch(['app/assets/js/**/*.js', '!app/js/main.min.js'], scripts);
+    watch(['app/assets/template/scss/**/*.scss'], styles);
+    watch(['app/assets/template/js/**/*.js', '!app/assets/template/js/main.min.js'], scripts);
     watch(['app/**/*.html']).on('change', html);
 }
 
 function build() {
     return src([
-        'app/assets/scss/**/*.scss',
-        'app/assets/fonts/**/*',
-        'app/assets/img/**/*',
+        'app/assets/template/scss/**/*.scss',
+        'app/assets/template/fonts/**/*',
+        'app/assets/template/img/**/*',
         'app/**/*.html'
     ], { base: 'app' })
         .pipe(dest(`${dir.dist}`))
