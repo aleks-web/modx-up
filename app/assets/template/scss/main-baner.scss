@@ -127,6 +127,10 @@
             }
         }
 
+        p {
+            font-size: 1.3rem;
+        }
+
         @media (max-width: 1024px) {
             width: 100%;
         }
@@ -143,7 +147,12 @@
             padding-left: 10px;
         }
 
-        ul li {
+        ol {
+            padding-left: 35px;
+        }
+
+        ul li,
+        ol li {
             margin-bottom: 13px;
             font-size: 1.4rem;
 
@@ -171,18 +180,19 @@
             }
         }
     }
+}
 
-    // Группа кномок
-    &__btns-wrap {
-        display: flex;
-        align-items: center;
+// Группа кнопок
+.main-baner__btns-wrap {
+    display: flex;
+    margin: 25px 0;
+    align-items: center;
 
-        >* {
-            margin-right: 20px;
+    >* {
+        margin-right: 20px;
 
-            &:last-child {
-                margin-right: 0;
-            }
+        &:last-child {
+            margin-right: 0;
         }
     }
 }

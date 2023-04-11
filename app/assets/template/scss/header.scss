@@ -33,13 +33,13 @@
 
     /* 
         ? Элемент с городами в шапке
-        desc: Расширяет и переопределяет стили БЭМ блока blocks/_drop-listing.scss
+        desc: Обертка для БЭМ блока blocks/_drop-listing.scss
     */
     &__city {
         margin-right: 25px;
 
-        // Текущий город при множестве городов
-        &-current {
+        // Текущий город
+        .drop-listing__current {
             padding: 0 10px;
             height: 100%;
         }
@@ -51,10 +51,10 @@
 
     /* 
         ? Элемент с номерами телефонов в шапке
-        desc: Расширяет и переопределяет стили БЭМ блока blocks/_phone.scss
+        desc: Обертка для БЭМ блока blocks/_phone.scss
     */
     &__phone {
-        &-number {
+        .phone__number {
             font-size: 1rem;
         }
     }

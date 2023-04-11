@@ -1,12 +1,12 @@
 .big-utp {
     position: relative;
     overflow: hidden;
-    background-color: var(--main-color) !important;
+    background-color: var(--main-color);
 
     &__wrap {
         padding-bottom: 0;
         padding-top: 145px;
-        background-color: var(--main-color-6) !important;
+        background-color: var(--main-color-6);
 
         // Верхний скос блока
         &--bevel {
@@ -80,7 +80,7 @@
 
             // Скос, срез угла
             &--bevel {
-                clip-path: polygon(100% 2%, 100% 85%, 85% 100%, 0 100%, 0 0);
+                clip-path: polygon(100% 0, 100% 85%, 85% 100%, 0 100%, 0 0);
             }
 
             // Срез у первого и последнего элемента
@@ -90,7 +90,7 @@
             }
 
             &:last-child {
-                clip-path: polygon(100% 2%, 100% 85%, 85% 100%, 0 100%, 0 0);
+                clip-path: polygon(100% 0, 100% 85%, 85% 100%, 0 100%, 0 0);
             }
 
             &-desc {
