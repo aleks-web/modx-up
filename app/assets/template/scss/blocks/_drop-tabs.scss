@@ -310,6 +310,55 @@
             padding: 0;
             margin-bottom: 20px;
         }
+
+        // Отступы между всеми элементами в контенте
+        >* {
+            margin-bottom: 15px;
+            margin-top: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        // Настройка заголовков
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: var(--main-color-4);
+            margin-top: 30px;
+        }
+
+        // Настройка списков в контенте
+        ul {
+            padding-left: 0;
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            li {
+                padding-left: 20px;
+            }
+
+            li:before {
+                background-image: unset;
+                background-color: var(--main-color-4);
+                height: 3px;
+                width: 10px;
+                border-radius: 10px;
+            }
+        }
+
+        ol {
+            padding-left: 17px;
+        }
     }
 
     &__list {

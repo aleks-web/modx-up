@@ -26,9 +26,11 @@
     // Обертка левого контента (главная информация)
     &__main {
         min-width: 300px;
+        margin-right: 60px;
 
         @media (max-width: 768px) {
             min-width: unset;
+            margin-right: 0;
             margin-bottom: 50px;
         }
 

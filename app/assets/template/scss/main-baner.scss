@@ -108,8 +108,12 @@
     &__title {
         @include main-title;
         color: var(--white);
-        margin-bottom: 30px;
+        margin-bottom: 0 !important;
         width: 70%;
+
+        ~* {
+            margin-top: 30px;
+        }
 
         @media (max-width: 1024px) {
             width: 100%;
@@ -135,8 +139,8 @@
             width: 100%;
         }
 
-        ~a[class*='__btn'] {
-            margin-top: 40px;
+        ~* {
+            margin-top: 30px;
         }
 
         ~div[class*='main-baner__utp'] {

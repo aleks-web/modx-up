@@ -48,6 +48,23 @@ button {
     border: none;
 }
 
+/*
+    Заголовки
+*/
+h1 {
+    @include main-title;
+}
+
+h2 {
+    @include title-h2;
+}
+
+h3 {
+    @include title-h3;
+}
+
+/* END Заголовки */
+
 /* Списки */
 ul {
     list-style: none;
