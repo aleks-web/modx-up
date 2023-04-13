@@ -1,6 +1,6 @@
 .drop-listing {
     position: relative;
-    font-size: 1rem;
+    font-size: inherit;
     height: 100%;
     display: flex;
     align-items: center;
@@ -57,6 +57,8 @@
         padding: 10px 15px;
         width: 100%;
         color: #747E94;
+        font-weight: 300;
+        font-size: inherit;
         transition: var(--fast-animation) all;
 
         &:last-child {

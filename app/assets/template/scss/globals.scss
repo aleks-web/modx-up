@@ -127,10 +127,10 @@ img {
 .container {
     position: relative;
     margin: 0 auto;
-    max-width: 1400px;
+    max-width: var(--container);
 
     @media (max-width: 1440px) {
-        max-width: 1170px;
+        max-width: var(--container-1440);
     }
 
     @media (max-width: 1210px) {

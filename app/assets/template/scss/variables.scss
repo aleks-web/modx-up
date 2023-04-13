@@ -2,6 +2,10 @@
     // Пропорция
     --index: 1vh + 1vw;
 
+    // Контейнер
+    --container: 1400px; // Дефолт: 1400px
+    --container-1440: 1170px; // Дефолт: 1170px
+
     // Падинги контейнера, когда он резиновый ( не фиксированный )
     --container-padding: 30px;
     --container-padding-negative: -30px;

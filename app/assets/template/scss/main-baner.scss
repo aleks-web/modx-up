@@ -265,6 +265,7 @@
     &-icon {
         margin-bottom: 15px;
         height: 44px;
+        display: block;
 
         @media (max-width: 576px) {
             height: 30px;
@@ -272,7 +273,8 @@
             margin-right: 15px;
         }
 
-        img {
+        img,
+        svg {
             height: 100%;
             width: auto;
         }

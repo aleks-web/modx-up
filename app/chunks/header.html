@@ -40,14 +40,46 @@
 
             <div class="header-info__brand">
                 <div class="header-info__brand-logo">
-                    <a href="/"><img src="../assets/template/img/delete/logo.svg" alt=""></a>
+                    <a class="header-info__brand-img" href="/"><img src="../assets/template/img/delete/logo.svg"
+                            alt=""></a>
                 </div>
             </div>
 
+
             <nav class="header-info__nav">
+
                 <ul class="nav">
-                    <li class="nav__item">
-                        <a class="nav__item-link" href="#"><span class="nav__item-active">Цены</span></a>
+                    <li class="nav__item-parent nav__item nav__item-first nav__item-level-1 nav__item-active">
+                        <span class="nav__item-text">Главная</span>
+                        <span class="nav__item-arrow"></span>
+                        <ul class="nav__sub-menu">
+                            <li class="nav__item-parent nav__item nav__item-first nav__item-level-2"><a
+                                    class="nav__item-link" href="index/price/">Цены</a><span
+                                    class="nav__item-arrow"></span>
+                                <ul class="nav__sub-menu">
+                                    <li class="nav__item nav__item-first nav__item-level-3"><a class="nav__item-link"
+                                            href="index/price/contacts.html">Контакты</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="drop-listing">
+                    <span class="drop-listing__current drop-listing__current-arrow--black">
+                        <span>Еще</span>
+                    </span>
+                    <div class="drop-listing__list">
+                        <a class="drop-listing__item" href="#">Пункт 1</a>
+                        <a class="drop-listing__item" href="#">Пункт 2</a>
+                    </div>
+                </div>
+
+
+
+                <!-- <ul class="nav">
+                    <li class="nav__item-parent nav__item-active nav__item">
+                        <a class="nav__item-link" href="#"><span class="nav__item-text">Цены</span></a>
                         <span class="nav__item-arrow"></span>
 
                         <ul class="nav__sub-menu">
@@ -69,9 +101,7 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- <li class="nav__item"><a class="nav__item-link" href="/companies.html">Компаниям</a></li>
-                    <li class="nav__item"><a class="nav__item-link" href="/individuals.html">Частным лицам</a></li>
-                    <li class="nav__item"><a class="nav__item-link" href="/contacts.html">Контакты</a></li> -->
+                    
                     <li class="nav__item"><a class="nav__item-link" href="/office-staff.html">Офисный персонал</a></li>
                     <li class="nav__item"><a class="nav__item-link" href="/404.html">Страница 404</a></li>
                     <li class="nav__menu">
@@ -91,7 +121,7 @@
                             <a href="#" class="btn-call-mini"></a>
                         </div>
                     </li>
-                </ul>
+                </ul> -->
 
                 <span class="nav__burger">
                     <span class="nav__burger-line"></span>
@@ -100,6 +130,12 @@
                 </span>
 
             </nav>
+
+            <div class="header-info__btn">
+                <a class="btn" href="#">Заказать звонок</a>
+                <a href="#" class="btn-call-mini"></a>
+            </div>
+
         </div>
     </section>
 </header>

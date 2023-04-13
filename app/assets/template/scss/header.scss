@@ -83,31 +83,46 @@
     &__container {
         height: auto;
         width: 100%;
-        display: grid;
+        display: flex;
+        align-items: center;
         grid-template-areas:
             "col1 col2 col3";
         justify-content: space-between;
+
+        @media (max-width: 1210px) {
+            display: grid;
+        }
     }
 
     // Меню в шапке
     &__nav {
-        height: 100%;
-        width: 80%;
+        height: 50px;
+        width: 100%;
         position: relative;
         display: flex;
+        font-size: 1.25rem;
         align-items: center;
+        justify-content: flex-end;
         overflow-x: inherit;
         overflow-y: unset;
 
         @media (max-width: 1210px) {
             grid-area: col1;
+
+            .drop-listing {
+                display: none;
+            }
+        }
+
+        .drop-listing__item:hover {
+            color: var(--main-color-7);
         }
     }
 }
 
 // Кнопка в шапке
 .header-info__btn {
-    margin-left: 10px;
+    margin-left: 35px;
     display: flex;
     align-items: center;
 
@@ -119,7 +134,7 @@
         height: 50px;
         font-size: 1.12rem;
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1210px) {
             display: none;
         }
     }
@@ -127,7 +142,7 @@
     .btn-call-mini {
         display: none;
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1210px) {
             display: block;
         }
 
@@ -147,6 +162,12 @@
 
     @media (max-width: 1210px) {
         justify-content: center;
+    }
+
+    &-img {
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
     img {
@@ -193,7 +214,7 @@
     &__burger {
         padding: 12px;
         height: 45px;
-        width: 55px;
+        min-width: 55px;
         display: none;
         flex-direction: column;
         justify-content: space-between;
@@ -202,7 +223,7 @@
         @media (max-width: 576px) {
             padding: 7px;
             height: 32px;
-            width: 38px;
+            min-width: 38px;
         }
 
         &-line {
@@ -264,14 +285,17 @@
             transform: rotate(-140deg);
         }
 
-        >.nav__item-arrow {
-            margin-right: 15px;
-            margin-left: -15px;
+        &-parent {
+            margin-right: 25px;
+        }
+
+        &-parent &-text {
+            padding-right: 10px;
         }
 
         // Пункт меню в виде текста или ссылки
         &-link,
-        &-active {
+        &-text {
             display: flex;
             align-items: center;
             height: 100%;
@@ -288,9 +312,8 @@
         }
 
         // Стили для активного меню
-        &-active {
+        &-text {
             color: var(--main-btn-color);
-            cursor: context-menu;
         }
 
         &-link {
@@ -314,6 +337,7 @@
         padding: 0;
         height: 100%;
         top: 100%;
+        width: max-content;
         opacity: 0;
         visibility: hidden;
         z-index: 10;
@@ -328,7 +352,7 @@
 
         .nav__item-arrow {
             transform: rotate(-45deg);
-            margin-left: -45px;
+            margin-right: 10px;
         }
 
         .nav__sub-menu {
@@ -368,6 +392,7 @@
         width: 20px;
     }
 
+    // Кнопка
     &__btn {
         padding: 20px;
 
