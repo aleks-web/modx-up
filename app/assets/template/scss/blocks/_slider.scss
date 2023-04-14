@@ -1,7 +1,12 @@
 // Стилизация слайдера
 .slider {
-    height: 100%;
+    height: auto;
     top: -65px;
+
+
+    &__wrapper {
+        height: auto;
+    }
 
     &__button-wrap {
         display: flex;
