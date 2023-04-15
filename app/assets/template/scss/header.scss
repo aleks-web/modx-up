@@ -371,10 +371,9 @@
     width: max-content;
     padding: 40px 20px 0px 20px;
     top: 0;
-    left: 0;
+    left: -100%;
     background-color: var(--white);
     z-index: 1000;
-    transform: translateX(-100%);
     transition: var(--fast-animation) all;
 
     &.open {

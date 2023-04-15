@@ -16,7 +16,7 @@ $(function () {
     }
 
 
-    /**
+    /*
         Главное меню
     */
     $('.nav__burger').click(function (e) {
@@ -28,17 +28,14 @@ $(function () {
 
 
     $('.drop-listing').each(function (e) {
-
         $(this).mousemove(function (e) {
             if (!$(this).hasClass('drop-listing--open')) {
                 $(this).toggleClass('drop-listing--open');
             }
         });
-
         $(this).mouseleave(function (e) {
             $(this).toggleClass('drop-listing--open');
         });
-
     });
 
 

@@ -284,3 +284,19 @@
         margin: 0;
     }
 }
+
+// Для страницы 404
+.page-404 .main-baner {
+    &__container {
+        @media (max-width: 1024px) {
+            margin-bottom: 125px;
+        }
+    }
+
+    &__bg-other {
+        @media (max-width: 768px) {
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
