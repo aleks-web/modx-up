@@ -30,6 +30,16 @@ html {
 
 }
 
+/*
+    Глобальный класс open
+    Используется в модальных окнах и мобильном меню
+    Добавляется элементу при открытом состоянии
+*/
+.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -37,6 +47,27 @@ body {
     font-size: 16px;
     line-height: 130%;
     position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        transition: var(--fast-animation) all;
+    }
+}
+
+// Класс добавляется тегу body при активном модальном окне
+body.body-modal-open {
+    position: relative;
+    background-color: #ccc;
+
+
+    &:before {
+        width: 100%;
+        height: 100%;
+        background-color: var(--main-color);
+        opacity: 0.5;
+        z-index: 1000;
+    }
 }
 
 p {

@@ -19,9 +19,64 @@ $(function () {
     /**
         Главное меню
     */
+    function modalAdd() {
+        $('body').addClass('body-modal-open');
+    }
+
+    // ? Функция, которая закрывает модальное окно(а)
+    function modalRemove(element = null) {
+        $('body').removeClass('body-modal-open');
+
+        if (!element) {
+            /*
+                Если аргумент не задан (в данном случае модальное окно), то закрываем все имеющиеся модалки
+                (тобишь все элементы имеющие класс .open)
+            */
+
+            $('.open').each(function (e) {
+                $(this).first().removeClass('open')
+            });
+        } else {
+            /*
+                Если есть модалка, то закрываем её
+            */
+            $(element).removeClass('open');
+        }
+    }
+
+    // Мобильное меню
     $('.nav__burger').click(function (e) {
-        $('.mob-menu').css('transform', 'translateX(0)');
-        $('.mob-menu').addClass('open');
+        $('.mobile-menu-sidebar').addClass('open');
+
+        modalAdd();
+    });
+
+    // Поведение мобильного меню
+    $('.mobile-nav').click(function (e) {
+        if ($(e.target).siblings('ul.mobile-nav__sub-menu').length != 0) {
+            e.preventDefault();
+            $(e.target).siblings('ul.mobile-nav__sub-menu').slideToggle();
+            $(e.target).toggleClass('mobile-nav__item--open');
+        };
+    });
+
+    $('body').click(function (e) {
+
+        // Удаляем затемнение фона через функцию modalRemove если клик прошел по фону
+        if ($(e.target).hasClass('body-modal-open')) {
+            modalRemove();
+        }
+
+        // Если клик по кнопке закрыть (по любому элементу с классом btn-close)
+        if ($(e.target).hasClass('btn-close')) {
+            $(e.target).parent().removeClass('open'); // Удаляем у родителя текущей кнопки класс .open
+
+            // Проверяем, есть ли еще открытые модальные окна (присутствует ли класс .open)
+            // Если нет, то удаляем затемнение фона через функцию modalRemove
+            $('.open').length == 0 ? modalRemove() : '';
+        }
+
+
     });
 
 

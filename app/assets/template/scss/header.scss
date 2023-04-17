@@ -291,6 +291,13 @@
 
         &-parent &-text {
             padding-right: 10px;
+
+            &:after {
+                content: 'Вы здесь';
+                right: unset;
+                left: -5px;
+                top: -7px;
+            }
         }
 
         // Пункт меню в виде текста или ссылки
@@ -314,6 +321,21 @@
         // Стили для активного меню
         &-text {
             color: var(--main-btn-color);
+            cursor: context-menu;
+
+            &:after {
+                display: block;
+                content: 'Текущая страница';
+                position: absolute;
+                width: max-content;
+                padding: 2px 10px;
+                background-color: var(--main-btn-color);
+                color: var(--white);
+                font-size: 0.6rem;
+                border-radius: 10px;
+                right: 0;
+                top: 0;
+            }
         }
 
         &-link {
@@ -363,47 +385,101 @@
 }
 
 
-// Мобильное меню
-.mob-menu {
+// Выплывающий сайтбар с меню и прочими элементами для мобильной версии сайта
+.mobile-menu-sidebar {
     position: fixed;
     height: 100vh;
-    min-width: 310px;
-    width: max-content;
-    padding: 40px 20px 0px 20px;
+    min-width: 200px;
+    width: 50%;
+    padding: 40px 20px 0 20px;
     top: 0;
     left: 0;
     background-color: var(--white);
     z-index: 1000;
     transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
     transition: var(--fast-animation) all;
+
+    @media (max-width: 768px) {
+        width: 60%;
+    }
+
+    @media (max-width: 576px) {
+        padding: 20px 20px 0 20px;
+        width: 80%;
+    }
+
+    @media (max-width: 376px) {
+        width: 90%;
+    }
 
     &.open {
         transform: translateX(0);
     }
 
-    .nav {
-        display: flex;
-    }
-
     &__close {
         position: absolute;
+        right: 25px;
         top: 20px;
-        right: 20px;
-        width: 20px;
+        width: 35px;
+        height: 35px;
+
+        @media (max-width: 576px) {
+            width: 25px;
+            height: 25px;
+        }
+
+        &:hover:after,
+        &:hover:before {
+            background-color: var(--main-btn-color-hover);
+        }
     }
 
     // Кнопка
     &__btn {
-        padding: 20px;
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        right: 15px;
+        height: 60px;
 
-        button {
+        @media (max-width: 768px) {
+            height: 55px;
+        }
+
+        @media (max-width: 576px) {
+            height: 50px;
+        }
+
+        @media (max-width: 376px) {
+            height: 45px;
+        }
+
+        .btn {
+            height: inherit;
             width: 100%;
+            border-radius: 0;
         }
     }
 
     &__logo {
-        max-width: 70%;
+        max-width: 50%;
         margin-bottom: 20px;
+
+        @media (max-width: 376px) {
+            max-width: 60%;
+        }
+
+        img {
+            width: auto;
+            height: 70px;
+
+            @media (max-width: 576px) {
+                height: auto;
+                width: 100%;
+            }
+        }
     }
 
     // Обертка блока информации (город и телефон)
@@ -413,25 +489,88 @@
         align-items: center;
         margin-bottom: 20px;
     }
+}
 
-    /* 
-        ? Элемент с городами
-        desc: Расширяет и переопределяет стили БЭМ блока blocks/_drop-listing.scss
-    */
-    &__city {
-        color: var(--black);
-        font-weight: 400;
+// Мобильное меню (список)
+.mobile-nav {
+    padding: 0;
 
-        &-current {
-            padding: 0;
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        padding: 10px 0;
+
+        &:before {
+            content: unset;
         }
 
-        &-list {
-            left: 0;
-            right: unset;
-            box-shadow: 1px 0 15px -5px #ccc;
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        //В открытом состоянии
+        &--open {
+            color: var(--main-btn-color);
+
+            &:after {
+                transform: rotate(-180deg);
+            }
+        }
+
+        &-active .mobile-nav__item-text {
+            color: var(--main-btn-color);
+        }
+
+        // Ссылка
+        &-link,
+        &-text {
+            display: flex;
+            font-weight: 300;
+            font-size: 1.3rem;
+            cursor: pointer;
+
+            &:after {
+                transition: var(--fast-animation) all;
+            }
+        }
+
+        &-text {
+            cursor: context-menu;
+            position: relative;
+        }
+
+        // Если есть дочерний список
+        &-parent {
+            display: flex;
+        }
+
+        &-parent>&-text {
+            &:before {
+                right: calc(-100% - 40px);
+            }
+        }
+
+        &-parent>.mobile-nav__item-link,
+        &-parent>.mobile-nav__item-text {
+
+            &:after {
+                content: '';
+                display: block;
+                margin-left: 10px;
+                background-image: var(--arrow-drop-black);
+                background-repeat: no-repeat no-repeat;
+                background-position: center;
+                background-size: 100%;
+                width: 15px;
+            }
         }
     }
 
-
+    // Подменю
+    &__sub-menu {
+        display: none;
+        padding-left: 10px;
+    }
 }

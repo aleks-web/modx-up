@@ -159,6 +159,7 @@
     width: 20px;
     height: 20px;
     background-color: transparent;
+    transition: var(--fast-animation) all;
 
     &:hover {
         cursor: pointer;
@@ -174,6 +175,7 @@
         background-color: var(--main-color-8);
         transform: rotate(45deg);
         border-radius: 5px;
+        transition: var(--fast-animation) all;
     }
 
     &:after {

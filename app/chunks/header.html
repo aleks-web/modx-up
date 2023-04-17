@@ -140,61 +140,41 @@
     </section>
 </header>
 
-<div class="mob-menu">
-    <button class="btn-close mob-menu__close"></button>
+<div class="mobile-menu-sidebar">
+    <button class="btn-close mobile-menu-sidebar__close"></button>
 
-    <div class="mob-menu__logo">
+    <div class="mobile-menu-sidebar__logo">
         <img src="../assets/template/img/delete/logo.svg" alt="">
     </div>
 
-    <div class="mob-menu__info">
-
-        <div class="drop-listing mob-menu__city">
-            <span class="drop-listing__current drop-listing__current-arrow--black mob-menu__city-current">
-                <span class="drop-listing__icon"><svg width="14" height="18">
-                        <use xlink:href="#geo"></use>
-                    </svg></span>
-                <span>Томск</span>
-            </span>
-            <div class="drop-listing__list mob-menu__city-list">
-                <a class="drop-listing__item drop-listing__item-current" href="#">Томск</a>
-                <a class="drop-listing__item" href="#">Екатеринбург</a>
-            </div>
-        </div>
-
-
+    <div class="mobile-menu-sidebar__info">
 
     </div>
 
+    <nav class="mobile-menu-sidebar__menu">
+        <ul class="mobile-nav">
+            <li class="mobile-nav__item-parent mobile-nav__item mobile-nav__item-first mobile-nav__item-active">
+                <span class="mobile-nav__item-text">Главная</span>
+                <span class="mobile-nav__item-arrow"></span>
+                <ul class="mobile-nav__sub-menu">
+                    <li class="mobile-nav__item-parent mobile-nav__item mobile-nav__item-first"><a
+                            class="mobile-nav__item-link" href="index/price/">Цены</a><span
+                            class="mobile-nav__item-arrow"></span>
+                        <ul class="mobile-nav__sub-menu">
+                            <li class="mobile-nav__item mobile-nav__item-first"><a class="mobile-nav__item-link"
+                                    href="index/price/contacts.html">Контакты</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="mobile-nav__item"><a class="mobile-nav__item-link" href="companies.html">Компаниям</a></li>
+            <li class="mobile-nav__item"><a class="mobile-nav__item-link" href="individuals.html">Частным лицам</a></li>
+            <li class="mobile-nav__item mobile-nav__item-last"><a class="mobile-nav__item-link"
+                    href="working-staff.html">Рабочий персонал</a></li>
+        </ul>
+    </nav>
 
-    <ul class="nav">
-        <li class="nav__item">
-            <a class="nav__item-link" href="#"><span class="nav__item-active">Цены</span></a>
-            <span class="nav__item-arrow"></span>
-
-            <ul class="nav__sub-menu">
-                <li class="nav__item"><a class="nav__item-link" href="#">Компаниям</a></li>
-                <li class="nav__item"><a class="nav__item-link" href="#">Физ.лицам</a></li>
-                <li class="nav__item">
-                    <a class="nav__item-link" href="#">Подпункт 4</a>
-                    <span class="nav__item-arrow"></span>
-
-                    <ul class="nav__sub-menu">
-                        <li class="nav__item"><a class="nav__item-link" href="#">Подпункт 1</a></li>
-                        <li class="nav__item"><a class="nav__item-link" href="#">Подпункт 2</a></li>
-                        <li class="nav__item"><a class="nav__item-link" href="#">Подпункт 3</a></li>
-                    </ul>
-
-                </li>
-            </ul>
-        </li>
-        <li class="nav__item"><a class="nav__item-link" href="#">Компаниям</a></li>
-        <li class="nav__item"><a class="nav__item-link" href="#">Частным лицам</a></li>
-        <li class="nav__item"><a class="nav__item-link" href="#">Работа у нас</a></li>
-        <li class="nav__item"><a class="nav__item-link" href="#">Контакты</a></li>
-    </ul>
-
-    <div class="mob-menu__btn">
+    <div class="mobile-menu-sidebar__btn">
         <a href="#" class="btn">Заказать звонок</a>
     </div>
 
