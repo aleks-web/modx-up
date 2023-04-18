@@ -5,6 +5,14 @@
     color: var(--white);
     overflow: hidden;
 
+    @media (max-width: 1210px) {
+        min-height: calc(100vh - 80px);
+    }
+
+    @media (max-width: 576px) {
+        min-height: calc(100vh - 60px);
+    }
+
     &__bg,
     &__bg-img {
         position: absolute;
@@ -307,6 +315,11 @@
 
 // Для страницы "Контакты"
 .page-contacts .main-baner {
+    @media (max-width: 576px) {
+        display: flex;
+        flex-direction: column-reverse;
+        min-height: unset;
+    }
 
     &__container {
         @media (max-width: 1024px) {
@@ -314,7 +327,7 @@
         }
 
         @media (max-width: 576px) {
-            padding-bottom: 250px;
+            padding-bottom: 0;
         }
     }
 
@@ -325,7 +338,7 @@
         }
 
         @media (max-width: 576px) {
-            height: 50%;
+            height: 40%;
         }
     }
 
@@ -337,8 +350,16 @@
 
     &__bg-other {
         @media (max-width: 576px) {
-            right: 0;
+            position: relative;
             bottom: 0;
+            right: 0;
+        }
+
+        img {
+            @media (max-width: 576px) {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 }

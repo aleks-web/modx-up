@@ -36,6 +36,7 @@
         desc: Обертка для БЭМ блока blocks/_drop-listing.scss
     */
     &__city {
+        height: 100%;
         margin-right: 25px;
 
         // Текущий город
@@ -334,7 +335,7 @@
                 font-size: 0.6rem;
                 border-radius: 10px;
                 right: 0;
-                top: 0;
+                top: -3px;
             }
         }
 
@@ -388,12 +389,12 @@
 // Выплывающий сайтбар с меню и прочими элементами для мобильной версии сайта
 .mobile-menu-sidebar {
     position: fixed;
-    height: 100vh;
+    height: 100%;
     min-width: 200px;
     width: 50%;
     padding: 40px 20px 0 20px;
     top: 0;
-    left: -100%;
+    left: 0;
     background-color: var(--white);
     z-index: 1000;
     transform: translateX(-100%);
@@ -487,7 +488,22 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        height: 40px;
+
+        .drop-listing__list {
+            box-shadow: 0px 0px 10px 0px var(--main-color-3);
+            left: 0;
+
+            &__current {
+                color: var(--main-color-9);
+                font-weight: 400;
+            }
+        }
+
+        .btn-call-mini {
+            height: 35px;
+            width: 35px;
+        }
     }
 }
 

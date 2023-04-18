@@ -58,7 +58,7 @@ body {
 // Класс добавляется тегу body при активном модальном окне
 body.body-modal-open {
     position: relative;
-    background-color: #ccc;
+    overflow: hidden;
 
 
     &:before {
