@@ -179,6 +179,10 @@
         >* {
             margin-bottom: 20px;
 
+            @media (max-width: 376px) {
+                margin-bottom: 10px;
+            }
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -189,16 +193,10 @@
 // Группа кнопок
 .main-baner__btns-wrap {
     display: flex;
+    flex-wrap: wrap;
     margin: 25px 0;
     align-items: center;
-
-    >* {
-        margin-right: 20px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
+    gap: 20px;
 }
 
 // Кнопка
@@ -285,6 +283,12 @@
     }
 }
 
+
+/* 
+    Поведение для определенных страниц
+    Селектор страницы задается тегу body
+*/
+
 // Для страницы 404
 .page-404 .main-baner {
     &__container {
@@ -295,6 +299,44 @@
 
     &__bg-other {
         @media (max-width: 768px) {
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+// Для страницы "Контакты"
+.page-contacts .main-baner {
+
+    &__container {
+        @media (max-width: 1024px) {
+            padding-bottom: 200px;
+        }
+
+        @media (max-width: 576px) {
+            padding-bottom: 250px;
+        }
+    }
+
+    &__bg,
+    &__bg-img {
+        @media (max-width: 1024px) {
+            height: 30%;
+        }
+
+        @media (max-width: 576px) {
+            height: 50%;
+        }
+    }
+
+    &__bg-img {
+        @media (max-width: 1024px) {
+            height: 90%;
+        }
+    }
+
+    &__bg-other {
+        @media (max-width: 576px) {
             right: 0;
             bottom: 0;
         }
