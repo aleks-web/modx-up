@@ -30,6 +30,12 @@ html {
 
 }
 
+input {
+    outline: unset;
+    border: unset;
+    padding: 10px;
+}
+
 /*
     Глобальный класс open
     Используется в модальных окнах и мобильном меню

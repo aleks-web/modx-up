@@ -141,7 +141,7 @@
             </nav>
 
             <div class="header-info__btn">
-                <a class="btn" href="#">Заказать звонок</a>
+                <a class="btn" onclick="modalOpen('#modal-order-call')" href="#">Заказать звонок</a>
                 <a href="#" class="btn-call-mini"></a>
             </div>
 
@@ -157,7 +157,23 @@
     </div>
 
     <div class="mobile-menu-sidebar__info">
+        <div class="drop-listing">
+            <span class="drop-listing__current drop-listing__current-arrow--black">
+                <span class="drop-listing__icon"><svg width="14" height="18">
+                        <use xlink:href="#geo-black"></use>
+                    </svg>
+                </span>
+                <span>Томск</span>
+            </span>
 
+            <div class="drop-listing__list">
+                <span class="drop-listing__item-title">Выберите город:</span>
+                <a class="drop-listing__item drop-listing__item-current" href="#">Москва</a>
+                <a class="drop-listing__item" href="#">Екатеринбург</a>
+            </div>
+        </div>
+
+        <button class="btn-call-mini"></button>
     </div>
 
     <nav class="mobile-menu-sidebar__menu">

@@ -123,3 +123,78 @@
         }
     }
 }
+
+// Сообщение справа снизу
+.message {
+    position: fixed;
+    width: 100%;
+    color: var(--white);
+    padding: 20px;
+    background-color: var(--main-color-9);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 1rem;
+    max-width: 220px;
+    right: 30px;
+    bottom: 30px;
+
+    @media (max-width: 768px) {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    @media (max-width: 576px) {
+        border-radius: 0;
+        right: 0;
+        bottom: 0;
+        max-width: unset;
+        width: 100%;
+        padding: 10px;
+        flex-direction: row;
+    }
+
+    button {
+        position: absolute;
+        top: 4px;
+        right: 8px;
+        width: 15px;
+        transition: var(--fast-animation) all;
+
+        @media (max-width: 576px) {
+            right: 10px;
+            top: 12px;
+            width: 20px;
+        }
+
+        &:hover::before,
+        &:hover::after {
+            background-color: var(--main-btn-color);
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+
+        @media (max-width: 576px) {
+            width: 100%;
+            margin-right: 30px;
+        }
+
+        @media (max-width: 376px) {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__icon {
+        display: block;
+        max-width: 35px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+    }
+}

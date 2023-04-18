@@ -3,7 +3,11 @@
 */
 $(function () {
 
-    // Функция проверки элемента на скрол
+    /*
+        Объявление функций
+    */
+
+    // ? Функция проверки элемента на скрол
     function hasScroll(element) {
         const conteinerScroll = document.querySelector(element).scrollWidth;
         const containerVisible = document.querySelector(element).offsetWidth;
@@ -15,13 +19,18 @@ $(function () {
         }
     }
 
+    // ? Функция открытия модальных окон
+    function modalOpen(modalID) {
+        $(modalID).addClass('open');
+        console.log('Функция открытия модального окна');
+    }
+    // END Функция открытия модальных окон
 
-    /*
-        Главное меню
-    */
+    // ? Функция добавляет затемнение при открытом модальном окне
     function modalAdd() {
         $('body').addClass('body-modal-open');
     }
+    // END Функция добавляет затемнение при открытом модальном окне
 
     // ? Функция, которая закрывает модальное окно(а)
     function modalRemove(element = null) {
@@ -43,13 +52,16 @@ $(function () {
             $(element).removeClass('open');
         }
     }
+    // END Функция, которая закрывает модальное окно(а)
 
-    // Мобильное меню
+
+
+    // Кнопка "Бургер"
     $('.nav__burger').click(function (e) {
         $('.mobile-menu-sidebar').addClass('open');
-
         modalAdd();
     });
+    // END Кнопка "Бургер"
 
     // Поведение мобильного меню
     $('.mobile-nav').click(function (e) {
@@ -59,7 +71,9 @@ $(function () {
             $(e.target).toggleClass('mobile-nav__item--open');
         };
     });
+    // END Поведение мобильного меню
 
+    // Одно событие на несколько
     $('body').click(function (e) {
 
         // Удаляем затемнение фона через функцию modalRemove если клик прошел по фону
@@ -75,7 +89,6 @@ $(function () {
             // Если нет, то удаляем затемнение фона через функцию modalRemove
             $('.open').length == 0 ? modalRemove() : '';
         }
-
 
     });
 
