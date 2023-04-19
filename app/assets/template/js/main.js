@@ -84,8 +84,7 @@ $(function () {
 
         // Если клик по кнопке закрыть (по любому элементу с классом btn-close)
         if ($(e.target).hasClass('btn-close')) {
-            console.log($(e.target).parent('.modal'));
-            $(e.target).parent('.modal').removeClass('open'); // Удаляем у родителя текущей кнопки класс .open
+            $(e.target).parents('.modal').removeClass('open'); // Удаляем у родителя текущей кнопки класс .open
 
             // Проверяем, есть ли еще открытые модальные окна (присутствует ли класс .open)
             // Если нет, то удаляем затемнение фона через функцию modalRemove
@@ -112,11 +111,11 @@ $(function () {
     $('.drop-listing').each(function (e) {
         $(this).mousemove(function (e) {
             if (!$(this).hasClass('drop-listing--open')) {
-                $(this).toggleClass('drop-listing--open');
+                $(this).addClass('drop-listing--open');
             }
         });
         $(this).mouseleave(function (e) {
-            $(this).toggleClass('drop-listing--open');
+            $(this).removeClass('drop-listing--open');
         });
     });
 
