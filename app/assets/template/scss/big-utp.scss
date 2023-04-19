@@ -8,6 +8,22 @@
         padding-top: 145px;
         background-color: var(--main-color-6);
 
+        @media (max-width: 1210px) {
+            padding-top: 100px;
+        }
+
+        @media (max-width: 1024px) {
+            padding-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            padding-top: 60px;
+        }
+
+        @media (max-width: 376px) {
+            padding-top: 40px;
+        }
+
         // Верхний скос блока
         &--bevel {
             clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);

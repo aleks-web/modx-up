@@ -1,37 +1,112 @@
 .modal {
     color: var(--white);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    position: absolute;
+    position: fixed;
     z-index: 100;
-    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     visibility: hidden;
     opacity: 0;
+    z-index: 2000;
+    transition: var(--fast-animation) all;
 
     &.open {}
 
+    // Класс добавляет фон всему экрану
+    &-bg:before {
+        content: "";
+        background-color: var(--main-color);
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -100;
+    }
+
     &__container {
-        width: 90%;
+        position: relative;
+        padding: 45px;
+        width: 80%;
         background-color: var(--main-color-9);
+
+        .btn-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+    }
+
+    // Для модальных окон с классом .modal-isform
+    &-isform {
+
+        // Шапка формы
+        &__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 45px;
+            text-align: center;
+
+            @media (max-width: 376px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &__title {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        &__desc {
+            font-size: 1.1rem;
+        }
+
+        // Ширина контейнера
+        .modal__container {
+            padding: 40px;
+            width: 30%;
+
+            @media (max-width: 1440px) {
+                width: 40%;
+            }
+
+            @media (max-width: 1024px) {
+                width: 50%;
+            }
+
+            @media (max-width: 768px) {
+                width: 70%;
+                padding: 35px;
+            }
+
+            @media (max-width: 576px) {
+                width: 90%;
+            }
+
+            @media (max-width: 376px) {
+                width: 100%;
+                padding: 15px;
+                padding-top: 30px;
+            }
+        }
     }
 
     &__form {
-        padding: 45px;
-    }
-
-    form {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
 
+    form {
         input {
             width: 100%;
             height: 40px;
@@ -54,6 +129,18 @@
             &:last-child {
                 margin-bottom: 0;
             }
+
+            @media (max-width: 376px) {
+                margin-bottom: 15px;
+            }
         }
+    }
+
+}
+
+.modal-form {
+
+    .modal__container {
+        width: 40%;
     }
 }

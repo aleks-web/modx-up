@@ -141,8 +141,8 @@
             </nav>
 
             <div class="header-info__btn">
-                <a class="btn" onclick="modalOpen('#modal-order-call')" href="#">Заказать звонок</a>
-                <a href="#" class="btn-call-mini"></a>
+                <a class="btn" data-modal-id="modal-order-call" href="#">Заказать звонок</a>
+                <a class="btn-call-mini" data-modal-id="modal-order-call" href="#"></a>
             </div>
 
         </div>
@@ -173,7 +173,7 @@
             </div>
         </div>
 
-        <button class="btn-call-mini"></button>
+        <button class="btn-call-mini" data-modal-id="modal-order-call"></button>
     </div>
 
     <nav class="mobile-menu-sidebar__menu">
@@ -182,12 +182,13 @@
                 <span class="mobile-nav__item-text">Главная</span>
                 <span class="mobile-nav__item-arrow"></span>
                 <ul class="mobile-nav__sub-menu">
-                    <li class="mobile-nav__item-parent mobile-nav__item mobile-nav__item-first"><a
-                            class="mobile-nav__item-link" href="index/price/">Цены</a><span
-                            class="mobile-nav__item-arrow"></span>
+                    <li class="mobile-nav__item-parent mobile-nav__item mobile-nav__item-first">
+                        <a class="mobile-nav__item-link" href="index/price/">Цены</a>
+                        <span class="mobile-nav__item-arrow"></span>
                         <ul class="mobile-nav__sub-menu">
                             <li class="mobile-nav__item mobile-nav__item-first"><a class="mobile-nav__item-link"
-                                    href="index/price/contacts.html">Контакты</a></li>
+                                    href="index/price/contacts.html">Контакты</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

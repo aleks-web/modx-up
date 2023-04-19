@@ -1,14 +1,18 @@
-<div id="modal-order-call" class="modal">
+<div id="modal-order-call" class="modal modal-isform">
 
     <div class="modal__container">
-        <div class="modal__form">
-            <form>
-                <input type="text" name="username" placeholder="Ваше имя">
-                <input type="text" name="usersecondname" placeholder="Ваша фамилия">
-                <input type="number" name="phone" placeholder="+7 (___) ___-__-__">
-                <button class="btn" type="submit">Заказать звонок</button>
-            </form>
+        <button class="btn-close"></button>
+        <div class="modal-isform__header">
+            <span class="modal-isform__title">Заказать звонок</span>
+            <span class="modal-isform__desc">Все поля обязательны к заполнению</span>
         </div>
+
+        <form class="modal__form">
+            <input type="text" name="username" placeholder="Ваше имя">
+            <input type="text" name="usersecondname" placeholder="Ваша фамилия">
+            <input type="number" name="phone" placeholder="+7 (___) ___-__-__">
+            <button class="btn btn-up" type="submit">Позвоните мне</button>
+        </form>
     </div>
 
 </div>

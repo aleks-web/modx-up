@@ -40,7 +40,8 @@
 
 // Обобщенные стили всех кнопок с иконками
 .btn-next,
-.btn-download {
+.btn-download,
+.btn-up {
     &:after {
         content: '';
         width: 16px;
@@ -91,6 +92,12 @@
             transform: translateX(0);
             transform: translateY(-2px);
         }
+    }
+}
+
+.btn-up {
+    &:after {
+        background-image: var(--arrow-up-white);
     }
 }
 

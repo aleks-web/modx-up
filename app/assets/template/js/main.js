@@ -18,38 +18,34 @@ $(function () {
             return false;
         }
     }
+    // END функция проверки элемента на скрол
 
     // ? Функция открытия модальных окон
-    function modalOpen(modalID) {
-        $(modalID).addClass('open');
-        console.log('Функция открытия модального окна');
+    function modalOpen(modalID = null) {
+        // Если передается селектор, то добавляем ему класс open
+        if (modalID) {
+            $(modalID).addClass('open');
+            $('.modal').length > 0 ? $('body').addClass('body-modal-open') : '';
+
+            $('.open').length > 1 ? $(modalID).addClass('modal-bg') : '';
+        }
     }
     // END Функция открытия модальных окон
 
-    // ? Функция добавляет затемнение при открытом модальном окне
-    function modalAdd() {
-        $('body').addClass('body-modal-open');
-    }
-    // END Функция добавляет затемнение при открытом модальном окне
-
     // ? Функция, которая закрывает модальное окно(а)
-    function modalRemove(element = null) {
-        $('body').removeClass('body-modal-open');
-
+    function modalClose(element = null) {
         if (!element) {
-            /*
-                Если аргумент не задан (в данном случае модальное окно), то закрываем все имеющиеся модалки
-                (тобишь все элементы имеющие класс .open)
-            */
+            //Если аргумент не задан (в данном случае модальное окно), то закрываем все имеющиеся модалки
+            //(тобишь все элементы имеющие класс .open)
 
             $('.open').each(function (e) {
                 $(this).first().removeClass('open')
             });
+            $('body').removeClass('body-modal-open');
         } else {
-            /*
-                Если есть модалка, то закрываем её
-            */
+            //Если есть модалка, то закрываем её
             $(element).removeClass('open');
+            $('.open').length == 0 ? $('body').removeClass('body-modal-open') : '';
         }
     }
     // END Функция, которая закрывает модальное окно(а)
@@ -59,7 +55,7 @@ $(function () {
     // Кнопка "Бургер"
     $('.nav__burger').click(function (e) {
         $('.mobile-menu-sidebar').addClass('open');
-        modalAdd();
+        $('body').addClass('body-modal-open');
     });
     // END Кнопка "Бургер"
 
@@ -76,19 +72,37 @@ $(function () {
     // Одно событие на несколько
     $('body').click(function (e) {
 
-        // Удаляем затемнение фона через функцию modalRemove если клик прошел по фону
+        // Удаляем затемнение фона через функцию modalClose если клик прошел по фону
         if ($(e.target).hasClass('body-modal-open')) {
-            modalRemove();
+            modalClose();
         }
+
+        if ($(e.target).hasClass('modal') && $(e.target).hasClass('open') && $(e.target).attr('id')) {
+            modalClose('#' + $(e.target).attr('id'));
+        }
+
 
         // Если клик по кнопке закрыть (по любому элементу с классом btn-close)
         if ($(e.target).hasClass('btn-close')) {
-            $(e.target).parent().removeClass('open'); // Удаляем у родителя текущей кнопки класс .open
+            console.log($(e.target).parent('.modal'));
+            $(e.target).parent('.modal').removeClass('open'); // Удаляем у родителя текущей кнопки класс .open
 
             // Проверяем, есть ли еще открытые модальные окна (присутствует ли класс .open)
             // Если нет, то удаляем затемнение фона через функцию modalRemove
-            $('.open').length == 0 ? modalRemove() : '';
+            $('.open').length == 0 ? modalClose() : '';
         }
+
+
+
+        // Клик по data-modal-id (открываем модальное окно)
+        // Если клик прошел по элементу с атрибутом data-modal-id
+        // data-modal-id - атрибут, значение которого содержит id модального окна (у модалки должен быть атрибут id с соответствующим селектором), которое необходимо открыть
+        // Открываем при помощи функции modalOpen. Передаем в нее селектор окна
+        if ($(e.target).data('modal-id') && $(e.target).data('modal-id') != '' && $(e.target).data('modal-id') != false) {
+            e.preventDefault();
+            modalOpen($('#' + $(e.target).data('modal-id')));
+        }
+        // END Клик по data-modal-id
 
     });
 
