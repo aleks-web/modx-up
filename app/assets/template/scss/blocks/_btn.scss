@@ -105,6 +105,9 @@
 .btn-border,
 .btn-border-download,
 .btn-border-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     display: flex;
     align-items: center;
@@ -115,6 +118,7 @@
     border: 2px solid var(--white);
     border-radius: 2px;
     cursor: pointer;
+    background: unset;
     transition: var(--fast-animation) all;
 
     &:hover {
@@ -123,7 +127,6 @@
     }
 
     &:after {
-        content: '';
         display: block;
         width: 16px;
         height: 16px;
@@ -137,11 +140,13 @@
 
 // Иконка скачать
 .btn-border-download:after {
+    content: '';
     background-image: var(--arrow-download-white);
     transform: translateY(-1px);
 }
 
 .btn-border-download:hover:after {
+    content: '';
     background-image: var(--arrow-download-black);
     transform: translateY(0);
 }
@@ -177,6 +182,9 @@
         content: '';
         position: absolute;
         left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         height: 2px;
         background-color: var(--main-color-8);

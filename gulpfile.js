@@ -39,9 +39,9 @@ function styles() {
         .pipe(browserSync.stream())
 }
 
+// Таск скриптов
 function scripts() {
-    return src('app/assets/template/js/main.js')
-        .pipe(concat('main.min.js'))
+    return src('app/assets/template/js/*.js')
         .pipe(uglify())
         .pipe(dest(`${dir.distJs}`))
         .pipe(browserSync.stream())

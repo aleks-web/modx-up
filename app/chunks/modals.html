@@ -10,9 +10,88 @@
         <form class="modal__form">
             <input type="text" name="username" placeholder="Ваше имя">
             <input type="text" name="usersecondname" placeholder="Ваша фамилия">
-            <input type="number" name="phone" placeholder="+7 (___) ___-__-__">
+            <input type="text" name="phone" placeholder="+7 (___) ___ __-__">
             <button class="btn btn-up" type="submit">Позвоните мне</button>
         </form>
     </div>
 
+</div>
+
+
+<div id="modal-thank" class="modal modal-isform">
+
+    <div class="modal__container">
+        <button class="btn-close"></button>
+        <div class="modal-isform__header">
+            <span class="modal-isform__title">Спасибо</span>
+            <span class="modal-isform__desc">Спасибо за заказ обратного звонока. Вскоре мы свяжемся с Вами.</span>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="modal-content-1" class="modal modal-content open">
+
+    
+
+        <div class="modal-content__container">
+            <button class="btn-close"></button>
+
+            <div class="slider swiper modal-content__slider">
+                <div class="swiper-wrapper">
+    
+                    <div class="swiper-slide">
+                        <img src="../assets/template/img/delete/cases.png" alt="Alt">
+                    </div>
+    
+                    <div class="swiper-slide">
+                        <img src="../assets/template/img/delete/cases.png" alt="Alt">
+                    </div>
+    
+                </div>
+
+                <div class="slider____button-wrap modal-content__button-wrap">
+                    <div class="slider__button-next"></div>
+                    <div class="slider__button-prev"></div>
+                </div>
+            </div>
+            
+    
+            <script>
+                const swiper = new Swiper('.modal-content__slider', {
+                    speed: 200,
+
+                    navigation: {
+                        nextEl: '.slider__button-next',
+                        prevEl: '.slider__button-prev',
+                    },
+                });
+            </script>
+    
+            <div class="modal-content__body">
+                <div class="block-title">
+                    <span class="block-title__title">Тайтл</span>
+                </div>
+    
+                <div class="modal-content__content">
+                    <blockquote>
+                        <p>Работа в праздники</p>
+                        <p>9 мая падает заявка на модуль, нужно 4 человека на ближайшее в Коченевск (70км от НСК!!!).В 14.30 парни были на месте и начали разгружать 40 тонный фургон с древесиной, и заново загружать (при экстренном торможении оборвались страховочные тросы и был перегруз на ось, что при малейшем неудачном повороте могло спровоцировать опрокидывании фуры). Парни начали в 14.30 и закончили в 02.00 ночи. Такси не получилось заказать, пришлось развозить самому на личном автомобиле. Парни в ту ночь очень сильно устали и замёрзли.</p>
+                        <p>P.S. Трое из четверых до сих пор работают у меня.</p>
+                    </blockquote>
+    
+                    <p><strong>Задача:</strong> Срочная разгрузка 40-тонного фургона</p>
+                    <p><strong>Как выполняли:</strong> Первая сложность в заказе — его срочность, так как сам объект находился в 70-и километрах от города. Однако наши ребята оперативно собрались и приехали на заказ уже через полтора часа.</p>
+                    <p>Работу начали в 14:30, а закончили в 02:00. Исполнители были очень уставшие и замёрзшие, но заказ выполнили полностью. Клиент остался очень доволен, более того — он был удивлён, как быстро наши ребята справились с задачей. Позже он снова обратился к нам с аналогичным заказом, разве что, фургон в следующий раз был уже 20-тонный.</p>
+                </div>
+            </div>
+
+            <div class="modal-content__btn-close">
+                <button class="modal-close btn-border">Закрыть</button>
+            </div>
+    
+        </div>
+
+   
 </div>
