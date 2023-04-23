@@ -1,7 +1,38 @@
 .full-case {
+    overflow: hidden;
+    padding-top: 0;
+    
     &__container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 50px;
+        color: var(--white);
+    }
+
+    &__block-title {
+        padding-top: 40px;
+    }
+
+    &__slider {
+        max-height: 500px;
+        position: relative;
+        overflow: hidden;
+
+        .swiper-slide {
+            overflow: hidden;
+            max-height: 500px;
+        }
+    }
+
+    &__button-wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        position: absolute;
+        right: 0;
+        background-color: var(--main-color);
+        bottom: 0;
+        z-index: 10;
+    }
+
+    &__block-title {
+        max-width: 900px;
     }
 }
