@@ -38,13 +38,14 @@
         <div class="modal-content__container">
             <button class="btn-close"></button>
 
-            <div class="slider swiper modal-content__slider">
+            <div id="modal-content__slider-1" class="slider swiper modal-content__slider">
+                
                 <div class="swiper-wrapper">
     
                     <div class="swiper-slide">
                         <img src="../assets/template/img/delete/cases.png" alt="Alt">
                     </div>
-    
+
                     <div class="swiper-slide">
                         <img src="../assets/template/img/delete/cases.png" alt="Alt">
                     </div>
@@ -56,18 +57,6 @@
                     <div class="slider__button-prev"></div>
                 </div>
             </div>
-            
-    
-            <script>
-                const swiper = new Swiper('.modal-content__slider', {
-                    speed: 200,
-
-                    navigation: {
-                        nextEl: '.slider__button-next',
-                        prevEl: '.slider__button-prev',
-                    },
-                });
-            </script>
     
             <div class="modal-content__body">
                 <div class="block-title">

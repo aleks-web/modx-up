@@ -96,8 +96,6 @@ $(function () {
     // Одно событие на несколько
     $('body').click(function (e) {
 
-        console.log('Клик по боди: ' + $(e.target));
-
         // Удаляем затемнение фона через функцию modalClose если клик прошел по фону
         if ($(e.target).hasClass('body-modal-open')) {
             modalClose();
@@ -245,21 +243,29 @@ $(function () {
     });
 
 
+    // Инициализация слайдеров в модальных окнах
     $('.modal-content').each(function (e) {
 
-        let ID = '#' + $(this).attr('id');
+        let ID = '#' + $(this).find('.modal-content__slider').attr('id');
 
-        console.log($(this));
+        // Инициализируем если нашелся элемент
+        if (ID) {
+            new Swiper(ID, {
+                spaceBetween: 10,
+                loop: true,
+                speed: 400,
+                autoHeight: true,
+                autoplay: {
+                    delay: 5000,
+                },
 
-        new Swiper(ID, {
-            speed: 200,
-            autoHeight: true,
-    
-            navigation: {
-                nextEl: '.slider__button-next',
-                prevEl: '.slider__button-prev',
-            }
-        });
+                navigation: {
+                    nextEl: '.slider__button-next',
+                    prevEl: '.slider__button-prev',
+                },
+            });
+        }
+
     });
 
     // Скрипт, который инициализирует слайдеры видеоблоков

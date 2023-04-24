@@ -1,5 +1,31 @@
 .big-map {
+    padding-top: 80px;
+    padding-bottom: 0;
+
+    @media (max-width: 1210px) {
+        padding-top: 50px;
+    }
+    @media (max-width: 1024px) {
+        padding-top: 40px;
+    }
+    @media (max-width: 768px) {
+        padding-top: 30px;
+    }
+    @media (max-width: 576px) {
+        padding-top: 20px;
+    }
+    @media (max-width: 376px) {
+        padding-top: 10px;
+    }
+
     &__content {
         height: 550px;
+
+        @media (max-width: 576px) {
+            height: 350px;
+        }
+        @media (max-width: 376px) {
+            height: 250px;
+        }
     }
 }
