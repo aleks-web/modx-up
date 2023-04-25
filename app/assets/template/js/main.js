@@ -52,25 +52,25 @@ $(function () {
 
 
     // Функция переноса курсора в начало строки
-    $.fn.setCursorPosition = function(pos) {
+    $.fn.setCursorPosition = function (pos) {
         if ($(this).get(0).setSelectionRange) {
-          $(this).get(0).setSelectionRange(pos, pos);
+            $(this).get(0).setSelectionRange(pos, pos);
         } else if ($(this).get(0).createTextRange) {
-          var range = $(this).get(0).createTextRange();
-          range.collapse(true);
-          range.moveEnd('character', pos);
-          range.moveStart('character', pos);
-          range.select();
+            var range = $(this).get(0).createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
         }
     };
     // END Функция переноса курсора в начало строки
 
     // Маска для всех input с name = phone
-    $('input[name=phone]').each(function(e) {
+    $('input[name=phone]').each(function (e) {
         $(this).mask("+7 (999) 999 99-99");
     });
 
-    $('input[name=phone]').click(function(e) {
+    $('input[name=phone]').click(function (e) {
         $(this).setCursorPosition(4);
     });
     // END Маска для всех input с name = phone
@@ -108,7 +108,8 @@ $(function () {
 
         // Если клик по кнопке закрыть (по любому элементу с классом btn-close)
         if ($(e.target).hasClass('btn-close') || $(e.target).hasClass('modal-close')) {
-            $(e.target).parents('.modal').removeClass('open'); // Удаляем у родителя текущей кнопки класс .open
+            // Удаляем у родителя текущей кнопки класс .open
+            $(e.target).parents('.open').removeClass('open');
 
             // Проверяем, есть ли еще открытые модальные окна (присутствует ли класс .open)
             // Если нет, то удаляем затемнение фона через функцию modalRemove

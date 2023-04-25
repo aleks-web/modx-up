@@ -19,6 +19,7 @@
     margin: 0;
     line-height: normal;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -47,6 +48,7 @@ blockquote {
         padding: 25px;
         clip-path: polygon(3% 0, 100% 0, 100% 95%, 97% 100%, 0 100%, 0 5%);
     }
+
     @media (max-width: 576px) {
         padding: var(--container-padding);
     }
