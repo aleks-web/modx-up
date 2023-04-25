@@ -1,0 +1,96 @@
+.full-content {
+    overflow: hidden;
+    padding-top: 0;
+
+    &__container {
+        color: var(--white);
+    }
+
+    // Стилизация блока контента
+    &__content {
+
+        h2,
+        h3,
+        h4 {
+            margin-bottom: 20px;
+            padding-top: 20px;
+            margin-top: 40px;
+
+            &:after {
+                content: '';
+                height: 6px;
+                width: 90px;
+                background-color: var(--main-color-4);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        ul {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    // Микс. Блок тайтла
+    &__block-title {
+        padding-top: 80px;
+        margin-bottom: 40px;
+
+        @media (max-width: 1024px) {
+            padding-top: 65px;
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 576px) {
+            padding-top: 50px;
+        }
+
+        &--hasmini {
+            padding-top: 40px;
+
+            @media (max-width: 1024px) {
+                padding-top: 35px;
+            }
+
+            @media (max-width: 576px) {
+                padding-top: 30px;
+            }
+        }
+    }
+
+    // Слайдер
+    &__slider {
+        max-height: 500px;
+        position: relative;
+        overflow: hidden;
+
+        .swiper-slide {
+            overflow: hidden;
+            max-height: 500px;
+        }
+    }
+
+    &__button-wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        position: absolute;
+        right: 0;
+        background-color: var(--main-color);
+        bottom: 0;
+        z-index: 10;
+    }
+}

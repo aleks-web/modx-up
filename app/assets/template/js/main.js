@@ -122,7 +122,7 @@ $(function () {
         // Если клик прошел по элементу с атрибутом data-modal-id
         // data-modal-id - атрибут, значение которого содержит id модального окна (у модалки должен быть атрибут id с соответствующим селектором), которое необходимо открыть
         // Открываем при помощи функции modalOpen. Передаем в нее селектор окна
-        if ($(e.target).data('modal-id') && $(e.target).data('modal-id') != '' && $(e.target).data('modal-id') != false) {
+        if ($(e.target).data('modal-id') && $(e.target).data('modal-id') != '' && $(e.target).data('modal-id') != 'false') {
             e.preventDefault();
             modalOpen($('#' + $(e.target).data('modal-id')));
         }
