@@ -5,36 +5,45 @@
 
     &__wrap {
         padding-bottom: 0;
-        padding-top: 145px;
+        padding-top: 80px;
         background-color: var(--main-color-6);
 
         @media (max-width: 1210px) {
-            padding-top: 100px;
+            padding-top: 70px;
         }
 
         @media (max-width: 1024px) {
-            padding-top: 80px;
-        }
-
-        @media (max-width: 768px) {
             padding-top: 60px;
         }
 
-        @media (max-width: 376px) {
+        @media (max-width: 768px) {
+            padding-top: 50px;
+        }
+
+        @media (max-width: 576px) {
             padding-top: 40px;
+        }
+
+        @media (max-width: 376px) {
+            padding-top: 30px;
         }
 
         // Верхний скос блока
         &--bevel {
+            padding-top: 150px;
             clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
 
             @media (max-width: 1210px) {
                 clip-path: polygon(0 13%, 100% 0, 100% 100%, 0% 100%);
             }
 
-            @media (max-width: 1210px) {
+            @media (max-width: 768px) {
+                padding-top: 130px;
+            }
+
+            @media (max-width: 576px) {
                 clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
-                padding-top: 80px;
+                padding-top: 70px;
             }
         }
     }

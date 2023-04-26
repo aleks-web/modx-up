@@ -43,6 +43,61 @@
         }
     }
 
+    // Соглашение на обработку персональных данных
+    &__agree {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        width: 100%;
+        transition: var(--fast-animation) all;
+
+        @media (max-width: 376px) {
+            margin-bottom: 15px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #fff;
+            box-sizing: border-box;
+            margin-right: 7px;
+            clip-path: unset;
+            transition: var(--fast-animation) all;
+        }
+
+        &:after {
+            border: none;
+            opacity: 0;
+            visibility: hidden;
+            background-color: var(--main-btn-color);
+            clip-path: polygon(49% 64%, 84% 14%, 100% 28%, 47% 100%, 0 49%, 15% 32%);
+        }
+    }
+
+    // Соглашение на обработку персональных данных (активное состояние)
+    &__agree.agree--checked {
+        &:before {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &:after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
     // Для модальных окон с классом .modal-isform
     &-isform {
 
@@ -55,7 +110,7 @@
             gap: 5px;
             text-align: center;
 
-            ~ form {
+            ~form {
                 margin-top: 45px;
 
                 @media (max-width: 376px) {
@@ -103,20 +158,25 @@
         }
     }
 
+    // Класс формы
     &__form {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
 
-    form {
         input {
             width: 100%;
-            height: 40px;
+            height: 100%;
             background-color: var(--main-color-8);
             color: var(--white);
 
             &::placeholder {
+                color: var(--white);
+            }
+
+            // Если ошибка в поле или оно не заполнено
+            &.error {
+                background-color: rgb(255, 0, 0, 11%);
                 color: var(--white);
             }
         }
@@ -125,17 +185,20 @@
             height: 45px;
             font-size: 1rem;
         }
+    }
 
-        >* {
-            margin-bottom: 20px;
+    // Класс input
+    &__input {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
 
-            &:last-child {
-                margin-bottom: 0;
-            }
+        @media (max-width: 376px) {
+            margin-bottom: 15px;
+        }
 
-            @media (max-width: 376px) {
-                margin-bottom: 15px;
-            }
+        &:last-child {
+            margin-bottom: 0;
         }
     }
 
@@ -145,6 +208,66 @@
 
     .modal__container {
         width: 40%;
+    }
+}
+
+// Модалка благодарности
+.modal-thank {
+
+    // Шапка формы
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        text-align: center;
+
+        ~form {
+            margin-top: 45px;
+
+            @media (max-width: 376px) {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+    &__desc {
+        font-size: 1.1rem;
+    }
+
+    // Ширина контейнера
+    .modal__container {
+        padding: 40px;
+        width: 30%;
+
+        @media (max-width: 1440px) {
+            width: 40%;
+        }
+
+        @media (max-width: 1024px) {
+            width: 50%;
+        }
+
+        @media (max-width: 768px) {
+            width: 70%;
+            padding: 35px;
+        }
+
+        @media (max-width: 576px) {
+            width: 90%;
+        }
+
+        @media (max-width: 376px) {
+            width: 100%;
+            padding: 15px;
+            padding-top: 30px;
+        }
     }
 }
 
@@ -197,7 +320,7 @@
             height: 40px;
             z-index: 10;
             right: -40px;
-            
+
             @media (max-width: 376px) {
                 right: 0;
                 background-color: var(--white);
@@ -206,7 +329,7 @@
 
             &:hover {
                 background-color: var(--white);
-                
+
                 &:before,
                 &:after {
                     background-color: var(--main-btn-color);
@@ -247,29 +370,68 @@
         @media (max-width: 1210px) {
             padding: 40px 45px;
         }
+
         @media (max-width: 768px) {
             padding: 30px 35px;
         }
+
         @media (max-width: 576px) {
             padding: var(--container-padding);
         }
+
         @media (max-width: 376px) {
             padding-bottom: 90px;
         }
 
         .block-title {
             margin-bottom: 40px;
-            
+
             &__title {
                 font-size: 2.5rem;
 
                 @media (max-width: 768px) {
                     font-size: 2rem;
                 }
+
                 @media (max-width: 576px) {
                     font-size: 1.8rem;
                 }
             }
+        }
+    }
+
+    // Блок с контентом. Оформление
+    &__content {
+
+        h2,
+        h3,
+        h4 {
+            margin-bottom: 20px;
+            padding-top: 20px;
+            margin-top: 40px;
+
+            &:after {
+                content: '';
+                height: 6px;
+                width: 90px;
+                background-color: var(--main-color-4);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        ul {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
         }
     }
 

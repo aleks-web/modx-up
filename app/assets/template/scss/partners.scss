@@ -1,12 +1,15 @@
 .partners {
+
     // Обертка grid для элементов
     &__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1px;
+
         @media (max-width: 1024px) {
             grid-template-columns: repeat(3, 1fr);
         }
+
         @media (max-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -21,11 +24,18 @@
         height: 180px;
         padding: 0 70px;
         background: rgba(253, 253, 253, 0.1);
+        transition: var(--fast-animation) all;
+
         @media (max-width: 576px) {
             padding: 0 30px;
         }
+
         @media (max-width: 376px) {
             height: 40vw;
+        }
+
+        &:hover {
+            background-color: var(--white);
         }
 
         &:hover &-img {
@@ -36,11 +46,11 @@
 
         // Срез у первого и последнего элемента
         &:first-child {
-            background: linear-gradient(135deg, transparent 15px, rgba(253, 253, 253, 0.1) 0);
+            clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 15%)
         }
 
         &:last-child {
-            background: linear-gradient(-45deg, transparent 15px, rgba(253, 253, 253, 0.1) 0);
+            clip-path: polygon(100% 0, 100% 85%, 92% 100%, 0 100%, 0 0)
         }
 
         &-img {
@@ -48,6 +58,7 @@
                 max-height: 100px;
                 filter: brightness(0) invert(1);
                 transition: var(--fast-animation) all;
+
                 @media (max-width: 576px) {
                     max-height: 70px;
                 }

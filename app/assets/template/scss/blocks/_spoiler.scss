@@ -32,6 +32,11 @@
         justify-content: space-between;
         transition: var(--fast-animation) all;
 
+        @media (max-width: 376px) {
+            font-size: 1rem;
+            padding: 10px;
+        }
+
         &:hover {
             opacity: 1;
             cursor: pointer;
@@ -45,6 +50,7 @@
             background-image: var(--arrow-drop-white);
             background-repeat: no-repeat;
             background-size: 100%;
+            margin-left: 10px;
             transition: var(--fast-animation) all;
         }
     }
@@ -55,5 +61,11 @@
         padding-top: 0;
         font-size: 1rem;
         color: var(--white);
+
+        @media (max-width: 376px) {
+            font-size: 0.9rem;
+            padding: 10px;
+            padding-top: 0;
+        }
     }
 }

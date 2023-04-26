@@ -139,6 +139,7 @@
         }
 
         &-list {
+            font-size: 1.1rem;
             margin-top: 60px;
             padding: 0;
             display: grid;
@@ -148,6 +149,12 @@
             @media (max-width: 1210px) {
                 margin-top: 40px;
             }
+
+            @media (max-width: 1024px) {
+                font-size: 1.2rem;
+            }
+
+
 
             @media (max-width: 376px) {
                 grid-template-columns: 1fr;
@@ -160,6 +167,10 @@
 
                 &:before {
                     top: 2px;
+
+                    @media (max-width: 1024px) {
+                        top: 1px;
+                    }
 
                     @media (max-width: 376px) {
                         top: 0;

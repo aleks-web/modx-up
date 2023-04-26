@@ -50,6 +50,48 @@ $(function () {
     }
     // END Функция, которая закрывает модальное окно(а)
 
+    // Следим за событием af_complete. AjaxForm
+    $(document).on('af_complete', function (e, res) {
+
+        // При успешной отправке
+        if (res.success) {
+            let title = null;
+            let thankText = null;
+
+            // Получаем введенное имя пользователя
+            let userName = $(res.form).find('input.username').val();
+            // Формируем title модального окна
+            if (userName) {
+                title = userName + ', спасибо';
+            } else {
+                title = 'Спасибо';
+            }
+
+            // Получаем текст благодарности за отправку формы (текст успешного сообщения)
+            thankText = $(res.form).find('.thank-text').text();
+            // Если текста успешного сообщения
+            if (!thankText) {
+                thankText = 'Данные успешно отправлены';
+            }
+
+            // Заполняем модальную форму сформированными сообщениями
+            $('#modal-thank').find('.modal-thank__title').text(title); // Заполняем тайтл
+            $('#modal-thank').find('.modal-thank__desc').text(thankText); // Заполняем основной текст
+
+            // Закрываем все окна
+            $('.open').each(function (e) {
+                $(this).first().removeClass('open')
+            });
+
+            // Открываем модальное окно с благодарностью
+            $('#modal-thank').addClass('open');
+        }
+
+        if (!res.success) {
+            console.log("Ошибка");
+        }
+    });
+    // END Следим за событием af_complete. AjaxForm
 
     // Функция переноса курсора в начало строки
     $.fn.setCursorPosition = function (pos) {
@@ -101,8 +143,22 @@ $(function () {
             modalClose();
         }
 
+        // Закрытие модального окна
         if ($(e.target).hasClass('modal') && $(e.target).hasClass('open') && $(e.target).attr('id')) {
             modalClose('#' + $(e.target).attr('id'));
+        }
+
+        // Обобщенный скрипт. Согласие на обработку персональных данных
+        if ($(e.target).hasClass('agree')) {
+            let input = $(e.target).parents('form').find('input[name="agree"]');
+
+            $(e.target).toggleClass('agree--checked');
+
+            if ($(e.target).hasClass('agree--checked')) {
+                input.val('true');
+            } else {
+                input.val('');
+            }
         }
 
 

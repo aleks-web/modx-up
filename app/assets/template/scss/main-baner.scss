@@ -10,7 +10,32 @@
     }
 
     @media (max-width: 576px) {
-        min-height: calc(100vh - 60px);
+        height: auto;
+    }
+
+    // Если нет UTP
+    &--notUtp {
+        @media (max-width: 1024px) {
+            .main-baner__bg {
+                height: 35%;
+            }
+
+            .main-baner__bg-other {
+                right: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-baner__bg-other {
+                right: 0;
+            }
+        }
+
+        @media (max-width: 376px) {
+            .main-baner__bg-other {
+                right: 0;
+            }
+        }
     }
 
     // Обертка фоновых изображений
@@ -103,10 +128,11 @@
         justify-content: center;
 
         @media (max-width: 1024px) {
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         @media (max-width: 576px) {
+            justify-content: space-between;
             padding-top: 20px;
             padding-bottom: 20px;
         }
@@ -341,7 +367,13 @@
 .page-404 .main-baner {
     &__container {
         @media (max-width: 1024px) {
-            margin-bottom: 125px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__bg-other {
+        @media (max-width: 1024px) {
+            height: 75%;
         }
     }
 
