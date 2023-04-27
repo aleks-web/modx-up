@@ -352,6 +352,11 @@
         top: unset;
         max-height: 500px;
         background-color: var(--main-color-9);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
 
     &__button-wrap {
