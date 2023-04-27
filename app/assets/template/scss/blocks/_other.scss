@@ -139,6 +139,9 @@
     max-width: 220px;
     right: 30px;
     bottom: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--fast-animation) all;
 
     @media (max-width: 768px) {
         right: 15px;

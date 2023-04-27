@@ -50,6 +50,10 @@ $(function () {
     }
     // END Функция, которая закрывает модальное окно(а)
 
+
+
+
+
     // Следим за событием af_complete. AjaxForm
     $(document).on('af_complete', function (e, res) {
 
@@ -92,6 +96,9 @@ $(function () {
         }
     });
     // END Следим за событием af_complete. AjaxForm
+
+
+
 
     // Функция переноса курсора в начало строки
     $.fn.setCursorPosition = function (pos) {
@@ -186,6 +193,22 @@ $(function () {
 
     });
 
+    // Событие скрола
+    window.addEventListener('scroll', function (e) {
+        let scrollTop = this.pageYOffset;
+
+        // Показываем сообщение (плашка снизу справа)
+        if (scrollTop > 2500 && !$('.message').hasClass('open') && localStorage.getItem('messageHasClose') != 'true') {
+
+            $('.message').find('.btn-close').click(function (e) {
+                localStorage.setItem('messageHasClose', 'true'); // Лучше в будущем переделать на cookie, для того, чтобы время жизни регулировать
+            });
+
+            $('.message').addClass('open');
+        }
+        // END Показываем сообщение
+    });
+    // END Событие скрола
 
 
 
