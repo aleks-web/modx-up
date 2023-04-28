@@ -117,5 +117,9 @@
         @media (max-width: 1210px) {
             top: unset;
         }
+
+        .swiper-slide img {
+            height: auto;
+        }
     }
 }
