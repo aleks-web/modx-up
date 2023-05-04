@@ -1,31 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-@@include('chunks/head.html', {
-"title": "Главная страница"
-})
-
+@@include('chunks/head.html', { "title": "Главная страница" })
 <body>
-  @@include('chunks/header.html')
-  @@include('chunks/main-baner.html', {
-  "title": "Рабочий персонал под любые задачи",
-  "other-img": "../assets/template/img/delete/man.png",
-  "bg": "../assets/template/img/delete/bg.jpg",
-  "page": "main",
-  })
-  @@include('chunks/offer.html')
+  @@include('chunks/header.html') @@include('chunks/main-baner.html', {
+  "title": "Рабочий персонал под любые задачи", "other-img":
+  "../assets/template/img/delete/man.png", "bg":
+  "../assets/template/img/delete/bg.jpg", "page": "main", })
   @@include('chunks/cards.html')
+  @@include('chunks/offer.html')
   @@include('chunks/history-company.html')
-  @@include('chunks/big-utp.html', {"bevel": "true", "title": "За что нас ценят клиенты?"})
+  @@include('chunks/big-utp.html',
+  {"bevel": "true", "title": "За что нас ценят клиенты?"})
   @@include('chunks/partners.html')
   @@include('chunks/presentation.html')
   @@include('chunks/order-call.html')
   @@include('chunks/modals.html')
-
-  @@include('chunks/footer.html')
-  @@include('chunks/svg.html')
-
-
-
+  @@include('chunks/footer.html') @@include('chunks/svg.html')
+  @@include('chunks/docs.html')
 </body>
-
 </html>
