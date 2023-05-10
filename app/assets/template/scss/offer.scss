@@ -3,12 +3,35 @@
     padding-top: 50px;
     padding-bottom: 100px;
 
+    @media (max-width: 1210px) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    @media (max-width: 1024px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    @media (max-width: 768px) {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    @media (max-width: 576px) {
+        padding-top: calc(var(--container-padding) + 10px);
+        padding-bottom: calc(var(--container-padding) + 10px);
+    }
+
     // Контейнер
     &__container {
         display: flex;
         align-items: end;
         justify-content: space-between;
         z-index: 1;
+
+        @media (max-width: 1210px) {
+            flex-direction: column;
+        }
     }
 
     // Фон картинкой
@@ -44,15 +67,26 @@
         background-color: var(--main-color);
         width: 100%;
         height: 130px;
+
+        @media (max-width: 1210px) {
+            display: none;
+        }
     }
 
     // Левая часть с тайтлом, описанием и кнопкой
     &__left {
-        min-width: 470px;
+        max-width: 470px;
         margin-right: 170px;
 
         @media (max-width: 1440px) {
+            max-width: 400px;
             margin-right: 90px;
+        }
+
+        @media (max-width: 1210px) {
+            max-width: unset;
+            margin-right: 0;
+            margin-bottom: 40px;
         }
 
         &__title {
@@ -61,6 +95,34 @@
 
         &__desc {
             font-size: 22px;
+        }
+    }
+
+    // Правая часть с таблицей
+    &__right {
+        width: 100%;
+        max-width: 768px;
+        overflow: hidden;
+
+        @media (max-width: 1210px) {
+            max-width: unset;
+        }
+
+        @include content-style;
+
+        table {
+            clip-path: polygon(3% 0, 100% 0, 100% 97%, 97% 100%, 0 100%, 0 3%);
+
+            @media (max-width: 1024px) {
+                padding: var(--container-padding);
+                padding-bottom: 10px;
+            }
+
+            caption {
+                @media (max-width: 1024px) {
+                    margin-bottom: 10px;
+                }
+            }
         }
     }
 
@@ -74,21 +136,18 @@
         font-size: 1.38rem;
         color: var(--white);
         margin-bottom: 65px;
+
+        @media (max-width: 1210px) {
+            margin-bottom: 30px;
+        }
     }
 
     // Кнопка
     &__btn {
         width: 100%;
-    }
 
-    // Правая часть с таблицей
-    &__right {
-        width: 100%;
-
-        @include content-style;
-
-        table {
-            clip-path: polygon(3% 0, 100% 0, 100% 97%, 97% 100%, 0 100%, 0 3%);
+        @media (max-width: 1440px) {
+            font-size: 1.1rem;
         }
     }
 }

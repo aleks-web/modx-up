@@ -1,10 +1,5 @@
 .history-company {
-    padding-top: 40px !important;
     color: var(--white);
-
-    @media (max-width: 376px) {
-        padding-top: 10px !important;
-    }
 
     &:has(~ .big-utp) {
         padding-bottom: 30px;
@@ -103,7 +98,7 @@
             position: absolute;
             width: 90%;
             height: 100%;
-            top: -65px;
+            top: -40px;
             left: -210px;
             background: rgb(0 0 0 / 13%);
 

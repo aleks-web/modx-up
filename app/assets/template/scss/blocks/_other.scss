@@ -141,6 +141,7 @@
     bottom: 30px;
     opacity: 0;
     visibility: hidden;
+    z-index: 10000;
     transition: var(--fast-animation) all;
 
     @media (max-width: 768px) {

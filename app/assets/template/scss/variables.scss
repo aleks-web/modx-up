@@ -182,11 +182,16 @@
     // Таблица
     table {
         background-color: var(--main-color-6);
+        overflow-x: overlay;
         display: block;
         color: var(--white);
         font-size: 18px;
         width: 100%;
         padding: 60px 40px;
+
+        &::-webkit-scrollbar {
+            height: 2px;
+        }
 
         tbody {
             display: block;
@@ -235,6 +240,15 @@
                 justify-content: center;
                 font-size: 1rem;
 
+                @media (max-width: 768px) {
+                    height: 40px;
+                }
+
+                @media (max-width: 576px) {
+                    height: 30px;
+                    min-width: 150px;
+                }
+
                 &:first-child {
                     justify-content: left;
                     width: 100%;
@@ -252,6 +266,10 @@
                 height: 1px;
                 background-color: #a5bff64b;
                 display: block;
+
+                @media (max-width: 1210px) {
+                    content: unset;
+                }
             }
         }
     }
