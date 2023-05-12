@@ -1,0 +1,19 @@
+.many-blocks {
+    // Фон верхнего и нижнего скоса
+    background-color: var(--main-color-6);
+
+    // Обертка всего блока
+    &__wrap {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        background-color: var(--main-color);
+        color: var(--white);
+
+        // Класс верхнего и нижнего скоса
+        &--bevel {
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+        }
+    }
+
+
+}
