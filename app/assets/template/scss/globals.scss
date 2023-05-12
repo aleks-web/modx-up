@@ -361,6 +361,10 @@ img {
     }
 }
 
+/* Общий класс, который задает жирность */
+.bold {
+    font-weight: 500;
+}
 
 @keyframes animation-pull {
     0% {

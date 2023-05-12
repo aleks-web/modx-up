@@ -205,6 +205,10 @@
             color: var(--white);
             margin-bottom: 40px;
             text-transform: uppercase;
+
+            @media (max-width: 576px) {
+                font-size: 1.2rem;
+            }
         }
 
         tr {
@@ -255,6 +259,15 @@
                 }
                 &:nth-child(2) {
                     background-color: rgba(202, 210, 230, 0.048);
+                }
+
+                span {
+                    display: block;
+                    margin-right: 3px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
                 }
             }
 

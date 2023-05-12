@@ -126,6 +126,33 @@
         }
     }
 
+    // Класс с длинной таблицы
+    &-table-length {
+        
+        // Если 1 элемент
+        &-1 {
+
+        }
+    }
+
+    // Если в таблице мало элементов (меньше или равно 6-ти элементам)
+    &-table-small {
+        padding-top: 100px;
+
+        .offer__container {
+            align-items: center;
+        }
+
+        .offer__line {
+            display: none;
+        }
+    }
+
+    // Если таблица большая (больше 6 элементов)
+    &-table-big {
+
+    }
+
     // Заголовок
     &__title {
         margin-bottom: 25px;
