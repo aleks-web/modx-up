@@ -11,9 +11,277 @@
 
         // Класс верхнего и нижнего скоса
         &--bevel {
-            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+            padding-top: 200px;
+            padding-bottom: 200px;
+            clip-path: polygon(0 160px, 100% 0, 100% 100%, 0 95%);
+
+            @media (max-width: 1024px) {
+                padding-top: 155px;
+                padding-bottom: 80px;
+                clip-path: polygon(0 80px, 100% 0, 100% 100%, 0 97%);
+            }
+
+            @media (max-width: 376px) {
+                padding-top: 90px;
+                padding-bottom: 60px;
+                clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 99%);
+            }
         }
     }
 
+    // Обобщенные стили блока
+    &__block {}
+
+}
+
+// Блок "Сертификаты"
+.many-blocks__block-certificates-slider {
+    margin-top: 40px;
+    display: flex;
+
+    @media (max-width: 1024px) {
+        margin-top: 0;
+    }
+
+    ~div {
+
+        @media (max-width: 768px) {
+            margin-top: 60px;
+        }
+    }
+
+    // Заголовок блока
+    &-title {
+        margin-bottom: 0;
+        margin-right: 140px;
+        max-width: 500px;
+
+        @media (max-width: 1440px) {
+            margin-right: 100px;
+        }
+
+        @media (max-width: 1210px) {
+            margin-right: 20px;
+            max-width: 600px;
+        }
+
+        @media (max-width: 1024px) {
+            margin-right: 60px;
+            max-width: 500px;
+        }
+
+        @media (max-width: 768px) {
+            margin-right: 0;
+            margin-bottom: 30px;
+            max-width: unset;
+            width: 100%;
+        }
+    }
+
+    // Контейнер
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    // Фон в виде сертификатов
+    &-bg {
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 120px;
+        height: 73%;
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
+
+        // Сертификат 1
+        &1 {
+            position: absolute;
+            top: 0;
+            width: auto;
+            left: 30%;
+            height: 100%;
+
+            @media (max-width: 1440px) {
+                height: 95%;
+            }
+        }
+
+        // Сертификат 2
+        &2 {
+            position: absolute;
+            right: 0;
+            height: 90%;
+            top: 20px;
+            z-index: -1;
+            width: auto;
+
+            @media (max-width: 1440px) {
+                height: 85%;
+            }
+        }
+    }
+
+    &-list {
+        position: relative;
+        width: 700px;
+        overflow: hidden;
+        top: -120px;
+
+        @media (max-width: 1024px) {
+            width: auto;
+            margin-right: 0;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            top: 0;
+        }
+    }
+
+    // Обертка. Сертификаты
+    &-wrap {
+        position: relative;
+        width: 361px;
+        overflow: hidden;
+        top: 0;
+        margin-left: 0 !important;
+
+        @media (max-width: 1440px) {
+            width: 300px;
+        }
+
+        @media (max-width: 1024px) {
+            top: 0;
+            margin-right: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+        }
+
+        .swiper-wrapper {
+            height: auto !important;
+        }
+    }
+
+    // Сертификат
+    &-item {
+        height: 100%;
+        cursor: pointer;
+
+
+    }
+}
+
+// Сертификаты без слайдера
+.many-blocks__block-certificates {
+
+    // Контейнер
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+
+        @media (max-width: 1024px) {
+            align-items: center;
+        }
+
+        @media (max-width: 576px) {
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    &-title {
+        margin-bottom: 0;
+
+        @media (max-width: 576px) {
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 376px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    // Список
+    &-list {
+        position: relative;
+        min-width: 700px;
+        margin-right: 150px;
+        display: flex;
+        justify-content: end;
+
+        @media (max-width: 1440px) {
+            margin-right: 80px;
+            min-width: 590px;
+        }
+
+        @media (max-width: 1024px) {
+            min-width: 500px;
+            margin-right: 50px;
+        }
+
+        @media (max-width: 576px) {
+            margin-right: 0;
+            min-width: unset;
+            width: 100%;
+            justify-content: start;
+        }
+
+        img {
+            width: 360px;
+            height: auto;
+
+            @media (max-width: 1440px) {
+                width: 300px;
+            }
+
+            @media (max-width: 576px) {
+                width: 50%;
+            }
+        }
+    }
+
+    &-item-1 {
+        z-index: 30;
+    }
+
+    &-item-2 {
+        position: absolute;
+        z-index: 25;
+        right: 32%;
+        top: 9%;
+        height: 82% !important;
+        width: auto !important;
+
+        @media (max-width: 576px) {
+            right: 24%;
+        }
+    }
+
+    &-item-3 {
+        position: absolute;
+        z-index: 20;
+        left: 0;
+        top: 15%;
+        height: 70% !important;
+        width: auto !important;
+
+        @media (max-width: 576px) {
+            right: 0;
+            left: unset;
+        }
+    }
 
 }

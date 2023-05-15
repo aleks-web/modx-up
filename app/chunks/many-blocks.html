@@ -1,17 +1,110 @@
 <section class="many-blocks">
 
     <div class="many-blocks__wrap many-blocks__wrap--bevel">
-    
-        <div class="many-blocks__block many-blocks__block-certificates">
 
-            <div class="many-blocks__block-container container">
-    
-                Верстка...
-    
+        <!-- Блок сертификаты (слайдер) -->
+        <div class="many-blocks__block many-blocks__block-certificates-slider">
+
+            <div class="container many-blocks__block-certificates-slider-container">
+
+                <div class="block-title many-blocks__block-certificates-slider-title">
+                    <span class="block-title__title">Соответствуем высоким стандартам</span>
+                    <span class="block-title__desc">Мы стремимся, чтобы каждый клиент стал деловым партнером на долгие
+                        годы,
+                        а сотрудничество с нами было удобным и выгодным.</span>
+                </div>
+
+                <div class="many-blocks__block-certificates-slider-list">
+
+                    <span class="many-blocks__block-certificates-slider-bg">
+
+                        <img class="many-blocks__block-certificates-slider-bg1"
+                            src="/assets/template/img/delete/certificate/certificate-2.png" alt="">
+                        <img class="many-blocks__block-certificates-slider-bg2"
+                            src="/assets/template/img/delete/certificate/certificate-5.png" alt="">
+
+                    </span>
+
+
+                    <div class="many-blocks__block-certificates-slider-wrap swiper slider">
+
+                        <div class="slider__button-wrap">
+                            <div class="slider__button-prev"></div>
+                            <div class="slider__button-next"></div>
+                        </div>
+
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide many-blocks__block-certificates-slider-item">
+                                <img src="/assets/template/img/delete/certificate/certificate.png" alt="Сертификат">
+                            </div>
+
+                            <div class="swiper-slide many-blocks__block-certificates-slider-item">
+                                <img src="/assets/template/img/delete/certificate/certificate-2.png" alt="Сертификат">
+                            </div>
+
+                            <div class="swiper-slide many-blocks__block-certificates-slider-item">
+                                <img src="/assets/template/img/delete/certificate/certificate-3.png" alt="Сертификат">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
-    
+        </div>
+        <!-- END блок сертификаты (слайдер) -->
+
+        <div class="many-blocks__block-certificates">
+            <div class="container many-blocks__block-certificates-container">
+
+                <div class="block-title many-blocks__block-certificates-title">
+                    <span class="block-title__title">Принимаем участие в благотворительных инициативах</span>
+                    <span class="block-title__desc">Мы искренне хотим сделать этот мир лучше и помочь тем, кто больше
+                        всего в этом нуждается.</span>
+                </div>
+
+                <div class="many-blocks__block-certificates-list">
+                    <img class="many-blocks__block-certificates-item-1"
+                        src="/assets/template/img/delete/certificate/certificate-4.png" alt="">
+                    <img class="many-blocks__block-certificates-item-2"
+                        src="/assets/template/img/delete/certificate/certificate-6.png" alt="">
+                    <img class="many-blocks__block-certificates-item-3"
+                        src="/assets/template/img/delete/certificate/certificate-5.png" alt="">
+                </div>
+
+            </div>
         </div>
 
     </div>
 
 </section>
+
+
+
+<script>
+    const certificatess = new Swiper('.many-blocks__block-certificates-slider-wrap', {
+        breakpoints: {
+            376: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                slideToClickedSlide: true,
+                autoHeight: true,
+            },
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                slideToClickedSlide: true,
+            },
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+                slideToClickedSlide: true,
+            },
+        },
+
+        navigation: {
+            nextEl: '.slider__button-next',
+            prevEl: '.slider__button-prev',
+        }
+    });
+</script>
