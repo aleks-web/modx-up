@@ -16,6 +16,7 @@ const { src, dest, watch, parallel } = require('gulp'),                         
 const dir = {
     app: "app/",
     dist: "dist/",
+    appCss: "app/assets/template/css",
     distCss: "dist/assets/template/css",
     distJs: "dist/assets/template/js",
 }
@@ -29,19 +30,22 @@ function browsersync() {
 }
 
 function styles() {
-    return src('app/assets/template/scss/style.scss')
+    src('app/assets/template/scss/style.scss')
         .pipe(scss())
         .pipe(concat('style.min.css'))
-        //.pipe(autoprefixer({
-        //overrideBrowserslist: ['last 10 version']
-        //}))
+        .pipe(dest(`${dir.appCss}`))
+    //.pipe(autoprefixer({
+    //overrideBrowserslist: ['last 10 version']
+    //}))
+
+    return src('app/assets/template/css/style.min.css')
         .pipe(dest(`${dir.distCss}`))
         .pipe(browserSync.stream())
 }
 
 // Таск скриптов
 function scripts() {
-    return src('app/assets/template/js/*.js')
+    return src('app/assets/template/js/*/*.js')
         .pipe(uglify())
         .pipe(dest(`${dir.distJs}`))
         .pipe(browserSync.stream())

@@ -1,0 +1,145 @@
+<section class="certificates">
+
+    <div class="certificates__wrap certificates__wrap--bevel">
+
+        <!-- Блок сертификаты (слайдер) -->
+        <!-- <div class="certificates__block certificates__slider">
+
+            <div class="container certificates__slider-container">
+
+                <div class="block-title certificates__slider-title">
+                    <span class="block-title__title">Соответствуем высоким стандартам</span>
+                    <span class="block-title__desc">Мы стремимся, чтобы каждый клиент стал деловым партнером на долгие
+                        годы,
+                        а сотрудничество с нами было удобным и выгодным.</span>
+                </div>
+
+                <div class="certificates__slider-list">
+
+                    <span class="certificates__slider-bg">
+
+                        <img class="certificates__slider-bg1"
+                            src="/assets/template/img/delete/certificate/certificate-2.png" alt="">
+                        <img class="certificates__slider-bg2"
+                            src="/assets/template/img/delete/certificate/certificate-5.png" alt="">
+
+                    </span>
+
+
+                    <div class="certificates__slider-wrap swiper slider">
+
+                        <div class="slider__button-wrap">
+                            <div class="slider__button-prev"></div>
+                            <div class="slider__button-next"></div>
+                        </div>
+
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide certificates__slider-item">
+                                <img data-fancybox data-src="/assets/template/img/delete/certificate/certificate.png"
+                                    src="/assets/template/img/delete/certificate/certificate.png" alt="Сертификат">
+                            </div>
+
+                            <div class="swiper-slide certificates__slider-item">
+                                <img data-fancybox data-src="/assets/template/img/delete/certificate/certificate-2.png"
+                                    src="/assets/template/img/delete/certificate/certificate-2.png" alt="Сертификат">
+                            </div>
+
+                            <div class="swiper-slide certificates__slider-item">
+                                <img data-fancybox data-src="/assets/template/img/delete/certificate/certificate-3.png"
+                                    src="/assets/template/img/delete/certificate/certificate-3.png" alt="Сертификат">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div> -->
+        <!-- END блок сертификаты (слайдер) -->
+
+        <div class="certificates__standart">
+            <div class="container certificates__standart-container">
+
+                <div class="block-title certificates__standart-title">
+                    <span class="block-title__title">Принимаем участие в благотворительных инициативах</span>
+                    <span class="block-title__desc">Мы искренне хотим сделать этот мир лучше и помочь тем, кто больше
+                        всего в этом нуждается.</span>
+                </div>
+
+                <div class="certificates__standart-list">
+
+                    <img data-fancybox="gallery" class="certificates__standart-item-1"
+                        data-src="/assets/template/img/delete/certificate/certificate-4.png"
+                        src="/assets/template/img/delete/certificate/certificate-4.png" loading="lazy" alt="Сертификат">
+
+                    <img data-fancybox="gallery" class="certificates__standart-item-2"
+                        data-src="/assets/template/img/delete/certificate/certificate-4.png"
+                        src="/assets/template/img/delete/certificate/certificate-4.png" loading="lazy" alt="Сертификат">
+
+                    <img data-fancybox="gallery" class="certificates__standart-item-3"
+                        data-src="/assets/template/img/delete/certificate/certificate-4.png"
+                        src="/assets/template/img/delete/certificate/certificate-4.png" loading="lazy" alt="Сертификат">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="certificates__standart certificates__standart--reverse">
+            <div class="container certificates__standart-container">
+
+                <div class="block-title certificates__standart-title">
+                    <span class="block-title__title">Принимаем участие в благотворительных инициативах</span>
+                    <span class="block-title__desc">Мы искренне хотим сделать этот мир лучше и помочь тем, кто больше
+                        всего в этом нуждается.</span>
+                </div>
+
+                <div class="certificates__standart-list">
+                    <img data-fancybox="gallery" class="certificates__standart-item-1"
+                        data-src="/assets/template/img/delete/certificate/certificate-4.png"
+                        src="/assets/template/img/delete/certificate/certificate-4.png" alt="">
+                    <img data-fancybox="gallery" class="certificates__standart-item-2"
+                        data-src="/assets/template/img/delete/certificate/certificate-4.png"
+                        src="/assets/template/img/delete/certificate/certificate-4.png" alt="">
+                    <img data-fancybox="gallery" class="certificates__standart-item-3"
+                        data-src="/assets/template/img/delete/certificate/certificate-4.png"
+                        src="/assets/template/img/delete/certificate/certificate-4.png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+    const certificatess = new Swiper('.certificates__slider-wrap', {
+        breakpoints: {
+            376: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                slideToClickedSlide: true,
+                autoHeight: true,
+            },
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                slideToClickedSlide: true,
+            },
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 50,
+                slideToClickedSlide: true,
+            },
+        },
+
+        navigation: {
+            nextEl: '.slider__button-next',
+            prevEl: '.slider__button-prev',
+        }
+    });
+</script>
