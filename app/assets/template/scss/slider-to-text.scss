@@ -1,0 +1,124 @@
+.slider-to-text {
+    background-color: var(--main-color);
+
+    &__wrap {
+        overflow: hidden;
+    }
+
+    &__container {
+        padding-top: 130px;
+        position: relative;
+
+        @media (max-width: 768px) {
+            padding-top: 0;
+        }
+    }
+
+    &__body {
+        position: relative;
+        width: 50%;
+        padding: 48px 40px;
+        background-color: var(--main-color-2);
+        z-index: 10;
+
+        @media (max-width: 1210px) {
+            width: 70%;
+        }
+
+        @media (max-width: 768px) {
+            background-color: transparent !important;
+            padding: 0;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__content {
+        color: var(--white);
+        font-size: 1.3rem;
+    }
+
+    &__slider {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        overflow-x: clip;
+        width: 60%;
+        bottom: 0;
+        right: 0;
+
+        @media (max-width: 1210px) {
+            right: var(--container-padding);
+        }
+
+        @media (max-width: 1024px) {
+            top: 0;
+        }
+
+        @media (max-width: 768px) {
+            top: unset;
+            bottom: 0;
+            position: relative;
+            width: calc(100% + var(--container-padding) * 2);
+        }
+
+        // Кнопки слайдера
+        &-btn {
+            position: relative;
+            background-color: var(--main-color);
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 0;
+            z-index: 5;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .swiper-slide {
+            max-height: 500px;
+            height: 100%;
+            overflow: hidden;
+            bottom: 20%;
+            top: 0;
+            cursor: zoom-in;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            @media (max-width: 1440px) {
+                max-height: unset;
+            }
+
+            @media (max-width: 768px) {
+                max-height: 400px;
+            }
+        }
+    }
+
+    // Пагинация
+    &__pagination {
+        display: none;
+        margin-top: calc(var(--container-padding) - 10px);
+        padding: 0 var(--container-padding);
+
+        @media (max-width: 768px) {
+            display: flex;
+        }
+
+        @media (max-width: 576px) {
+            margin-top: calc(var(--container-padding) - 15px);
+        }
+
+        @media (max-width: 376px) {
+            margin-top: var(--container-padding);
+        }
+    }
+}

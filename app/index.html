@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="ru">
 @@include('chunks/head.html', { "title": "Главная страница" })
+
 <body>
   @@include('chunks/header.html') @@include('chunks/main-baner.html', {
   "title": "Рабочий персонал под любые задачи", "other-img":
   "../assets/template/img/delete/man.png", "bg":
   "../assets/template/img/delete/bg.jpg", "page": "main", })
+  @@include('chunks/slider-to-text.html')
   @@include('chunks/cards.html')
   @@include('chunks/history-company.html')
   @@include('chunks/big-utp.html',
@@ -17,4 +19,5 @@
   @@include('chunks/footer.html')
   @@include('chunks/svg.html')
 </body>
+
 </html>

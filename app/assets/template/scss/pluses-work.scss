@@ -112,6 +112,7 @@
         }
 
         &-bg {
+            display: none;
             position: absolute;
             top: 0;
             left: 0;
@@ -120,6 +121,10 @@
             background-image: url('../img/delete/bg.jpg');
             background-repeat: no-repeat no-repeat;
             background-size: cover;
+
+            @media (max-width: 1024px) {
+                display: block;
+            }
         }
     }
 

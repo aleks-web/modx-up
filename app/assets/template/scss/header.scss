@@ -416,7 +416,7 @@
     }
 
     &.open {
-        transform: translateX(0);
+        transform: translateX(0) !important;
     }
 
     &__close {

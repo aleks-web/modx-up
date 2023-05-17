@@ -1,0 +1,70 @@
+<section class="block slider-to-text">
+    <div class="slider-to-text__wrap">
+        <div class="container slider-to-text__container">
+
+
+            <div class="slider-to-text__body">
+                <div class="block-title slider-to-text__title">
+                    <span class="block-title__title">Предоставляем проживание иногородним сотрудникам</span>
+                </div>
+
+                <div class="slider-to-text__content">
+                    <p>Для иногородних предоставляем проживание в уютных и комфортабельных хостелах, расположенных в
+                        местах
+                        с удобной транспортной развязкой.</p>
+                    <p>В наших хостелах вы будете чувствовать себя как дома, у вас всегда будет горячий душ, чистая
+                        постель, возможность приобрести завтрак, ужин, либо приготовить их на оборудованной общей кухне.
+                    </p>
+                </div>
+            </div>
+
+            <div class="slider-to-text__slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img data-fancybox="gallery" data-src="/assets/template/img/delete/dwelling.png"
+                            src="/assets/template/img/delete/dwelling.png" alt="dwelling">
+                    </div>
+                    <div class="swiper-slide">
+                        <img data-fancybox="gallery" data-src="/assets/template/img/delete/dwelling.png"
+                            src="/assets/template/img/delete/dwelling.png" alt="dwelling">
+                    </div>
+                </div>
+
+                <div class="btns-slider slider-to-text__slider-btn">
+                    <span class="btns-slider__prev"></span>
+                    <span class="btns-slider__next"></span>
+                </div>
+
+                <div class="slider-to-text__pagination pagination-slider"></div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</section>
+
+<script>
+    const sliderToText = new Swiper('.slider-to-text__slider', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        slideToClickedSlide: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+
+        navigation: {
+            nextEl: '.btns-slider__next',
+            prevEl: '.btns-slider__prev',
+        },
+        pagination: {
+            el: '.pagination-slider',
+            type: 'bullets',
+            modifierClass: 'pagination-slider-',
+            bulletClass: 'pagination-slider__bullet',
+            bulletActiveClass: 'pagination-slider__bullet--active',
+        },
+    });
+</script>
