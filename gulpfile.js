@@ -62,7 +62,7 @@ function html() {
 }
 
 function watching() {
-    watch(['app/assets/template/scss/**/*.scss'], styles);
+    watch(['app/assets/template/scss/**/*.scss'], styles, styles);
     watch(['app/assets/template/js/**/*.js', '!app/assets/template/js/main.min.js'], scripts);
     watch(['app/**/*.html']).on('change', html);
 }

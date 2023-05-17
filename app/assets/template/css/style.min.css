@@ -5886,6 +5886,11 @@ img {
 .certificates__standart-item-1 {
   z-index: 30;
   cursor: pointer;
+  filter: contrast(0.9);
+  transition: var(--fast-animation) all;
+}
+.certificates__standart-item-1:hover {
+  filter: contrast(1);
 }
 .certificates__standart-item-2, .certificates__standart-item-3 {
   position: absolute;

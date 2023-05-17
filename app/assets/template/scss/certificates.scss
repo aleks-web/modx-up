@@ -342,6 +342,13 @@
     &-item-1 {
         z-index: 30;
         cursor: pointer;
+        filter: contrast(0.9);
+        transition: var(--fast-animation) all;
+
+        &:hover {
+            filter: contrast(1);
+        }
+
     }
 
     &-item-2,
