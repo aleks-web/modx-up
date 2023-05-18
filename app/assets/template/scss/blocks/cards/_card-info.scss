@@ -16,6 +16,8 @@
         overflow: hidden;
         position: relative;
         display: flex;
+        justify-content: center;
+        height: 100%;
         flex-direction: column;
         align-items: center;
         padding: 30px 20px;
@@ -71,10 +73,12 @@
         }
     }
 
-    &__img {
+    &__img,
+    &__svg {
         height: 110px;
         display: flex;
         align-items: center;
+        justify-content: center;
         flex-direction: column;
         margin-bottom: 20px;
 
