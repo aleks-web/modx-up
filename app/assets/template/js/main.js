@@ -183,17 +183,32 @@ $(function () {
     // Событие скрола
     window.addEventListener('scroll', function (e) {
         let scrollTop = this.pageYOffset;
+        let margin = $('.message').outerHeight() + 'px';
+        let bottom = $('.message').css('bottom');
+
+        if ($('.message').hasClass('open')) {
+            $('.message').addClass('open');
+            $('.fixed-sidebar').css({'bottom': bottom, 'margin-bottom': margin});
+        }
 
         // Показываем сообщение (плашка снизу справа)
-        if (scrollTop > 2500 && !$('.message').hasClass('open') && localStorage.getItem('messageHasClose') != 'true') {
+        if (scrollTop > 2500 && !$('.message').hasClass('open') && $.cookie('messageHasClose') != 'true') {
 
             $('.message').find('.btn-close').click(function (e) {
-                localStorage.setItem('messageHasClose', 'true'); // Лучше в будущем переделать на cookie, для того, чтобы время жизни регулировать
+                $.cookie('messageHasClose', 'true', { expires: 1, path: '/' });
+                $('.fixed-sidebar').removeAttr('style');
             });
 
             $('.message').addClass('open');
+            $('.fixed-sidebar').css({'bottom': bottom, 'margin-bottom': margin});
         }
         // END Показываем сообщение
+    });
+
+    window.addEventListener('resize', function(e) {
+        let margin = $('.message').outerHeight() + 'px';
+        let bottom = $('.message').css('bottom');
+        $('.fixed-sidebar').css({'bottom': bottom, 'margin-bottom': margin});
     });
     // END Событие скрола
 
