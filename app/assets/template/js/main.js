@@ -7,19 +7,6 @@ $(function () {
         Объявление функций
     */
 
-    // ? Функция проверки элемента на скрол
-    function hasScroll(element) {
-        const conteinerScroll = document.querySelector(element).scrollWidth;
-        const containerVisible = document.querySelector(element).offsetWidth;
-
-        if (conteinerScroll > containerVisible) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    // END функция проверки элемента на скрол
-
     // ? Функция открытия модальных окон
     function modalOpen(modalID = null) {
         // Если передается селектор, то добавляем ему класс open

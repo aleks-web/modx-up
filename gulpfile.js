@@ -45,7 +45,7 @@ function styles() {
 
 // Таск скриптов
 function scripts() {
-    return src('app/assets/template/js/*/*.js')
+    return src('app/assets/template/js/*.js')
         .pipe(uglify())
         .pipe(dest(`${dir.distJs}`))
         .pipe(browserSync.stream())
