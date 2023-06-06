@@ -1,18 +1,22 @@
 /* Небольшие элементы с иконками */
 .icon-text-phone,
 .icon-text-email,
-.icon-text-clock {
+.icon-text-clock,
+.icon-text-document,
+.icon-text-user,
+.icon-text-pen {
     position: relative;
     display: flex;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: inherit;
+    color: var(--white);
 
     &:before {
         content: '';
         display: block;
-        min-width: 25px;
-        min-height: 25px;
-        margin-right: 10px;
+        min-width: 18px;
+        min-height: 18px;
+        margin-right: 5px;
         background-size: 100% 100%;
         background-position: center;
         background-repeat: no-repeat no-repeat;
@@ -37,6 +41,21 @@
 // Иконка с часами
 .icon-text-clock::before {
     background-image: var(--clock-white);
+}
+
+// Иконка с документом
+.icon-text-document::before {
+    background-image: var(--document-white);
+}
+
+// Иконка с юзером
+.icon-text-user::before {
+    background-image: var(--user-white);
+}
+
+// Иконка с ручкой
+.icon-text-pen::before {
+    background-image: var(--pen-white);
 }
 
 /* END Небольшие элементы с иконками */

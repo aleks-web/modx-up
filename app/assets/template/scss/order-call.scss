@@ -124,9 +124,11 @@
             img {
                 position: absolute;
                 bottom: 0;
+                height: auto;
 
                 @media (max-width: 1024px) {
-                    position: static;
+                    position: relative;
+                    bottom: -10px;
                 }
 
                 @media (max-width: 768px) {

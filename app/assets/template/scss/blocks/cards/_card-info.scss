@@ -3,6 +3,8 @@
     container-type: inline-size;
     container-name: card-info;
 
+    cursor: pointer;
+
     @media (max-width: 576px) {
         &--open {
             .card-info__body {
@@ -98,6 +100,22 @@
             height: 100%;
             width: auto;
 
+            @container card-info (min-width: 390px) {
+                position: absolute;
+                z-index: -1;
+                right: -10%;
+                top: 10%;
+                opacity: 0.2;
+            }
+
+            @media (max-width: 576px) {
+                position: static;
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        svg {
             @container card-info (min-width: 390px) {
                 position: absolute;
                 z-index: -1;

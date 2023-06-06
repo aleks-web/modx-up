@@ -37,9 +37,18 @@ $(function () {
     }
     // END Функция, которая закрывает модальное окно(а)
 
-
-
-
+    // Переопределение функций вывода сообщений (отключение стандартных)
+    // AjaxForm.Message.success = function (message, sticky) {
+    //     if (message) {
+    //         if (!sticky) {sticky = false; }
+    //     }
+    // }
+    // AjaxForm.Message.error = function (message, sticky) {
+    //     if (message) {
+    //         if (!sticky) {sticky = false; }
+    //     }
+    // }
+    // END Переопределение функций вывода сообщений (отключение стандартных)
 
     // Следим за событием af_complete. AjaxForm
     $(document).on('af_complete', function (e, res) {
@@ -180,7 +189,7 @@ $(function () {
 
     });
 
-    // Событие скрола
+    // Событие скрола на пуш уведомление
     window.addEventListener('scroll', function (e) {
         let scrollTop = this.pageYOffset;
         let margin = $('.message').outerHeight() + 'px';
@@ -210,7 +219,52 @@ $(function () {
         let bottom = $('.message').css('bottom');
         $('.fixed-sidebar').css({'bottom': bottom, 'margin-bottom': margin});
     });
-    // END Событие скрола
+    // END Событие скрола на пуш уведомление
+
+    // Событие скролла на меню
+    window.addEventListener('scroll', function (e) {
+        let scrollTop = this.pageYOffset;
+        let height = $('.ticker').outerHeight();
+
+        if (window.innerWidth > 1210) {
+
+            if (scrollTop >= height && !$('.header-info').hasClass('header-info--fixed')) {
+                $('.header-info').addClass('header-info--fixed');
+                $('.header-info').css('height', '60px');
+                $('body').css('margin-top', $('.header-info').outerHeight());
+                $('.header-info__brand-img img').css('height', '30px');
+                $('.header-info__btn .btn').css('height', '35px');
+                $('.ticker').css({'position': 'fixed', 'width': '100%', 'top': '-100%'});
+            } else if (scrollTop < height && $('.header-info').hasClass('header-info--fixed')) {
+                $('.header-info').removeClass('header-info--fixed');
+                $('.header-info').removeAttr('style');
+                $('body').css('margin-top', '0');
+                $('.header-info__brand-img img').removeAttr('style');
+                $('.header-info__btn .btn').removeAttr('style');
+                $('.ticker').removeAttr('style');
+            }
+
+        } else if (window.innerWidth > 1024) {
+            $('body').css('margin-top', $('.header-info').outerHeight());
+            
+            if (scrollTop >= 0 && !$('.header-info').hasClass('header-info--fixed')) {
+                $('.header-info').addClass('header-info--fixed');
+                $('.header-info').css('height', '60px');
+                $('body').css('margin-top', $('.header-info').outerHeight());
+                $('.header-info__brand-img img').css('height', '30px');
+                $('.header-info__btn .btn').css('height', '35px');
+            } else if (scrollTop <= 0 && $('.header-info').hasClass('header-info--fixed')) {
+                $('.header-info').removeClass('header-info--fixed');
+                $('.header-info').removeAttr('style');
+                $('body').css('margin-top', '0');
+                $('.header-info__brand-img img').removeAttr('style');
+                $('.header-info__btn .btn').removeAttr('style');
+            }
+
+        }
+
+    });
+    // END Событие скролла на меню
 
 
 
@@ -230,6 +284,10 @@ $(function () {
     $('.card-info').each(function (e) {
         $(this).click(function (e) {
             $(this).toggleClass('card-info--open');
+            
+            if ($(this).data('url')) {
+                window.open($(this).data('url'), '_blank');
+            }
         });
     });
 

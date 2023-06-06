@@ -57,6 +57,21 @@
         }
     }
 
+    &__infobar {
+        a {
+            border-bottom: 1px solid transparent !important;
+
+            * {
+                color: #D5DAE3;
+                transition: var(--fast-animation) all;
+    
+                &:hover {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
     // Обертка правого контента (Блок ссылок)
     &__other {
         display: flex;
