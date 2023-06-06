@@ -271,7 +271,7 @@ img {
 .block-title {
     padding-top: 24px;
     margin-bottom: 64px;
-    color: var(--white);
+    color: var(--main-color-block-title);
 
     @media (max-width: 1210px) {
         margin-bottom: 40px;
@@ -394,14 +394,14 @@ img {
     height: auto;
     width: max-content;
     z-index: 200;
-    padding:  0 var(--container-padding) calc(var(--container-padding) - 10px) 0;
+    padding: 0 var(--container-padding) calc(var(--container-padding) - 10px) 0;
     display: flex;
     flex-direction: column;
     align-items: end;
     transition: var(--fast-animation) all;
 
     @media (max-width: 576px) {
-        padding:  0 calc(var(--container-padding) - 10px) calc(var(--container-padding) - 10px) 0;
+        padding: 0 calc(var(--container-padding) - 10px) calc(var(--container-padding) - 10px) 0;
     }
 
     &__call {
@@ -434,9 +434,7 @@ img {
     z-index: 1000;
     transition: var(--fast-animation) all;
 
-    &.open {
-        
-    }
+    &.open {}
 
     @media (max-width: 576px) {
         border-radius: 0;
