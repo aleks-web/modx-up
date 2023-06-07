@@ -91,6 +91,7 @@ body {
     @media (max-width: 1024px) {
         margin-top: 80px !important;
     }
+
     @media (max-width: 576px) {
         margin-top: 60px !important;
     }
@@ -295,7 +296,7 @@ img {
             content: '';
             height: 6px;
             width: 90px;
-            background-color: var(--main-color-4);
+            background-color: var(--main-color-block-title-line);
             position: absolute;
             top: 0;
             left: 0;
@@ -313,7 +314,7 @@ img {
         &-mini {
             display: block;
             text-transform: uppercase;
-            color: var(--main-color-4);
+            color: var(--main-color-block-title-mini);
             margin-bottom: 10px;
             font-weight: 400;
 

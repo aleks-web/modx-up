@@ -1,7 +1,7 @@
 .footer {
     padding-top: 80px;
     padding-bottom: 80px;
-    background-color: var(--main-color-footer);
+    background-color: var(--main-color-footer-bg);
 
     @media (max-width: 1024px) {
         padding-top: 40px;
@@ -64,7 +64,7 @@
             * {
                 color: #D5DAE3;
                 transition: var(--fast-animation) all;
-    
+
                 &:hover {
                     color: var(--white);
                 }
@@ -144,13 +144,13 @@
             }
 
             a {
-                color: #D5DAE3;
+                color: var(--main-color-footer-text);
                 border-bottom: 1px solid transparent;
                 transition: var(--fast-animation) all;
 
                 &:hover {
-                    color: var(--white);
-                    border-bottom: 1px solid var(--white);
+                    color: var(--main-color-footer-link-hover);
+                    border-bottom: 1px solid var(--main-color-footer-link-hover);
                 }
             }
         }
@@ -200,7 +200,7 @@
 // Блок с городом
 .footer__city {
     height: 30px;
-    color: var(--white);
+    color: var(--main-color-footer-text);
     margin-top: 10px;
 
     &-list {
@@ -211,7 +211,7 @@
 
 // Блок время работы
 .footer__working {
-    color: #D5DAE3;
+    color: var(--main-color-footer-text);
 
     // Все дочерние элементы первого уровня
     >* {
@@ -290,7 +290,7 @@
 
     &-text {
         display: block;
-        color: #D5DAE3;
+        color: var(--main-color-footer-text);
         font-size: 1.1rem;
         line-height: 140%;
 

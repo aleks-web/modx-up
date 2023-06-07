@@ -4,8 +4,8 @@
 
 // Верхняя строка
 .ticker {
-    background: var(--main-color);
-    color: var(--white);
+    background: var(--main-color-ticker-bg);
+    color: var(--main-color-ticker-text);
     height: 50px;
     top: 0;
 
@@ -46,6 +46,30 @@
             height: 100%;
         }
 
+        .drop-listing__list {
+            background-color: var(--main-color-ticker-submenu-bg);
+        }
+
+        .drop-listing__item {
+            color: var(--main-color-ticker-submenu-link);
+
+            &:hover {
+                color: var(--main-color-ticker-submenu-link-hover);
+            }
+
+            &-title {
+                color: var(--main-color-ticker-submenu-link);
+            }
+
+            &-current {
+                color: var(--main-color-ticker-submenu-link-active);
+
+                &:hover {
+                    color: var(--main-color-ticker-submenu-link-active);
+                }
+            }
+        }
+
     }
 
     // END блок с городами
@@ -58,6 +82,7 @@
     &__phone {
         .phone__number {
             font-size: 1rem;
+            color: var(--main-color-ticker-text);
         }
     }
 
@@ -73,7 +98,7 @@
     justify-content: space-between;
     width: 100%;
     z-index: 1000;
-    background-color: var(--main-color-3);
+    background-color: var(--main-color-header-bg);
     transition: var(--fast-animation) all;
 
     @media (max-width: 1024px) {
@@ -138,7 +163,7 @@
         }
 
         .drop-listing__item:hover {
-            color: var(--main-color-7);
+            color: var(--main-color-header-link-hover);
         }
     }
 }
@@ -261,15 +286,15 @@
             border-radius: 5px;
 
             &:nth-child(1) {
-                background-color: var(--main-btn-color);
+                background-color: var(--main-color-header-link-active);
             }
 
             &:nth-child(2) {
-                background-color: var(--main-color-7);
+                background-color: var(--main-color-header-link-hover);
             }
 
             &:nth-child(3) {
-                background-color: var(--black);
+                background-color: var(--main-color-header-link);
             }
         }
 
@@ -351,7 +376,7 @@
 
         // Стили для активного меню
         &-text {
-            color: var(--main-btn-color);
+            color: var(--main-color-header-link-active);
             cursor: context-menu;
 
             &:after {
@@ -360,7 +385,7 @@
                 position: absolute;
                 width: max-content;
                 padding: 2px 10px;
-                background-color: var(--main-btn-color);
+                background-color: var(--main-color-header-link-active);
                 color: var(--white);
                 font-size: 0.6rem;
                 border-radius: 10px;
@@ -371,7 +396,7 @@
 
         &-link {
             &:hover {
-                color: #4969B5;
+                color: var(--main-color-header-link-hover);
             }
         }
 
@@ -399,7 +424,7 @@
         .nav__item {
             min-width: 100%;
             margin-right: 0;
-            background-color: #fff;
+            background-color: var(--main-color-header-submenu-bg);
             transition: var(--fast-animation) all;
         }
 
@@ -425,7 +450,7 @@
     padding: 40px 20px 0 20px;
     top: 0;
     left: 0;
-    background-color: var(--white);
+    background-color: var(--main-color-header-bg);
     z-index: 1000;
     transform: translateX(-100%);
     opacity: 0;
@@ -463,7 +488,7 @@
 
         &:hover:after,
         &:hover:before {
-            background-color: var(--main-btn-color-hover);
+            background-color: var(--main-color-header-link-hover);
         }
     }
 
@@ -523,9 +548,10 @@
         .drop-listing__list {
             box-shadow: 0px 0px 10px 0px var(--main-color-3);
             left: 0;
+            background-color: var(--main-color-header-submenu-bg);
 
             &__current {
-                color: var(--main-color-9);
+                color: var(--main-color-header-link-active);
                 font-weight: 400;
             }
         }
@@ -558,7 +584,7 @@
 
         //В открытом состоянии
         &--open {
-            color: var(--main-btn-color);
+            color: var(--main-color-header-link-active);
 
             &:after {
                 transform: rotate(-180deg);
@@ -566,7 +592,7 @@
         }
 
         &-active .mobile-nav__item-text {
-            color: var(--main-btn-color);
+            color: var(--main-color-header-link-active);
         }
 
         // Ссылка
